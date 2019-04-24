@@ -32,6 +32,7 @@ class DragonRubyDocumenter
         os_arr << "* ```#{class_tree(obj).to_s}```"
       end
     end
+    os_arr.sort!
     output[:objspace] << os_arr.join("\n") + "\n\n"
 
     flush_documentation
