@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+require 'bundler/inline'
+
+gemfile do
+  source 'https://rubygems.org'
+  gem 'kramdown'
+  gem 'prawndown', '~> 0.1.2'
+end
+
+mddir   = File.expand_path("../../output_md", __FILE__)
+htmldir = File.expand_path("../../output_html", __FILE__)
+pdfdir  = File.expand_path("../../output_pdf", __FILE__)
+
+Dir.glob(mddir + '/*.md').each do |mdfile|
+  puts "found: #{mdfile}"
+  contents = File.open(mdfile).read
+  outstr = Kramdown::Document.new(contents).to_html
+
+  outfile = "#{htmldir}/#{File.basename(mdfile, '.*')}.html"
+  file = File.open(outfile, "w")
+  file.write(outstr)
+  file.close
+end
+
+system("pandoc #{pdfdir}/full.md --toc -o #{pdfdir}/DragonRubyObjectMethods.pdf")
