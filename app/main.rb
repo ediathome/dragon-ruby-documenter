@@ -2,6 +2,9 @@
 #
 class DragonRubyDocumenter
 
+  MD_OUTPUT_DIR = 'output_md'
+  PDF_OUTPUT_DIR = 'output_pdf'
+
   def dox args
     puts "DragonRubyDocumenter:: starting output…"
 
@@ -41,17 +44,21 @@ class DragonRubyDocumenter
 
   private
 
-  def md_file
-    @md_file ||= init_md_file
+  def md_file(fname)
+    @md_file ||= Hash.new
+    @md_file[fname] ||= md_file_init(fname)
+    @md_file[fname]
   end
 
-  def md_file_path
-    "DragonRubyObjectMethods.md"
+  def md_file_init(nfilepath)
+    nfilepath = "#{MD_OUTPUT_DIR}/#{nfilepath}"
+    File.delete(nfilepath) if File.exist?(nfilepath)
+    File.open(nfilepath, "w")
   end
 
   def class_tree(obj)
     rv = ""
-    if obj.respond_to?(:superclass)
+    if obj.respond_to?(:superclass) && obj.superclass.to_s != ''
       rv += class_tree(obj.superclass.to_s) + "::"
     end
     rv += obj.to_s
@@ -59,7 +66,7 @@ class DragonRubyDocumenter
   end
 
   def output
-    @output ||= { objspace: "", short: "", full: "" }
+    @output ||= { objspace: "", short: "", full: "", index: ""}
   end
 
   def add_to_out(ostr)
@@ -67,10 +74,6 @@ class DragonRubyDocumenter
     output[:full] << ostr
   end
 
-  def init_md_file
-    File.delete(md_file_path) if File.exist?(md_file_path)
-    File.open(md_file_path, "w")
-  end
 
   # Call with a Hash
   # { obj: args, comment: '**args**' },
@@ -105,16 +108,48 @@ class DragonRubyDocumenter
       next if mn.to_s=="documenter_button"
       output[:short] << "* ```#{mn.to_s}```\n"
     end
-
+    add_to_out "\n[Top](#top)"
     add_to_out "\n\n---\n\n"
   end
 
+  def output_headers
+    hs = Hash.new
+    hs[:objspace]   = "Global Object Space"
+    hs[:short]      = "Short (excluding inherited methods)"
+    hs[:full]       = "Full (including inherited methods)"
+    hs[:index]      = "Index"
+    hs
+  end
+
+  def nav
+    return @nav unless @nav.nil?
+    @nav = "# DragonRubyGTK - Class dumps\n{:.no_toc}\n"
+    output.each do |k, v| 
+      @nav += "* [#{k}](#{k}.html)\n"
+    end
+    @nav += "\n\n"
+    @nav
+  end
+
+  def md_toc
+    "\n* A markdown unordered list which will be replaced with the ToC, excluding the from above\n{:toc}\n\n"
+  end
+
   def flush_documentation
-    fout  = "# Global Object Space\n\n"  + output[:objspace]
-    fout += "# Short\n\n" + output[:short]
-    fout += "# Long\n\n" + output[:full]
-    md_file.write(fout)
-    puts "DragonRubyDocumenter: wrote documentation to '#{md_file_path}'"
+    full_contents = ""
+    output.each do |k, v|
+      heading = "## #{output_headers[k]}\n{:.no_toc}\n\n"
+      full_contents += heading + v
+
+      of = md_file("#{k}.md")
+      of.write( nav + heading + md_toc + v)
+      of.close
+      puts "DragonRubyDocumenter: wrote documentation to '#{of}'"
+    end
+
+    full_mdfile = File.open("#{PDF_OUTPUT_DIR}/full.md", "w")
+    full_mdfile.write full_contents
+    full_mdfile.close
   end
 end
 
