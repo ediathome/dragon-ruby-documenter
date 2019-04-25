@@ -10,6 +10,7 @@ end
 mddir   = File.expand_path("../../output_md", __FILE__)
 htmldir = File.expand_path("../../output_html", __FILE__)
 pdfdir  = File.expand_path("../../output_pdf", __FILE__)
+template_file = File.expand_path("../../templates/template.latex", __FILE__)
 
 Dir.glob(mddir + '/*.md').each do |mdfile|
   puts "found: #{mdfile}"
@@ -22,4 +23,5 @@ Dir.glob(mddir + '/*.md').each do |mdfile|
   file.close
 end
 
-system("pandoc #{pdfdir}/full.md --toc -o #{pdfdir}/DragonRubyObjectMethods.pdf")
+
+system("pandoc #{pdfdir}/full.md --toc --strip-comments --template=#{template_file} -V linkcolor:blue -o #{pdfdir}/DragonRubyObjectMethods.pdf")

@@ -85,11 +85,11 @@ class DragonRubyDocumenter
     short_methods = tobject.methods(false).sort
 
     if tobject.class==OpenStructLite
-      add_to_out "## OpenStructLite for #{thash[:comment]}"
+      add_to_out "### OpenStructLite for #{thash[:comment]}"
     elsif tobject.class==BasicObject
-      add_to_out "# BasicObject"
+      add_to_out "### BasicObject"
     else
-      add_to_out "## Class: #{tobject.class}"
+      add_to_out "### Class: #{tobject.class}"
     end
     add_to_out "\n#{thash[:comment]}\n\n"
 
@@ -138,13 +138,15 @@ class DragonRubyDocumenter
   def flush_documentation
     full_contents = ""
     output.each do |k, v|
-      heading = "## #{output_headers[k]}\n{:.no_toc}\n\n"
-      full_contents += heading + v
+      heading = "## #{output_headers[k]}"
+      unless k==:index
+        full_contents += "#{heading}\n\n#{v}"
+      end
 
       of = md_file("#{k}.md")
-      of.write( nav + heading + md_toc + v)
+      of.write( nav + heading + "\n{:.no_toc}\n\n"+ md_toc + v)
       of.close
-      puts "DragonRubyDocumenter: wrote documentation to '#{of}'"
+      puts "DragonRubyDocumenter: wrote documentation to '#{k}.md'"
     end
 
     full_mdfile = File.open("#{PDF_OUTPUT_DIR}/full.md", "w")
