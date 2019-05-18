@@ -3,8 +3,8 @@ This small app dumps a basic DragonRuby documentation to a Markdown file.
 
 You can find example outputs here:
 
-* [PDF file](https://vtlearn.de/site/dragonruby/DragonRubyObjectMethods.pdf)
-* [HTML version](https://vtlearn.de/site/dragonruby/)
+* [PDF file](https://github.com/ediathome/dragon-ruby-documenter/raw/master/output_pdf/DragonRubyObjectMethods.pdf)
+* [HTML version](https://ediathome.github.io/dragon-ruby-documenter/)
 
 ## Howto
 You will need DragonRuby installed and in your path. Run the following command in the project dir (tested on macOS):
