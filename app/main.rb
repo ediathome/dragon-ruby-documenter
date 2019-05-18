@@ -8,20 +8,46 @@ class DragonRubyDocumenter
   def dox args
     puts "DragonRubyDocumenter:: starting output…"
 
+    #
+    # Initialize stuff here
+    #
+    # args.outputs.sounds << "resources/beep.wav"
+    fd = IO.sysopen("/dev/tty", "w")
+    tio = IO.new(fd,"w")
+
     logc = [
-      { obj: args, comment: '**args**' },
-      { obj: args.dragon, comment: '**args.dragon**' },
-      { obj: args.dragon.root, comment: '**args.dragon.root**' },
-      { obj: args.game.new_entity(:doc_button), comment: '**args.game.new_entity** Methods of an entity object ' },
-      { obj: $ffi, comment: '**$ffi**' },
-      { obj: FFI::File.new, comment: '**FFI::File**'},
-      { obj: args.game, comment: '**args.game**' },
-      { obj: GC, comment: '**GC**'},
-      { obj: args.grid, comment: '**args.grid**' },
-      { obj: args.inputs, comment: '**args.inputs**' },
-      { obj: $layout, comment: '**$layout**' },
-      { obj: args.outputs, comment: '**args.outputs**' },
-      { obj: args.passes, comment: '**args.passes**' }
+      { obj: args, comment: '*args*' },
+      { obj: args.dragon, comment: '*args.dragon*' },
+      { obj: args.dragon.root, comment: '*args.dragon.root*' },
+      { obj: args.game.new_entity(:doc_button), comment: '*args.game.new_entity* Methods of an entity object ' },
+      { obj: $ffi, comment: '*$ffi*' },
+      { obj: FFI::File.new, comment: '*FFI::File*'},
+      { obj: args.game, comment: '*args.game*' },
+      { obj: GC, comment: '*GC*'},
+      { obj: args.grid, comment: '*args.grid*' },
+      # IO stuff
+      { obj: tio, comment: '*IO.new(IO.sysopen("/dev/tty", "w"), "w")*' },
+      { obj: File.open('tmp.test', "w"), comment: '*File.open*' },
+
+      { obj: $layout, comment: '*$layout*' },
+      { obj: args.outputs, comment: '*args.outputs*' },
+      # Sound is currently not working
+      # { obj: Sound.new('resources/beep.wav'), comment: '*args.outputs.sounds.first* ' },
+      { obj: args.passes, comment: '*args.passes*' },
+      # Primitives
+      { obj: Primitive.new, comment: '*Primitive.new*' },
+      { obj: Border.new, comment: '*Border.new*' },
+      { obj: Label.new, comment: '*Label.new*' },
+      { obj: Line.new, comment: '*Line.new*' },
+      { obj: Solid.new, comment: '*Solid.new*' },
+      { obj: Sprite.new, comment: '*Sprite.new*' },
+      # Inputs
+      { obj: args.inputs, comment: '*args.inputs*' },
+      { obj: args.inputs.controller_one, comment: '*args.inputs.controller_one*'},
+      { obj: args.inputs.controller_two, comment: '*args.inputs.controller_two*'},
+      { obj: args.inputs.controllers, comment: '*args.inputs.controllers*'},
+      { obj: args.inputs.keyboard, comment: '*args.inputs.keyboard*'},
+      { obj: args.inputs.mouse, comment: '*args.inputs.mouse*'}
     ]
     logc.each { |lo| log_object_methods lo }
 
@@ -90,7 +116,7 @@ class DragonRubyDocumenter
     elsif tobject.class==BasicObject
       add_to_out "### BasicObject"
     else
-      add_to_out "### Class: #{tobject.class}"
+      add_to_out "### Class: #{class_tree(tobject.class).to_s}"
     end
     add_to_out "\n#{thash[:comment]}\n\n"
 
