@@ -103,6 +103,61 @@
 
 ---
 
+### Class: DragonRubyRoot
+**args.dragon.root**
+
+* ```files_reloaded```
+* ```files_reloaded=```
+* ```framerate```
+* ```framerate=```
+* ```framerate_at```
+* ```framerate_at=```
+* ```gridline_color```
+* ```gridline_color=```
+* ```gridline_label_color```
+* ```gridline_label_color=```
+* ```gridline_label_spacing_x```
+* ```gridline_label_spacing_x=```
+* ```gridline_label_spacing_y```
+* ```gridline_label_spacing_y=```
+* ```gridline_spacing_x```
+* ```gridline_spacing_x=```
+* ```gridline_spacing_y```
+* ```gridline_spacing_y=```
+* ```hash```
+* ```hash=```
+* ```initialize```
+* ```keyboard_focus```
+* ```keyboard_focus=```
+* ```mouse_focus```
+* ```mouse_focus=```
+* ```paused```
+* ```paused=```
+* ```reloaded_files```
+* ```reloaded_files=```
+* ```repl_enabled```
+* ```repl_enabled=```
+* ```repl_text_color```
+* ```repl_text_color=```
+* ```repl_text_font```
+* ```repl_text_font=```
+* ```show_gridlines```
+* ```show_gridlines=```
+* ```take_screenshot```
+* ```take_screenshot=```
+* ```tick_count```
+* ```tick_count=```
+* ```time_per_tick```
+* ```time_per_tick=```
+* ```toast_debounce```
+* ```toast_debounce=```
+* ```toast_message```
+* ```toast_message=```
+
+[Top](#top)
+
+---
+
 ### OpenStructLite for **args.game.new_entity** Methods of an entity object 
 **args.game.new_entity** Methods of an entity object 
 

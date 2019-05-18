@@ -11,6 +11,7 @@ class DragonRubyDocumenter
     logc = [
       { obj: args, comment: '**args**' },
       { obj: args.dragon, comment: '**args.dragon**' },
+      { obj: args.dragon.root, comment: '**args.dragon.root**' },
       { obj: args.game.new_entity(:doc_button), comment: '**args.game.new_entity** Methods of an entity object ' },
       { obj: $ffi, comment: '**$ffi**' },
       { obj: FFI::File.new, comment: '**FFI::File**'},
