@@ -87,7 +87,8 @@ build-iPhoneSimulator/
 # End of https://www.gitignore.io/api/ruby,macos
 
 DragonRubyObjectMethods.md
-output_md/*.md
-output_html/*.html
-output_pdf/*.pdf
-output_pdf/*.md
+# output_md/*.md
+# output_html/*.html
+# output_pdf/*.pdf
+# output_pdf/*.md
+bin/publish
