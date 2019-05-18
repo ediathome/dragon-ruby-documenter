@@ -8,7 +8,7 @@ gemfile do
 end
 
 mddir   = File.expand_path("../../output_md", __FILE__)
-htmldir = File.expand_path("../../output_html", __FILE__)
+htmldir = File.expand_path("../../docs", __FILE__)
 pdfdir  = File.expand_path("../../output_pdf", __FILE__)
 template_file = File.expand_path("../../templates/template.latex", __FILE__)
 
