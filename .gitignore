@@ -92,3 +92,4 @@ DragonRubyObjectMethods.md
 # output_pdf/*.pdf
 # output_pdf/*.md
 bin/publish
+tmp.test
