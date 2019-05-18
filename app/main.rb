@@ -152,6 +152,7 @@ class DragonRubyDocumenter
     full_mdfile = File.open("#{PDF_OUTPUT_DIR}/full.md", "w")
     full_mdfile.write full_contents
     full_mdfile.close
+    puts "DragonRubyDocumenter: wrote documentation to '#{PDF_OUTPUT_DIR}/full.md'"
   end
 end
 
@@ -187,6 +188,7 @@ def tick args
 
   if args.inputs.mouse.click && args.inputs.mouse.click.point.inside_rect?(documenter_button.border)
     if $docer.dox args
+      puts "Creating documentation done at tick #{args.game.tick_count}"
       args.game.documenter_success = args.game.tick_count
     else
       puts "Error of some kind"
