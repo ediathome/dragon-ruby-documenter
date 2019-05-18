@@ -18,7 +18,7 @@
   <li><a href="#class-module" id="markdown-toc-class-module">Class: Module</a></li>
   <li><a href="#class-grid" id="markdown-toc-class-grid">Class: Grid</a></li>
   <li><a href="#class-inputs" id="markdown-toc-class-inputs">Class: Inputs</a></li>
-  <li><a href="#class-layout" id="markdown-toc-class-layout">Class: Layout</a></li>
+  <li><a href="#class-dragonrubyview" id="markdown-toc-class-dragonrubyview">Class: DragonRubyView</a></li>
   <li><a href="#class-outputs" id="markdown-toc-class-outputs">Class: Outputs</a></li>
   <li><a href="#class-array" id="markdown-toc-class-array">Class: Array</a></li>
 </ul>
@@ -57,6 +57,7 @@
   <li><code>border_to_ffi</code></li>
   <li><code>borders</code></li>
   <li><code>calc_wrapper</code></li>
+  <li><code>calcstringbox</code></li>
   <li><code>clear_draw_passes</code></li>
   <li><code>clear_draw_primitives</code></li>
   <li><code>clear_inputs</code></li>
@@ -65,6 +66,7 @@
   <li><code>dequeue_sounds</code></li>
   <li><code>export!</code></li>
   <li><code>ffi_file</code></li>
+  <li><code>ffi_misc</code></li>
   <li><code>ffi_mrb</code></li>
   <li><code>flattened_solids</code></li>
   <li><code>gridlines!</code></li>
@@ -76,6 +78,7 @@
   <li><code>labels</code></li>
   <li><code>line_to_ffi</code></li>
   <li><code>lines</code></li>
+  <li><code>load_state</code></li>
   <li><code>next_keyboard_inputs_after_tick</code></li>
   <li><code>next_keyboard_inputs_before_tick</code></li>
   <li><code>passes</code></li>
@@ -91,6 +94,7 @@
   <li><code>reset</code></li>
   <li><code>root</code></li>
   <li><code>root=</code></li>
+  <li><code>save_state</code></li>
   <li><code>solid_to_ffi</code></li>
   <li><code>sprite_to_ffi</code></li>
   <li><code>sprites</code></li>
@@ -333,7 +337,7 @@
 
 <hr />
 
-<h3 id="class-layout">Class: Layout</h3>
+<h3 id="class-dragonrubyview">Class: DragonRubyView</h3>
 <p><strong>$layout</strong></p>
 
 <ul>
@@ -344,6 +348,7 @@
   <li><code>__reload_repl_file</code></li>
   <li><code>__reload_ruby_file</code></li>
   <li><code>__repl_labels</code></li>
+  <li><code>analog_to_perc</code></li>
   <li><code>append_buffer</code></li>
   <li><code>append_current_repl_code</code></li>
   <li><code>append_mini_buffer_code</code></li>
@@ -404,11 +409,17 @@
   <li><code>labels</code></li>
   <li><code>labels_with_alpha</code></li>
   <li><code>left_aligned</code></li>
+  <li><code>left_analog_x_player_1</code></li>
+  <li><code>left_analog_x_player_2</code></li>
+  <li><code>left_analog_y_player_1</code></li>
+  <li><code>left_analog_y_player_2</code></li>
   <li><code>light_gray</code></li>
   <li><code>lines</code></li>
   <li><code>mini_buffer_enabled?</code></li>
   <li><code>mini_buffer_label</code></li>
+  <li><code>mouse_move</code></li>
   <li><code>mouse_pressed</code></li>
+  <li><code>mouse_up</code></li>
   <li><code>on_reload</code></li>
   <li><code>on_startup</code></li>
   <li><code>passes</code></li>
@@ -457,6 +468,10 @@
   <li><code>repl_text_font</code></li>
   <li><code>repl_tick</code></li>
   <li><code>right_aligned</code></li>
+  <li><code>right_analog_x_player_1</code></li>
+  <li><code>right_analog_x_player_2</code></li>
+  <li><code>right_analog_y_player_1</code></li>
+  <li><code>right_analog_y_player_2</code></li>
   <li><code>set_buffer</code></li>
   <li><code>set_current_repl_code</code></li>
   <li><code>set_key</code></li>
@@ -467,6 +482,7 @@
   <li><code>sounds</code></li>
   <li><code>sprites</code></li>
   <li><code>stop_music</code></li>
+  <li><code>take_screenshot</code></li>
   <li><code>target</code></li>
   <li><code>text_color</code></li>
   <li><code>text_font</code></li>
@@ -476,6 +492,8 @@
   <li><code>tick_flashes</code></li>
   <li><code>time_per_tick</code></li>
   <li><code>white</code></li>
+  <li><code>window_keyboard_focus_changed</code></li>
+  <li><code>window_mouse_focus_changed</code></li>
 </ul>
 
 <p><a href="#top">Top</a></p>
@@ -557,6 +575,8 @@
   <li><code>a</code></li>
   <li><code>a=</code></li>
   <li><code>angle</code></li>
+  <li><code>angle=</code></li>
+  <li><code>angle_given_point</code></li>
   <li><code>append</code></li>
   <li><code>assoc</code></li>
   <li><code>at</code></li>
@@ -574,6 +594,7 @@
   <li><code>delete_at</code></li>
   <li><code>delete_if</code></li>
   <li><code>dig</code></li>
+  <li><code>draw_primitive_marker?</code></li>
   <li><code>each</code></li>
   <li><code>each_index</code></li>
   <li><code>empty?</code></li>
@@ -606,11 +627,18 @@
   <li><code>pairs_to_hash</code></li>
   <li><code>path</code></li>
   <li><code>permutation</code></li>
+  <li><code>point</code></li>
   <li><code>pop</code></li>
   <li><code>prepend</code></li>
   <li><code>product</code></li>
   <li><code>push</code></li>
   <li><code>rassoc</code></li>
+  <li><code>rect</code></li>
+  <li><code>rect_offset</code></li>
+  <li><code>rect_shift_down</code></li>
+  <li><code>rect_shift_left</code></li>
+  <li><code>rect_shift_right</code></li>
+  <li><code>rect_shift_up</code></li>
   <li><code>reject!</code></li>
   <li><code>reject_false</code></li>
   <li><code>reject_nil</code></li>
@@ -623,7 +651,9 @@
   <li><code>rotate</code></li>
   <li><code>rotate!</code></li>
   <li><code>sample</code></li>
+  <li><code>scale_rect</code></li>
   <li><code>select!</code></li>
+  <li><code>self_rect</code></li>
   <li><code>serialize</code></li>
   <li><code>shift</code></li>
   <li><code>shuffle</code></li>
