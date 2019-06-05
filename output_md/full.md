@@ -28,10 +28,12 @@
 * ```String```
 * ```__caller_without_noise__```
 * ```__case_eqq```
+* ```__custom_object_methods__```
 * ```__dragon_ruby_source_files__```
 * ```__dragon_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
+* ```__object_methods__```
 * ```__pretty_print_exception__```
 * ```__printstr__```
 * ```__send__```
@@ -43,6 +45,7 @@
 * ```caller```
 * ```class```
 * ```class_defined?```
+* ```clear_render_targets```
 * ```clone```
 * ```define_singleton_method```
 * ```destructure```
@@ -67,6 +70,7 @@
 * ```grid```
 * ```grid=```
 * ```hash```
+* ```help```
 * ```here```
 * ```initialize```
 * ```initialize_copy```
@@ -94,6 +98,7 @@
 * ```object_id```
 * ```open```
 * ```or```
+* ```original_puts```
 * ```outputs```
 * ```outputs=```
 * ```p```
@@ -112,7 +117,11 @@
 * ```raise_method_missing_better_error```
 * ```raise_with_caller```
 * ```rand```
+* ```recording```
+* ```recording=```
 * ```remove_instance_variable```
+* ```render_target```
+* ```require```
 * ```respond_to?```
 * ```send```
 * ```serialize```
@@ -120,6 +129,7 @@
 * ```singleton_methods```
 * ```sprintf```
 * ```srand```
+* ```state```
 * ```tap```
 * ```then```
 * ```tick```
@@ -146,10 +156,12 @@
 * ```String```
 * ```__caller_without_noise__```
 * ```__case_eqq```
+* ```__custom_object_methods__```
 * ```__dragon_ruby_source_files__```
 * ```__dragon_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
+* ```__object_methods__```
 * ```__pretty_print_exception__```
 * ```__printstr__```
 * ```__send__```
@@ -159,24 +171,30 @@
 * ```and```
 * ```args```
 * ```args=```
+* ```argv```
+* ```argv=```
 * ```block_given?```
 * ```border_to_ffi```
-* ```borders```
 * ```calc_wrapper```
 * ```calcstringbox```
 * ```caller```
+* ```check_framerate```
 * ```class```
 * ```class_defined?```
 * ```clear_draw_passes```
 * ```clear_draw_primitives```
 * ```clear_inputs```
+* ```cli_arguments```
 * ```clone```
+* ```console```
 * ```current_framerate```
 * ```current_framerate_raw```
 * ```define_singleton_method```
 * ```dequeue_sounds```
 * ```dig```
+* ```disable_console```
 * ```dup```
+* ```enable_console```
 * ```enum_for```
 * ```eql?```
 * ```equal?```
@@ -194,14 +212,13 @@
 * ```getc```
 * ```gets```
 * ```global_variables```
-* ```gridlines!```
-* ```has_toast?```
 * ```hash```
+* ```help```
 * ```here```
-* ```highlights```
 * ```init_args_if_needed```
 * ```initialize```
 * ```initialize_copy```
+* ```input_history```
 * ```inspect```
 * ```instance_eval```
 * ```instance_exec```
@@ -215,12 +232,11 @@
 * ```itself```
 * ```kind_of?```
 * ```label_to_ffi```
-* ```labels```
 * ```lambda```
 * ```line_to_ffi```
-* ```lines```
 * ```load_state```
 * ```local_variables```
+* ```log```
 * ```loop```
 * ```method_missing```
 * ```methods```
@@ -231,6 +247,7 @@
 * ```object_id```
 * ```open```
 * ```or```
+* ```original_puts```
 * ```p```
 * ```passes```
 * ```pause!```
@@ -248,13 +265,19 @@
 * ```puts```
 * ```putsc```
 * ```queue_key_up```
+* ```quit!```
+* ```quit_requested?```
 * ```raise```
 * ```raise_method_missing_better_error```
 * ```raise_with_caller```
 * ```rand```
+* ```record_input_history```
+* ```recording```
 * ```remove_instance_variable```
 * ```render_height```
+* ```render_replay_mouse```
 * ```render_width```
+* ```request_quit```
 * ```require```
 * ```reset```
 * ```respond_to?```
@@ -262,6 +285,8 @@
 * ```root=```
 * ```save_state```
 * ```send```
+* ```set_rng```
+* ```show_console```
 * ```singleton_class```
 * ```singleton_methods```
 * ```solid_to_ffi```
@@ -269,23 +294,25 @@
 * ```sprite_to_ffi```
 * ```sprites```
 * ```srand```
+* ```stage_replay_values```
+* ```start!```
+* ```start_recording```
+* ```start_replay```
+* ```stop_recording```
+* ```stop_replay```
 * ```tap```
 * ```target```
 * ```text_font```
 * ```then```
 * ```tick```
+* ```tick_console```
 * ```tick_core```
 * ```tick_speed_count```
 * ```tick_speed_count=```
 * ```tick_speed_sum```
 * ```tick_speed_sum=```
-* ```tick_toast```
 * ```to_enum```
 * ```to_s```
-* ```toast!```
-* ```toast_labels```
-* ```toggle_gridlines!```
-* ```ungridlines!```
 * ```unpause!```
 * ```yield_self```
 
@@ -308,10 +335,12 @@
 * ```String```
 * ```__caller_without_noise__```
 * ```__case_eqq```
+* ```__custom_object_methods__```
 * ```__dragon_ruby_source_files__```
 * ```__dragon_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
+* ```__object_methods__```
 * ```__pretty_print_exception__```
 * ```__printstr__```
 * ```__send__```
@@ -345,20 +374,9 @@
 * ```getc```
 * ```gets```
 * ```global_variables```
-* ```gridline_color```
-* ```gridline_color=```
-* ```gridline_label_color```
-* ```gridline_label_color=```
-* ```gridline_label_spacing_x```
-* ```gridline_label_spacing_x=```
-* ```gridline_label_spacing_y```
-* ```gridline_label_spacing_y=```
-* ```gridline_spacing_x```
-* ```gridline_spacing_x=```
-* ```gridline_spacing_y```
-* ```gridline_spacing_y=```
 * ```hash```
 * ```hash=```
+* ```help```
 * ```here```
 * ```initialize```
 * ```initialize_copy```
@@ -388,6 +406,7 @@
 * ```object_id```
 * ```open```
 * ```or```
+* ```original_puts```
 * ```p```
 * ```paused```
 * ```paused=```
@@ -407,16 +426,9 @@
 * ```reloaded_files```
 * ```reloaded_files=```
 * ```remove_instance_variable```
-* ```repl_enabled```
-* ```repl_enabled=```
-* ```repl_text_color```
-* ```repl_text_color=```
-* ```repl_text_font```
-* ```repl_text_font=```
+* ```require```
 * ```respond_to?```
 * ```send```
-* ```show_gridlines```
-* ```show_gridlines=```
 * ```singleton_class```
 * ```singleton_methods```
 * ```sprintf```
@@ -432,17 +444,13 @@
 * ```time_per_tick=```
 * ```to_enum```
 * ```to_s```
-* ```toast_debounce```
-* ```toast_debounce=```
-* ```toast_message```
-* ```toast_message=```
 * ```yield_self```
 
 [Top](#top)
 
 ---
 
-### OpenStructLite for *args.game.new_entity* Methods of an entity object 
+### Class: Object::OpenEntity
 *args.game.new_entity* Methods of an entity object 
 
 * ```!```
@@ -459,12 +467,14 @@
 * ```__case_eqq```
 * ```__contains_array_indexers__```
 * ```__contains_array_indexers__=```
+* ```__custom_object_methods__```
 * ```__dragon_ruby_source_files__```
 * ```__dragon_ruby_string_contains_source_file_path__?```
 * ```__get_hash_property__```
 * ```__id__```
 * ```__meta__```
 * ```__method__```
+* ```__object_methods__```
 * ```__pretty_print_exception__```
 * ```__printstr__```
 * ```__reserved_keys__```
@@ -501,8 +511,11 @@
 * ```frozen?```
 * ```getc```
 * ```gets```
+* ```global_created_at=```
+* ```global_created_at_elapsed```
 * ```global_variables```
 * ```hash```
+* ```help```
 * ```here```
 * ```initialize```
 * ```initialize_copy```
@@ -524,13 +537,16 @@
 * ```meta```
 * ```method_missing```
 * ```methods```
+* ```new?```
 * ```new_entity```
 * ```nil?```
 * ```numeric_or_default```
 * ```object_id```
+* ```old?```
 * ```open```
 * ```or```
 * ```original_eq_eq```
+* ```original_puts```
 * ```p```
 * ```print```
 * ```printf```
@@ -546,6 +562,7 @@
 * ```raise_with_caller```
 * ```rand```
 * ```remove_instance_variable```
+* ```require```
 * ```respond_to?```
 * ```send```
 * ```set!```
@@ -580,10 +597,12 @@
 * ```String```
 * ```__caller_without_noise__```
 * ```__case_eqq```
+* ```__custom_object_methods__```
 * ```__dragon_ruby_source_files__```
 * ```__dragon_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
+* ```__object_methods__```
 * ```__pretty_print_exception__```
 * ```__printstr__```
 * ```__send__```
@@ -613,6 +632,7 @@
 * ```gets```
 * ```global_variables```
 * ```hash```
+* ```help```
 * ```here```
 * ```initialize```
 * ```initialize_copy```
@@ -638,6 +658,7 @@
 * ```object_id```
 * ```open```
 * ```or```
+* ```original_puts```
 * ```p```
 * ```parse```
 * ```print```
@@ -655,6 +676,7 @@
 * ```rand```
 * ```reload```
 * ```remove_instance_variable```
+* ```require```
 * ```respond_to?```
 * ```send```
 * ```singleton_class```
@@ -687,10 +709,12 @@
 * ```String```
 * ```__caller_without_noise__```
 * ```__case_eqq```
+* ```__custom_object_methods__```
 * ```__dragon_ruby_source_files__```
 * ```__dragon_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
+* ```__object_methods__```
 * ```__pretty_print_exception__```
 * ```__printstr__```
 * ```__send__```
@@ -719,6 +743,7 @@
 * ```gets```
 * ```global_variables```
 * ```hash```
+* ```help```
 * ```here```
 * ```initialize```
 * ```initialize_copy```
@@ -746,6 +771,7 @@
 * ```object_id```
 * ```open```
 * ```or```
+* ```original_puts```
 * ```p```
 * ```print```
 * ```printf```
@@ -761,6 +787,7 @@
 * ```raise_with_caller```
 * ```rand```
 * ```remove_instance_variable```
+* ```require```
 * ```respond_to?```
 * ```send```
 * ```singleton_class```
@@ -779,7 +806,7 @@
 
 ---
 
-### OpenStructLite for *args.game*
+### Class: Object::OpenEntity
 *args.game*
 
 * ```!```
@@ -796,12 +823,14 @@
 * ```__case_eqq```
 * ```__contains_array_indexers__```
 * ```__contains_array_indexers__=```
+* ```__custom_object_methods__```
 * ```__dragon_ruby_source_files__```
 * ```__dragon_ruby_string_contains_source_file_path__?```
 * ```__get_hash_property__```
 * ```__id__```
 * ```__meta__```
 * ```__method__```
+* ```__object_methods__```
 * ```__pretty_print_exception__```
 * ```__printstr__```
 * ```__reserved_keys__```
@@ -824,6 +853,7 @@
 * ```define_singleton_method```
 * ```dig```
 * ```documenter_success```
+* ```documenter_success=```
 * ```dup```
 * ```entity_id```
 * ```enum_for```
@@ -837,8 +867,10 @@
 * ```frozen?```
 * ```getc```
 * ```gets```
+* ```global_created_at_elapsed```
 * ```global_variables```
 * ```hash```
+* ```help```
 * ```here```
 * ```initialize```
 * ```initialize_copy```
@@ -860,13 +892,16 @@
 * ```meta```
 * ```method_missing```
 * ```methods```
+* ```new?```
 * ```new_entity```
 * ```nil?```
 * ```numeric_or_default```
 * ```object_id```
+* ```old?```
 * ```open```
 * ```or```
 * ```original_eq_eq```
+* ```original_puts```
 * ```p```
 * ```print```
 * ```printf```
@@ -882,6 +917,7 @@
 * ```raise_with_caller```
 * ```rand```
 * ```remove_instance_variable```
+* ```require```
 * ```respond_to?```
 * ```send```
 * ```set!```
@@ -918,10 +954,12 @@
 * ```String```
 * ```__caller_without_noise__```
 * ```__case_eqq```
+* ```__custom_object_methods__```
 * ```__dragon_ruby_source_files__```
 * ```__dragon_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
+* ```__object_methods__```
 * ```__pretty_print_exception__```
 * ```__printstr__```
 * ```__send__```
@@ -975,6 +1013,7 @@
 * ```gets```
 * ```global_variables```
 * ```hash```
+* ```help```
 * ```here```
 * ```include```
 * ```include?```
@@ -1013,6 +1052,7 @@
 * ```object_id```
 * ```open```
 * ```or```
+* ```original_puts```
 * ```p```
 * ```prepend```
 * ```prepend_features```
@@ -1037,6 +1077,7 @@
 * ```remove_const```
 * ```remove_instance_variable```
 * ```remove_method```
+* ```require```
 * ```respond_to?```
 * ```send```
 * ```singleton_class```
@@ -1074,10 +1115,12 @@
 * ```String```
 * ```__caller_without_noise__```
 * ```__case_eqq```
+* ```__custom_object_methods__```
 * ```__dragon_ruby_source_files__```
 * ```__dragon_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
+* ```__object_methods__```
 * ```__pretty_print_exception__```
 * ```__print_origin_help```
 * ```__printstr__```
@@ -1090,6 +1133,10 @@
 * ```bottom```
 * ```bottom=```
 * ```caller```
+* ```center_x```
+* ```center_x=```
+* ```center_y```
+* ```center_y=```
 * ```class```
 * ```class_defined?```
 * ```clone```
@@ -1111,6 +1158,7 @@
 * ```h```
 * ```h_half```
 * ```hash```
+* ```help```
 * ```here```
 * ```initialize```
 * ```initialize_copy```
@@ -1144,6 +1192,7 @@
 * ```origin_x=```
 * ```origin_y```
 * ```origin_y=```
+* ```original_puts```
 * ```p```
 * ```print```
 * ```printf```
@@ -1161,6 +1210,7 @@
 * ```rect```
 * ```rect=```
 * ```remove_instance_variable```
+* ```require```
 * ```respond_to?```
 * ```right```
 * ```right=```
@@ -1205,10 +1255,12 @@
 * ```String```
 * ```__caller_without_noise__```
 * ```__case_eqq```
+* ```__custom_object_methods__```
 * ```__dragon_ruby_source_files__```
 * ```__dragon_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
+* ```__object_methods__```
 * ```__pretty_print_exception__```
 * ```__printstr__```
 * ```__send__```
@@ -1274,6 +1326,7 @@
 * ```grep```
 * ```group_by```
 * ```hash```
+* ```help```
 * ```here```
 * ```include?```
 * ```initialize```
@@ -1313,6 +1366,7 @@
 * ```one?```
 * ```open```
 * ```or```
+* ```original_puts```
 * ```p```
 * ```partition```
 * ```pid```
@@ -1338,6 +1392,7 @@
 * ```reduce```
 * ```reject```
 * ```remove_instance_variable```
+* ```require```
 * ```respond_to?```
 * ```reverse_each```
 * ```rewind```
@@ -1393,10 +1448,12 @@
 * ```String```
 * ```__caller_without_noise__```
 * ```__case_eqq```
+* ```__custom_object_methods__```
 * ```__dragon_ruby_source_files__```
 * ```__dragon_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
+* ```__object_methods__```
 * ```__pretty_print_exception__```
 * ```__printstr__```
 * ```__send__```
@@ -1463,6 +1520,7 @@
 * ```grep```
 * ```group_by```
 * ```hash```
+* ```help```
 * ```here```
 * ```include?```
 * ```initialize```
@@ -1503,6 +1561,7 @@
 * ```one?```
 * ```open```
 * ```or```
+* ```original_puts```
 * ```p```
 * ```partition```
 * ```path```
@@ -1530,6 +1589,7 @@
 * ```reduce```
 * ```reject```
 * ```remove_instance_variable```
+* ```require```
 * ```respond_to?```
 * ```reverse_each```
 * ```rewind```
@@ -1569,101 +1629,68 @@
 
 ---
 
-### Class: Object::DragonRubyView
+### Class: Object::NilClass
 *$layout*
 
 * ```!```
 * ```!=```
 * ```!~```
+* ```&```
+* ```+```
+* ```<```
+* ```<=```
 * ```==```
 * ```===```
+* ```>```
+* ```>=```
 * ```Array```
 * ```Float```
 * ```Hash```
 * ```Integer```
 * ```String```
+* ```^```
 * ```__caller_without_noise__```
 * ```__case_eqq```
+* ```__check_thrash__!```
+* ```__custom_object_methods__```
 * ```__dragon_ruby_source_files__```
 * ```__dragon_ruby_string_contains_source_file_path__?```
-* ```__files_to_reload```
-* ```__highlights```
 * ```__id__```
-* ```__init_mtimes```
 * ```__method__```
+* ```__object_methods__```
 * ```__pretty_print_exception__```
 * ```__printstr__```
-* ```__reload_if_needed```
-* ```__reload_repl_file```
-* ```__reload_ruby_file```
-* ```__repl_labels```
 * ```__send__```
 * ```__supports_ivars__?```
 * ```_inspect```
 * ```````
-* ```analog_to_perc```
 * ```and```
-* ```append_buffer```
-* ```append_current_repl_code```
-* ```append_mini_buffer_code```
-* ```append_repl_code```
+* ```assign_method_missing```
 * ```background_color```
-* ```black```
-* ```blink_cursor```
 * ```block_given?```
-* ```borders```
-* ```button_name_given_enum```
-* ```bye```
 * ```caller```
-* ```center_aligned```
-* ```char_with_shift```
 * ```class```
 * ```class_defined?```
 * ```clone```
-* ```color_with_perc_towards```
-* ```current_repl_code_index```
-* ```current_repl_code_index=```
-* ```dark_gray```
 * ```define_singleton_method```
 * ```dig```
 * ```dup```
 * ```enum_for```
 * ```eql?```
 * ```equal?```
-* ```eval_or_create_main_rb```
-* ```exit_mini_buffer_if_needed```
 * ```extend```
 * ```fail```
 * ```fast_rand```
-* ```ffi_file```
-* ```ffi_mrb```
-* ```font_med```
+* ```feels_like_an_array?```
 * ```format```
 * ```freeze```
 * ```frozen?```
-* ```get_buffer```
-* ```get_current_repl_code```
-* ```get_mini_buffer_code```
-* ```get_repl_code```
 * ```getc```
 * ```gets```
 * ```global_variables```
-* ```gray```
-* ```green```
-* ```gridline_color```
-* ```gridline_label_color```
-* ```gridline_label_spacing_x```
-* ```gridline_label_spacing_y```
-* ```gridline_spacing_x```
-* ```gridline_spacing_y```
-* ```gridlines```
 * ```hash```
+* ```help```
 * ```here```
-* ```hide_repl```
-* ```highlights```
-* ```in_game_repl_labels```
-* ```in_game_repl_shown```
-* ```in_game_repl_shown=```
 * ```initialize```
 * ```initialize_copy```
 * ```inspect```
@@ -1677,148 +1704,52 @@
 * ```is_a?```
 * ```iterator?```
 * ```itself```
-* ```key_down_in_game```
-* ```key_down_player_one```
-* ```key_down_player_two```
-* ```key_down_raw```
-* ```key_down_raw_repl```
-* ```key_down_raw_show_hide_mini_buffer```
-* ```key_down_raw_show_hide_repl```
-* ```key_held_player_one```
-* ```key_held_player_two```
-* ```key_held_raw```
-* ```key_in_game```
-* ```key_up_in_game```
-* ```key_up_player_one```
-* ```key_up_player_two```
-* ```key_up_raw```
-* ```keyboard_methods```
-* ```keyboard_methods_invalidate!```
 * ```kind_of?```
-* ```labels```
-* ```labels_with_alpha```
 * ```lambda```
-* ```left_aligned```
-* ```left_analog_x_player_1```
-* ```left_analog_x_player_2```
-* ```left_analog_y_player_1```
-* ```left_analog_y_player_2```
-* ```light_gray```
-* ```lines```
 * ```local_variables```
 * ```loop```
 * ```method_missing```
 * ```methods```
-* ```mini_buffer_enabled?```
-* ```mini_buffer_label```
-* ```mouse_move```
-* ```mouse_pressed```
-* ```mouse_up```
 * ```nil?```
 * ```numeric_or_default```
 * ```object_id```
-* ```on_reload```
-* ```on_startup```
 * ```open```
 * ```or```
+* ```original_puts```
 * ```p```
-* ```passes```
-* ```prepend_buffer```
-* ```prepend_current_repl_code```
-* ```pretty_print_exception_and_export!```
-* ```primitives```
 * ```print```
-* ```print_help_when_mouse_clicked```
 * ```printf```
 * ```private_methods```
 * ```proc```
-* ```process_mini_buffer```
-* ```process_repl```
 * ```protected_methods```
 * ```public_methods```
 * ```purge_class```
 * ```puts```
 * ```putsc```
-* ```queue_flash```
-* ```queue_music```
-* ```queue_sound```
 * ```raise```
 * ```raise_method_missing_better_error```
 * ```raise_with_caller```
 * ```rand```
-* ```really_light_gray```
-* ```red```
 * ```remove_instance_variable```
-* ```render_height```
-* ```render_width```
-* ```repl_before_after_cursor```
-* ```repl_clear```
-* ```repl_code_labels```
-* ```repl_code_line```
-* ```repl_code_lines```
-* ```repl_cursor_down```
-* ```repl_cursor_index```
-* ```repl_cursor_key```
-* ```repl_cursor_left```
-* ```repl_cursor_location```
-* ```repl_cursor_location_shifted```
-* ```repl_cursor_right```
-* ```repl_cursor_up```
-* ```repl_cursor_width```
-* ```repl_dismissed```
-* ```repl_enabled?```
-* ```repl_eval_buffer```
-* ```repl_eval_mini_buffer```
-* ```repl_file_name```
-* ```repl_instructions```
-* ```repl_labels```
-* ```repl_line_numbers```
-* ```repl_load```
-* ```repl_ordinal_cursor```
-* ```repl_save```
-* ```repl_set_cursor```
-* ```repl_shown```
-* ```repl_text_color```
-* ```repl_text_font```
-* ```repl_tick```
+* ```require```
 * ```respond_to?```
-* ```right_aligned```
-* ```right_analog_x_player_1```
-* ```right_analog_x_player_2```
-* ```right_analog_y_player_1```
-* ```right_analog_y_player_2```
 * ```send```
-* ```set_buffer```
-* ```set_current_repl_code```
-* ```set_key```
-* ```set_mini_buffer_code```
-* ```set_repl_code```
-* ```show_cursor?```
-* ```show_repl```
+* ```serialize```
 * ```singleton_class```
 * ```singleton_methods```
-* ```sounds```
 * ```sprintf```
-* ```sprites```
 * ```srand```
-* ```stop_music```
-* ```take_screenshot```
 * ```tap```
-* ```target```
-* ```text_color```
-* ```text_font```
-* ```textures```
-* ```textures=```
 * ```then```
 * ```tick```
-* ```tick_flashes```
-* ```time_per_tick```
+* ```to_a```
 * ```to_enum```
+* ```to_f```
+* ```to_h```
+* ```to_i```
 * ```to_s```
-* ```white```
-* ```window_keyboard_focus_changed```
-* ```window_mouse_focus_changed```
 * ```yield_self```
+* ```|```
 
 [Top](#top)
 
@@ -1839,10 +1770,12 @@
 * ```String```
 * ```__caller_without_noise__```
 * ```__case_eqq```
+* ```__custom_object_methods__```
 * ```__dragon_ruby_source_files__```
 * ```__dragon_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
+* ```__object_methods__```
 * ```__pretty_print_exception__```
 * ```__printstr__```
 * ```__send__```
@@ -1853,6 +1786,7 @@
 * ```all_labels```
 * ```all_lines```
 * ```all_primitives```
+* ```all_reserved```
 * ```all_solids```
 * ```all_sounds```
 * ```all_sprites```
@@ -1864,6 +1798,7 @@
 * ```class```
 * ```class_defined?```
 * ```clear```
+* ```clear_non_static```
 * ```clone```
 * ```define_singleton_method```
 * ```dig```
@@ -1883,6 +1818,7 @@
 * ```hash```
 * ```height```
 * ```height=```
+* ```help```
 * ```here```
 * ```initialize```
 * ```initialize_copy```
@@ -1912,6 +1848,7 @@
 * ```object_id```
 * ```open```
 * ```or```
+* ```original_puts```
 * ```p```
 * ```primitives```
 * ```primitives=```
@@ -1929,6 +1866,9 @@
 * ```raise_with_caller```
 * ```rand```
 * ```remove_instance_variable```
+* ```require```
+* ```reserved```
+* ```reserved=```
 * ```respond_to?```
 * ```send```
 * ```serialize```
@@ -1950,6 +1890,8 @@
 * ```static_lines=```
 * ```static_primitives```
 * ```static_primitives=```
+* ```static_reserved```
+* ```static_reserved=```
 * ```static_solids```
 * ```static_solids=```
 * ```static_sprites```
@@ -1995,10 +1937,12 @@
 * ```__ary_index```
 * ```__caller_without_noise__```
 * ```__case_eqq```
+* ```__custom_object_methods__```
 * ```__dragon_ruby_source_files__```
 * ```__dragon_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
+* ```__object_methods__```
 * ```__pretty_print_exception__```
 * ```__printstr__```
 * ```__send__```
@@ -2016,6 +1960,7 @@
 * ```angle=```
 * ```angle_given_point```
 * ```any?```
+* ```any_intersects_rect?```
 * ```append```
 * ```assoc```
 * ```at```
@@ -2086,6 +2031,7 @@
 * ```hash```
 * ```height```
 * ```height_half```
+* ```help```
 * ```here```
 * ```include?```
 * ```index```
@@ -2118,6 +2064,7 @@
 * ```loop```
 * ```map```
 * ```map!```
+* ```map_2d```
 * ```max```
 * ```max_by```
 * ```member?```
@@ -2134,6 +2081,7 @@
 * ```one?```
 * ```open```
 * ```or```
+* ```original_puts```
 * ```p```
 * ```pack```
 * ```pairs_to_hash```
@@ -2161,6 +2109,7 @@
 * ```rassoc```
 * ```rect```
 * ```rect_offset```
+* ```rect_shift```
 * ```rect_shift_down```
 * ```rect_shift_left```
 * ```rect_shift_right```
@@ -2172,7 +2121,9 @@
 * ```reject_nil```
 * ```remove_instance_variable```
 * ```replace```
+* ```require```
 * ```respond_to?```
+* ```rest```
 * ```reverse```
 * ```reverse!```
 * ```reverse_each```
@@ -2188,6 +2139,7 @@
 * ```send```
 * ```serialize```
 * ```shift```
+* ```shift_rect```
 * ```shuffle```
 * ```shuffle!```
 * ```singleton_class```
@@ -2251,10 +2203,12 @@
 * ```String```
 * ```__caller_without_noise__```
 * ```__case_eqq```
+* ```__custom_object_methods__```
 * ```__dragon_ruby_source_files__```
 * ```__dragon_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
+* ```__object_methods__```
 * ```__pretty_print_exception__```
 * ```__printstr__```
 * ```__send__```
@@ -2283,6 +2237,7 @@
 * ```gets```
 * ```global_variables```
 * ```hash```
+* ```help```
 * ```here```
 * ```initialize```
 * ```initialize_copy```
@@ -2308,6 +2263,7 @@
 * ```object_id```
 * ```open```
 * ```or```
+* ```original_puts```
 * ```p```
 * ```print```
 * ```printf```
@@ -2323,6 +2279,7 @@
 * ```raise_with_caller```
 * ```rand```
 * ```remove_instance_variable```
+* ```require```
 * ```respond_to?```
 * ```send```
 * ```serialize```
@@ -2356,10 +2313,12 @@
 * ```String```
 * ```__caller_without_noise__```
 * ```__case_eqq```
+* ```__custom_object_methods__```
 * ```__dragon_ruby_source_files__```
 * ```__dragon_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
+* ```__object_methods__```
 * ```__pretty_print_exception__```
 * ```__printstr__```
 * ```__send__```
@@ -2396,6 +2355,7 @@
 * ```h```
 * ```h=```
 * ```hash```
+* ```help```
 * ```here```
 * ```initialize```
 * ```initialize_copy```
@@ -2421,6 +2381,7 @@
 * ```object_id```
 * ```open```
 * ```or```
+* ```original_puts```
 * ```p```
 * ```print```
 * ```printf```
@@ -2438,6 +2399,7 @@
 * ```raise_with_caller```
 * ```rand```
 * ```remove_instance_variable```
+* ```require```
 * ```respond_to?```
 * ```send```
 * ```serialize```
@@ -2479,10 +2441,12 @@
 * ```String```
 * ```__caller_without_noise__```
 * ```__case_eqq```
+* ```__custom_object_methods__```
 * ```__dragon_ruby_source_files__```
 * ```__dragon_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
+* ```__object_methods__```
 * ```__pretty_print_exception__```
 * ```__printstr__```
 * ```__send__```
@@ -2521,6 +2485,7 @@
 * ```gets```
 * ```global_variables```
 * ```hash```
+* ```help```
 * ```here```
 * ```initialize```
 * ```initialize_copy```
@@ -2546,6 +2511,7 @@
 * ```object_id```
 * ```open```
 * ```or```
+* ```original_puts```
 * ```p```
 * ```print```
 * ```printf```
@@ -2563,6 +2529,7 @@
 * ```raise_with_caller```
 * ```rand```
 * ```remove_instance_variable```
+* ```require```
 * ```respond_to?```
 * ```send```
 * ```serialize```
@@ -2606,10 +2573,12 @@
 * ```String```
 * ```__caller_without_noise__```
 * ```__case_eqq```
+* ```__custom_object_methods__```
 * ```__dragon_ruby_source_files__```
 * ```__dragon_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
+* ```__object_methods__```
 * ```__pretty_print_exception__```
 * ```__printstr__```
 * ```__send__```
@@ -2644,6 +2613,7 @@
 * ```gets```
 * ```global_variables```
 * ```hash```
+* ```help```
 * ```here```
 * ```initialize```
 * ```initialize_copy```
@@ -2669,6 +2639,7 @@
 * ```object_id```
 * ```open```
 * ```or```
+* ```original_puts```
 * ```p```
 * ```print```
 * ```printf```
@@ -2686,6 +2657,7 @@
 * ```raise_with_caller```
 * ```rand```
 * ```remove_instance_variable```
+* ```require```
 * ```respond_to?```
 * ```send```
 * ```serialize```
@@ -2727,10 +2699,12 @@
 * ```String```
 * ```__caller_without_noise__```
 * ```__case_eqq```
+* ```__custom_object_methods__```
 * ```__dragon_ruby_source_files__```
 * ```__dragon_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
+* ```__object_methods__```
 * ```__pretty_print_exception__```
 * ```__printstr__```
 * ```__send__```
@@ -2767,6 +2741,7 @@
 * ```h```
 * ```h=```
 * ```hash```
+* ```help```
 * ```here```
 * ```initialize```
 * ```initialize_copy```
@@ -2792,6 +2767,7 @@
 * ```object_id```
 * ```open```
 * ```or```
+* ```original_puts```
 * ```p```
 * ```print```
 * ```printf```
@@ -2809,6 +2785,7 @@
 * ```raise_with_caller```
 * ```rand```
 * ```remove_instance_variable```
+* ```require```
 * ```respond_to?```
 * ```send```
 * ```serialize```
@@ -2850,10 +2827,12 @@
 * ```String```
 * ```__caller_without_noise__```
 * ```__case_eqq```
+* ```__custom_object_methods__```
 * ```__dragon_ruby_source_files__```
 * ```__dragon_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
+* ```__object_methods__```
 * ```__pretty_print_exception__```
 * ```__printstr__```
 * ```__send__```
@@ -2900,6 +2879,7 @@
 * ```h```
 * ```h=```
 * ```hash```
+* ```help```
 * ```here```
 * ```initialize```
 * ```initialize_copy```
@@ -2925,6 +2905,7 @@
 * ```object_id```
 * ```open```
 * ```or```
+* ```original_puts```
 * ```p```
 * ```path```
 * ```path=```
@@ -2944,6 +2925,7 @@
 * ```raise_with_caller```
 * ```rand```
 * ```remove_instance_variable```
+* ```require```
 * ```respond_to?```
 * ```send```
 * ```serialize```
@@ -2991,10 +2973,12 @@
 * ```String```
 * ```__caller_without_noise__```
 * ```__case_eqq```
+* ```__custom_object_methods__```
 * ```__dragon_ruby_source_files__```
 * ```__dragon_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
+* ```__object_methods__```
 * ```__pretty_print_exception__```
 * ```__printstr__```
 * ```__send__```
@@ -3027,7 +3011,10 @@
 * ```gets```
 * ```global_variables```
 * ```hash```
+* ```help```
 * ```here```
+* ```history```
+* ```history=```
 * ```initialize```
 * ```initialize_copy```
 * ```inspect```
@@ -3056,6 +3043,7 @@
 * ```object_id```
 * ```open```
 * ```or```
+* ```original_puts```
 * ```p```
 * ```print```
 * ```printf```
@@ -3071,6 +3059,7 @@
 * ```raise_with_caller```
 * ```rand```
 * ```remove_instance_variable```
+* ```require```
 * ```respond_to?```
 * ```send```
 * ```serialize```
@@ -3079,6 +3068,8 @@
 * ```sprintf```
 * ```srand```
 * ```tap```
+* ```text```
+* ```text=```
 * ```then```
 * ```tick```
 * ```to_enum```
@@ -3104,10 +3095,12 @@
 * ```String```
 * ```__caller_without_noise__```
 * ```__case_eqq```
+* ```__custom_object_methods__```
 * ```__dragon_ruby_source_files__```
 * ```__dragon_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
+* ```__object_methods__```
 * ```__pretty_print_exception__```
 * ```__printstr__```
 * ```__send__```
@@ -3137,6 +3130,7 @@
 * ```gets```
 * ```global_variables```
 * ```hash```
+* ```help```
 * ```here```
 * ```initialize```
 * ```initialize_copy```
@@ -3178,6 +3172,7 @@
 * ```object_id```
 * ```open```
 * ```or```
+* ```original_puts```
 * ```p```
 * ```print```
 * ```printf```
@@ -3193,6 +3188,7 @@
 * ```raise_with_caller```
 * ```rand```
 * ```remove_instance_variable```
+* ```require```
 * ```respond_to?```
 * ```right_analog_x_perc```
 * ```right_analog_x_perc=```
@@ -3236,10 +3232,12 @@
 * ```String```
 * ```__caller_without_noise__```
 * ```__case_eqq```
+* ```__custom_object_methods__```
 * ```__dragon_ruby_source_files__```
 * ```__dragon_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
+* ```__object_methods__```
 * ```__pretty_print_exception__```
 * ```__printstr__```
 * ```__send__```
@@ -3269,6 +3267,7 @@
 * ```gets```
 * ```global_variables```
 * ```hash```
+* ```help```
 * ```here```
 * ```initialize```
 * ```initialize_copy```
@@ -3310,6 +3309,7 @@
 * ```object_id```
 * ```open```
 * ```or```
+* ```original_puts```
 * ```p```
 * ```print```
 * ```printf```
@@ -3325,6 +3325,7 @@
 * ```raise_with_caller```
 * ```rand```
 * ```remove_instance_variable```
+* ```require```
 * ```respond_to?```
 * ```right_analog_x_perc```
 * ```right_analog_x_perc=```
@@ -3379,10 +3380,12 @@
 * ```__ary_index```
 * ```__caller_without_noise__```
 * ```__case_eqq```
+* ```__custom_object_methods__```
 * ```__dragon_ruby_source_files__```
 * ```__dragon_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
+* ```__object_methods__```
 * ```__pretty_print_exception__```
 * ```__printstr__```
 * ```__send__```
@@ -3400,6 +3403,7 @@
 * ```angle=```
 * ```angle_given_point```
 * ```any?```
+* ```any_intersects_rect?```
 * ```append```
 * ```assoc```
 * ```at```
@@ -3470,6 +3474,7 @@
 * ```hash```
 * ```height```
 * ```height_half```
+* ```help```
 * ```here```
 * ```include?```
 * ```index```
@@ -3502,6 +3507,7 @@
 * ```loop```
 * ```map```
 * ```map!```
+* ```map_2d```
 * ```max```
 * ```max_by```
 * ```member?```
@@ -3518,6 +3524,7 @@
 * ```one?```
 * ```open```
 * ```or```
+* ```original_puts```
 * ```p```
 * ```pack```
 * ```pairs_to_hash```
@@ -3545,6 +3552,7 @@
 * ```rassoc```
 * ```rect```
 * ```rect_offset```
+* ```rect_shift```
 * ```rect_shift_down```
 * ```rect_shift_left```
 * ```rect_shift_right```
@@ -3556,7 +3564,9 @@
 * ```reject_nil```
 * ```remove_instance_variable```
 * ```replace```
+* ```require```
 * ```respond_to?```
+* ```rest```
 * ```reverse```
 * ```reverse!```
 * ```reverse_each```
@@ -3572,6 +3582,7 @@
 * ```send```
 * ```serialize```
 * ```shift```
+* ```shift_rect```
 * ```shuffle```
 * ```shuffle!```
 * ```singleton_class```
@@ -3635,10 +3646,12 @@
 * ```String```
 * ```__caller_without_noise__```
 * ```__case_eqq```
+* ```__custom_object_methods__```
 * ```__dragon_ruby_source_files__```
 * ```__dragon_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
+* ```__object_methods__```
 * ```__pretty_print_exception__```
 * ```__printstr__```
 * ```__send__```
@@ -3654,6 +3667,7 @@
 * ```clone```
 * ```define_singleton_method```
 * ```dig```
+* ```down```
 * ```dup```
 * ```enum_for```
 * ```eql?```
@@ -3670,6 +3684,7 @@
 * ```has_focus```
 * ```has_focus=```
 * ```hash```
+* ```help```
 * ```here```
 * ```initialize```
 * ```initialize_copy```
@@ -3692,6 +3707,7 @@
 * ```key_up=```
 * ```kind_of?```
 * ```lambda```
+* ```left```
 * ```left_right```
 * ```local_variables```
 * ```loop```
@@ -3702,6 +3718,7 @@
 * ```object_id```
 * ```open```
 * ```or```
+* ```original_puts```
 * ```p```
 * ```print```
 * ```printf```
@@ -3717,7 +3734,9 @@
 * ```raise_with_caller```
 * ```rand```
 * ```remove_instance_variable```
+* ```require```
 * ```respond_to?```
+* ```right```
 * ```send```
 * ```serialize```
 * ```singleton_class```
@@ -3729,6 +3748,8 @@
 * ```tick```
 * ```to_enum```
 * ```to_s```
+* ```up```
+* ```up_down```
 * ```yield_self```
 
 [Top](#top)
@@ -3750,10 +3771,12 @@
 * ```String```
 * ```__caller_without_noise__```
 * ```__case_eqq```
+* ```__custom_object_methods__```
 * ```__dragon_ruby_source_files__```
 * ```__dragon_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
+* ```__object_methods__```
 * ```__pretty_print_exception__```
 * ```__printstr__```
 * ```__send__```
@@ -3788,6 +3811,7 @@
 * ```has_focus```
 * ```has_focus=```
 * ```hash```
+* ```help```
 * ```here```
 * ```initialize```
 * ```initialize_copy```
@@ -3812,11 +3836,14 @@
 * ```moved=```
 * ```moved_at```
 * ```moved_at=```
+* ```moved_at_time```
+* ```moved_at_time=```
 * ```nil?```
 * ```numeric_or_default```
 * ```object_id```
 * ```open```
 * ```or```
+* ```original_puts```
 * ```p```
 * ```position```
 * ```previous_click```
@@ -3835,6 +3862,7 @@
 * ```raise_with_caller```
 * ```rand```
 * ```remove_instance_variable```
+* ```require```
 * ```respond_to?```
 * ```send```
 * ```serialize```

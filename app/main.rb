@@ -51,20 +51,25 @@ class DragonRubyDocumenter
     ]
     logc.each { |lo| log_object_methods lo }
 
+    puts "completed logging object methods"
+
     os_arr = []
     ObjectSpace.each_object do |obj|
-      # This would be nicer with Regexp, but there seems to
-      # be some kind of bug with String.match
-      next if obj.to_s[0..1] == '#<'
-      next if obj.to_s == 'DragonRubyDocumenter'
-      next if obj.to_s == '#<Class:DragonRubyDocumenter>'
+    #   # This would be nicer with Regexp, but there seems to
+    #   # be some kind of bug with String.match
+    #   next if obj.to_s[0..1] == '#<'
+    #   next if obj.to_s == 'DragonRubyDocumenter'
+    #   next if obj.to_s == '#<Class:DragonRubyDocumenter>'
+    # 
+    #   puts "looping ObjectSpace class: #{obj.class} for #{obj.to_s[0..50]}"
       if obj.is_a?(Class)
         os_arr << "* ```#{class_tree(obj).to_s}```"
       end
     end
     os_arr.sort!
     output[:objspace] << os_arr.join("\n") + "\n\n"
-
+    
+    puts "flushing documentation"
     flush_documentation
     true
   end
@@ -111,9 +116,7 @@ class DragonRubyDocumenter
     full_methods  = tobject.methods(true).sort
     short_methods = tobject.methods(false).sort
 
-    if tobject.class==OpenStructLite
-      add_to_out "### OpenStructLite for #{thash[:comment]}"
-    elsif tobject.class==BasicObject
+    if tobject.class==BasicObject
       add_to_out "### BasicObject"
     else
       add_to_out "### Class: #{class_tree(tobject.class).to_s}"

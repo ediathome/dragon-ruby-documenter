@@ -16,6 +16,7 @@
 ### Class: Object::DragonRubyArgs
 *args*
 
+* ```clear_render_targets```
 * ```destructure```
 * ```dragon```
 * ```dragon=```
@@ -30,7 +31,11 @@
 * ```outputs=```
 * ```passes```
 * ```passes=```
+* ```recording```
+* ```recording=```
+* ```render_target```
 * ```serialize```
+* ```state```
 
 [Top](#top)
 
@@ -41,31 +46,35 @@
 
 * ```args```
 * ```args=```
+* ```argv```
+* ```argv=```
 * ```border_to_ffi```
-* ```borders```
 * ```calc_wrapper```
 * ```calcstringbox```
+* ```check_framerate```
 * ```clear_draw_passes```
 * ```clear_draw_primitives```
 * ```clear_inputs```
+* ```cli_arguments```
+* ```console```
 * ```current_framerate```
 * ```current_framerate_raw```
 * ```dequeue_sounds```
+* ```disable_console```
+* ```enable_console```
 * ```export!```
 * ```ffi_file```
 * ```ffi_misc```
 * ```ffi_mrb```
 * ```flattened_solids```
-* ```gridlines!```
-* ```has_toast?```
-* ```highlights```
+* ```help```
 * ```init_args_if_needed```
 * ```initialize```
+* ```input_history```
 * ```label_to_ffi```
-* ```labels```
 * ```line_to_ffi```
-* ```lines```
 * ```load_state```
+* ```log```
 * ```next_keyboard_inputs_after_tick```
 * ```next_keyboard_inputs_before_tick```
 * ```passes```
@@ -75,28 +84,38 @@
 * ```primitive_to_ffi```
 * ```primitives```
 * ```queue_key_up```
+* ```quit!```
+* ```quit_requested?```
+* ```record_input_history```
+* ```recording```
 * ```render_height```
+* ```render_replay_mouse```
 * ```render_width```
+* ```request_quit```
 * ```require```
 * ```reset```
 * ```root```
 * ```root=```
 * ```save_state```
+* ```set_rng```
+* ```show_console```
 * ```solid_to_ffi```
 * ```sprite_to_ffi```
 * ```sprites```
+* ```stage_replay_values```
+* ```start!```
+* ```start_recording```
+* ```start_replay```
+* ```stop_recording```
+* ```stop_replay```
 * ```target```
 * ```text_font```
+* ```tick_console```
 * ```tick_core```
 * ```tick_speed_count```
 * ```tick_speed_count=```
 * ```tick_speed_sum```
 * ```tick_speed_sum=```
-* ```tick_toast```
-* ```toast!```
-* ```toast_labels```
-* ```toggle_gridlines!```
-* ```ungridlines!```
 * ```unpause!```
 
 [Top](#top)
@@ -112,18 +131,6 @@
 * ```framerate=```
 * ```framerate_at```
 * ```framerate_at=```
-* ```gridline_color```
-* ```gridline_color=```
-* ```gridline_label_color```
-* ```gridline_label_color=```
-* ```gridline_label_spacing_x```
-* ```gridline_label_spacing_x=```
-* ```gridline_label_spacing_y```
-* ```gridline_label_spacing_y=```
-* ```gridline_spacing_x```
-* ```gridline_spacing_x=```
-* ```gridline_spacing_y```
-* ```gridline_spacing_y=```
 * ```hash```
 * ```hash=```
 * ```initialize```
@@ -135,30 +142,18 @@
 * ```paused=```
 * ```reloaded_files```
 * ```reloaded_files=```
-* ```repl_enabled```
-* ```repl_enabled=```
-* ```repl_text_color```
-* ```repl_text_color=```
-* ```repl_text_font```
-* ```repl_text_font=```
-* ```show_gridlines```
-* ```show_gridlines=```
 * ```take_screenshot```
 * ```take_screenshot=```
 * ```tick_count```
 * ```tick_count=```
 * ```time_per_tick```
 * ```time_per_tick=```
-* ```toast_debounce```
-* ```toast_debounce=```
-* ```toast_message```
-* ```toast_message=```
 
 [Top](#top)
 
 ---
 
-### OpenStructLite for *args.game.new_entity* Methods of an entity object 
+### Class: Object::OpenEntity
 *args.game.new_entity* Methods of an entity object 
 
 * ```==```
@@ -176,12 +171,16 @@
 * ```created_at_elapsed```
 * ```entity_id```
 * ```entity_type=```
+* ```global_created_at=```
+* ```global_created_at_elapsed```
 * ```hash```
 * ```initialize```
 * ```inspect```
 * ```meta```
 * ```method_missing```
+* ```new?```
 * ```new_entity```
+* ```old?```
 * ```original_eq_eq```
 * ```set!```
 * ```to_s```
@@ -213,7 +212,7 @@
 
 ---
 
-### OpenStructLite for *args.game*
+### Class: Object::OpenEntity
 *args.game*
 
 * ```==```
@@ -229,13 +228,17 @@
 * ```clear!```
 * ```created_at_elapsed```
 * ```documenter_success```
+* ```documenter_success=```
 * ```entity_id```
+* ```global_created_at_elapsed```
 * ```hash```
 * ```initialize```
 * ```inspect```
 * ```meta```
 * ```method_missing```
+* ```new?```
 * ```new_entity```
+* ```old?```
 * ```original_eq_eq```
 * ```set!```
 * ```tick_count```
@@ -318,6 +321,10 @@
 * ```__print_origin_help```
 * ```bottom```
 * ```bottom=```
+* ```center_x```
+* ```center_x=```
+* ```center_y```
+* ```center_y=```
 * ```h```
 * ```h_half```
 * ```initialize```
@@ -411,162 +418,22 @@
 
 ---
 
-### Class: Object::DragonRubyView
+### Class: Object::NilClass
 *$layout*
 
-* ```__files_to_reload```
-* ```__highlights```
-* ```__init_mtimes```
-* ```__reload_if_needed```
-* ```__reload_repl_file```
-* ```__reload_ruby_file```
-* ```__repl_labels```
-* ```analog_to_perc```
-* ```append_buffer```
-* ```append_current_repl_code```
-* ```append_mini_buffer_code```
-* ```append_repl_code```
+* ```&```
+* ```^```
+* ```__check_thrash__!```
 * ```background_color```
-* ```black```
-* ```blink_cursor```
-* ```borders```
-* ```button_name_given_enum```
-* ```bye```
-* ```center_aligned```
-* ```char_with_shift```
-* ```color_with_perc_towards```
-* ```current_repl_code_index```
-* ```current_repl_code_index=```
-* ```dark_gray```
-* ```eval_or_create_main_rb```
-* ```exit_mini_buffer_if_needed```
-* ```ffi_file```
-* ```ffi_mrb```
-* ```font_med```
-* ```get_buffer```
-* ```get_current_repl_code```
-* ```get_mini_buffer_code```
-* ```get_repl_code```
-* ```gray```
-* ```green```
-* ```gridline_color```
-* ```gridline_label_color```
-* ```gridline_label_spacing_x```
-* ```gridline_label_spacing_y```
-* ```gridline_spacing_x```
-* ```gridline_spacing_y```
-* ```gridlines```
-* ```hide_repl```
-* ```highlights```
-* ```in_game_repl_labels```
-* ```in_game_repl_shown```
-* ```in_game_repl_shown=```
-* ```initialize```
-* ```key_down_in_game```
-* ```key_down_player_one```
-* ```key_down_player_two```
-* ```key_down_raw```
-* ```key_down_raw_repl```
-* ```key_down_raw_show_hide_mini_buffer```
-* ```key_down_raw_show_hide_repl```
-* ```key_held_player_one```
-* ```key_held_player_two```
-* ```key_held_raw```
-* ```key_in_game```
-* ```key_up_in_game```
-* ```key_up_player_one```
-* ```key_up_player_two```
-* ```key_up_raw```
-* ```keyboard_methods```
-* ```keyboard_methods_invalidate!```
-* ```labels```
-* ```labels_with_alpha```
-* ```left_aligned```
-* ```left_analog_x_player_1```
-* ```left_analog_x_player_2```
-* ```left_analog_y_player_1```
-* ```left_analog_y_player_2```
-* ```light_gray```
-* ```lines```
-* ```mini_buffer_enabled?```
-* ```mini_buffer_label```
-* ```mouse_move```
-* ```mouse_pressed```
-* ```mouse_up```
-* ```on_reload```
-* ```on_startup```
-* ```passes```
-* ```prepend_buffer```
-* ```prepend_current_repl_code```
-* ```pretty_print_exception_and_export!```
-* ```primitives```
-* ```print_help_when_mouse_clicked```
-* ```process_mini_buffer```
-* ```process_repl```
-* ```queue_flash```
-* ```queue_music```
-* ```queue_sound```
-* ```really_light_gray```
-* ```red```
-* ```render_height```
-* ```render_width```
-* ```repl_before_after_cursor```
-* ```repl_clear```
-* ```repl_code_labels```
-* ```repl_code_line```
-* ```repl_code_lines```
-* ```repl_cursor_down```
-* ```repl_cursor_index```
-* ```repl_cursor_key```
-* ```repl_cursor_left```
-* ```repl_cursor_location```
-* ```repl_cursor_location_shifted```
-* ```repl_cursor_right```
-* ```repl_cursor_up```
-* ```repl_cursor_width```
-* ```repl_dismissed```
-* ```repl_enabled?```
-* ```repl_eval_buffer```
-* ```repl_eval_mini_buffer```
-* ```repl_file_name```
-* ```repl_instructions```
-* ```repl_labels```
-* ```repl_line_numbers```
-* ```repl_load```
-* ```repl_ordinal_cursor```
-* ```repl_save```
-* ```repl_set_cursor```
-* ```repl_shown```
-* ```repl_text_color```
-* ```repl_text_font```
-* ```repl_tick```
-* ```right_aligned```
-* ```right_analog_x_player_1```
-* ```right_analog_x_player_2```
-* ```right_analog_y_player_1```
-* ```right_analog_y_player_2```
-* ```set_buffer```
-* ```set_current_repl_code```
-* ```set_key```
-* ```set_mini_buffer_code```
-* ```set_repl_code```
-* ```show_cursor?```
-* ```show_repl```
-* ```sounds```
-* ```sprites```
-* ```stop_music```
-* ```take_screenshot```
-* ```target```
-* ```text_color```
-* ```text_font```
-* ```textures```
-* ```textures=```
-* ```tick```
-* ```tick_flashes```
-* ```time_per_tick```
-* ```white```
-* ```window_keyboard_focus_changed```
-* ```window_mouse_focus_changed```
+* ```inspect```
+* ```method_missing```
+* ```nil?```
+* ```to_a```
+* ```to_f```
+* ```to_h```
+* ```to_i```
+* ```to_s```
+* ```|```
 
 [Top](#top)
 
@@ -579,12 +446,14 @@
 * ```all_labels```
 * ```all_lines```
 * ```all_primitives```
+* ```all_reserved```
 * ```all_solids```
 * ```all_sounds```
 * ```all_sprites```
 * ```borders```
 * ```borders=```
 * ```clear```
+* ```clear_non_static```
 * ```height```
 * ```height=```
 * ```initialize```
@@ -594,6 +463,8 @@
 * ```lines=```
 * ```primitives```
 * ```primitives=```
+* ```reserved```
+* ```reserved=```
 * ```serialize```
 * ```solids```
 * ```solids=```
@@ -609,6 +480,8 @@
 * ```static_lines=```
 * ```static_primitives```
 * ```static_primitives=```
+* ```static_reserved```
+* ```static_reserved=```
 * ```static_solids```
 * ```static_solids=```
 * ```static_sprites```
@@ -646,6 +519,7 @@
 * ```angle```
 * ```angle=```
 * ```angle_given_point```
+* ```any_intersects_rect?```
 * ```append```
 * ```assoc```
 * ```at```
@@ -692,6 +566,7 @@
 * ```left```
 * ```length```
 * ```map!```
+* ```map_2d```
 * ```pack```
 * ```pairs_to_hash```
 * ```path```
@@ -704,6 +579,7 @@
 * ```rassoc```
 * ```rect```
 * ```rect_offset```
+* ```rect_shift```
 * ```rect_shift_down```
 * ```rect_shift_left```
 * ```rect_shift_right```
@@ -712,6 +588,7 @@
 * ```reject_false```
 * ```reject_nil```
 * ```replace```
+* ```rest```
 * ```reverse```
 * ```reverse!```
 * ```reverse_each```
@@ -725,6 +602,7 @@
 * ```self_rect```
 * ```serialize```
 * ```shift```
+* ```shift_rect```
 * ```shuffle```
 * ```shuffle!```
 * ```size```
@@ -929,12 +807,16 @@
 * ```controller_two```
 * ```controllers```
 * ```controllers=```
+* ```history```
+* ```history=```
 * ```initialize```
 * ```keyboard```
 * ```keyboard=```
 * ```mouse```
 * ```mouse=```
 * ```serialize```
+* ```text```
+* ```text=```
 
 [Top](#top)
 
@@ -1037,6 +919,7 @@
 * ```angle```
 * ```angle=```
 * ```angle_given_point```
+* ```any_intersects_rect?```
 * ```append```
 * ```assoc```
 * ```at```
@@ -1083,6 +966,7 @@
 * ```left```
 * ```length```
 * ```map!```
+* ```map_2d```
 * ```pack```
 * ```pairs_to_hash```
 * ```path```
@@ -1095,6 +979,7 @@
 * ```rassoc```
 * ```rect```
 * ```rect_offset```
+* ```rect_shift```
 * ```rect_shift_down```
 * ```rect_shift_left```
 * ```rect_shift_right```
@@ -1103,6 +988,7 @@
 * ```reject_false```
 * ```reject_nil```
 * ```replace```
+* ```rest```
 * ```reverse```
 * ```reverse!```
 * ```reverse_each```
@@ -1116,6 +1002,7 @@
 * ```self_rect```
 * ```serialize```
 * ```shift```
+* ```shift_rect```
 * ```shuffle```
 * ```shuffle!```
 * ```size```
@@ -1154,17 +1041,24 @@
 *args.inputs.keyboard*
 
 * ```clear```
+* ```down```
 * ```has_focus```
 * ```has_focus=```
 * ```initialize```
+* ```inspect```
 * ```key_down```
 * ```key_down=```
 * ```key_held```
 * ```key_held=```
 * ```key_up```
 * ```key_up=```
+* ```left```
 * ```left_right```
+* ```right```
 * ```serialize```
+* ```to_s```
+* ```up```
+* ```up_down```
 
 [Top](#top)
 
@@ -1184,6 +1078,8 @@
 * ```moved=```
 * ```moved_at```
 * ```moved_at=```
+* ```moved_at_time```
+* ```moved_at_time=```
 * ```position```
 * ```previous_click```
 * ```previous_click=```

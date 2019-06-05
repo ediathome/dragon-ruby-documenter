@@ -12,15 +12,15 @@
   <li><a href="#class-objectdragonrubyargs" id="markdown-toc-class-objectdragonrubyargs">Class: Object::DragonRubyArgs</a></li>
   <li><a href="#class-objectdragonruby" id="markdown-toc-class-objectdragonruby">Class: Object::DragonRuby</a></li>
   <li><a href="#class-objectdragonrubyroot" id="markdown-toc-class-objectdragonrubyroot">Class: Object::DragonRubyRoot</a></li>
-  <li><a href="#openstructlite-for-argsgamenewentity-methods-of-an-entity-object" id="markdown-toc-openstructlite-for-argsgamenewentity-methods-of-an-entity-object">OpenStructLite for <em>args.game.new_entity</em> Methods of an entity object</a></li>
+  <li><a href="#class-objectopenentity" id="markdown-toc-class-objectopenentity">Class: Object::OpenEntity</a></li>
   <li><a href="#class-objectffimrb" id="markdown-toc-class-objectffimrb">Class: Object::FFI::MRB</a></li>
   <li><a href="#class-objectffifile" id="markdown-toc-class-objectffifile">Class: Object::FFI::File</a></li>
-  <li><a href="#openstructlite-for-argsgame" id="markdown-toc-openstructlite-for-argsgame">OpenStructLite for <em>args.game</em></a></li>
+  <li><a href="#class-objectopenentity-1" id="markdown-toc-class-objectopenentity-1">Class: Object::OpenEntity</a></li>
   <li><a href="#class-objectmodule" id="markdown-toc-class-objectmodule">Class: Object::Module</a></li>
   <li><a href="#class-objectgrid" id="markdown-toc-class-objectgrid">Class: Object::Grid</a></li>
   <li><a href="#class-objectio" id="markdown-toc-class-objectio">Class: Object::IO</a></li>
   <li><a href="#class-iofile" id="markdown-toc-class-iofile">Class: IO::File</a></li>
-  <li><a href="#class-objectdragonrubyview" id="markdown-toc-class-objectdragonrubyview">Class: Object::DragonRubyView</a></li>
+  <li><a href="#class-objectnilclass" id="markdown-toc-class-objectnilclass">Class: Object::NilClass</a></li>
   <li><a href="#class-objectoutputs" id="markdown-toc-class-objectoutputs">Class: Object::Outputs</a></li>
   <li><a href="#class-objectarray" id="markdown-toc-class-objectarray">Class: Object::Array</a></li>
   <li><a href="#class-objectprimitive" id="markdown-toc-class-objectprimitive">Class: Object::Primitive</a></li>
@@ -53,10 +53,12 @@
   <li><code>String</code></li>
   <li><code>__caller_without_noise__</code></li>
   <li><code>__case_eqq</code></li>
+  <li><code>__custom_object_methods__</code></li>
   <li><code>__dragon_ruby_source_files__</code></li>
   <li><code>__dragon_ruby_string_contains_source_file_path__?</code></li>
   <li><code>__id__</code></li>
   <li><code>__method__</code></li>
+  <li><code>__object_methods__</code></li>
   <li><code>__pretty_print_exception__</code></li>
   <li><code>__printstr__</code></li>
   <li><code>__send__</code></li>
@@ -68,6 +70,7 @@
   <li><code>caller</code></li>
   <li><code>class</code></li>
   <li><code>class_defined?</code></li>
+  <li><code>clear_render_targets</code></li>
   <li><code>clone</code></li>
   <li><code>define_singleton_method</code></li>
   <li><code>destructure</code></li>
@@ -92,6 +95,7 @@
   <li><code>grid</code></li>
   <li><code>grid=</code></li>
   <li><code>hash</code></li>
+  <li><code>help</code></li>
   <li><code>here</code></li>
   <li><code>initialize</code></li>
   <li><code>initialize_copy</code></li>
@@ -119,6 +123,7 @@
   <li><code>object_id</code></li>
   <li><code>open</code></li>
   <li><code>or</code></li>
+  <li><code>original_puts</code></li>
   <li><code>outputs</code></li>
   <li><code>outputs=</code></li>
   <li><code>p</code></li>
@@ -137,7 +142,11 @@
   <li><code>raise_method_missing_better_error</code></li>
   <li><code>raise_with_caller</code></li>
   <li><code>rand</code></li>
+  <li><code>recording</code></li>
+  <li><code>recording=</code></li>
   <li><code>remove_instance_variable</code></li>
+  <li><code>render_target</code></li>
+  <li><code>require</code></li>
   <li><code>respond_to?</code></li>
   <li><code>send</code></li>
   <li><code>serialize</code></li>
@@ -145,6 +154,7 @@
   <li><code>singleton_methods</code></li>
   <li><code>sprintf</code></li>
   <li><code>srand</code></li>
+  <li><code>state</code></li>
   <li><code>tap</code></li>
   <li><code>then</code></li>
   <li><code>tick</code></li>
@@ -173,10 +183,12 @@
   <li><code>String</code></li>
   <li><code>__caller_without_noise__</code></li>
   <li><code>__case_eqq</code></li>
+  <li><code>__custom_object_methods__</code></li>
   <li><code>__dragon_ruby_source_files__</code></li>
   <li><code>__dragon_ruby_string_contains_source_file_path__?</code></li>
   <li><code>__id__</code></li>
   <li><code>__method__</code></li>
+  <li><code>__object_methods__</code></li>
   <li><code>__pretty_print_exception__</code></li>
   <li><code>__printstr__</code></li>
   <li><code>__send__</code></li>
@@ -186,24 +198,30 @@
   <li><code>and</code></li>
   <li><code>args</code></li>
   <li><code>args=</code></li>
+  <li><code>argv</code></li>
+  <li><code>argv=</code></li>
   <li><code>block_given?</code></li>
   <li><code>border_to_ffi</code></li>
-  <li><code>borders</code></li>
   <li><code>calc_wrapper</code></li>
   <li><code>calcstringbox</code></li>
   <li><code>caller</code></li>
+  <li><code>check_framerate</code></li>
   <li><code>class</code></li>
   <li><code>class_defined?</code></li>
   <li><code>clear_draw_passes</code></li>
   <li><code>clear_draw_primitives</code></li>
   <li><code>clear_inputs</code></li>
+  <li><code>cli_arguments</code></li>
   <li><code>clone</code></li>
+  <li><code>console</code></li>
   <li><code>current_framerate</code></li>
   <li><code>current_framerate_raw</code></li>
   <li><code>define_singleton_method</code></li>
   <li><code>dequeue_sounds</code></li>
   <li><code>dig</code></li>
+  <li><code>disable_console</code></li>
   <li><code>dup</code></li>
+  <li><code>enable_console</code></li>
   <li><code>enum_for</code></li>
   <li><code>eql?</code></li>
   <li><code>equal?</code></li>
@@ -221,14 +239,13 @@
   <li><code>getc</code></li>
   <li><code>gets</code></li>
   <li><code>global_variables</code></li>
-  <li><code>gridlines!</code></li>
-  <li><code>has_toast?</code></li>
   <li><code>hash</code></li>
+  <li><code>help</code></li>
   <li><code>here</code></li>
-  <li><code>highlights</code></li>
   <li><code>init_args_if_needed</code></li>
   <li><code>initialize</code></li>
   <li><code>initialize_copy</code></li>
+  <li><code>input_history</code></li>
   <li><code>inspect</code></li>
   <li><code>instance_eval</code></li>
   <li><code>instance_exec</code></li>
@@ -242,12 +259,11 @@
   <li><code>itself</code></li>
   <li><code>kind_of?</code></li>
   <li><code>label_to_ffi</code></li>
-  <li><code>labels</code></li>
   <li><code>lambda</code></li>
   <li><code>line_to_ffi</code></li>
-  <li><code>lines</code></li>
   <li><code>load_state</code></li>
   <li><code>local_variables</code></li>
+  <li><code>log</code></li>
   <li><code>loop</code></li>
   <li><code>method_missing</code></li>
   <li><code>methods</code></li>
@@ -258,6 +274,7 @@
   <li><code>object_id</code></li>
   <li><code>open</code></li>
   <li><code>or</code></li>
+  <li><code>original_puts</code></li>
   <li><code>p</code></li>
   <li><code>passes</code></li>
   <li><code>pause!</code></li>
@@ -275,13 +292,19 @@
   <li><code>puts</code></li>
   <li><code>putsc</code></li>
   <li><code>queue_key_up</code></li>
+  <li><code>quit!</code></li>
+  <li><code>quit_requested?</code></li>
   <li><code>raise</code></li>
   <li><code>raise_method_missing_better_error</code></li>
   <li><code>raise_with_caller</code></li>
   <li><code>rand</code></li>
+  <li><code>record_input_history</code></li>
+  <li><code>recording</code></li>
   <li><code>remove_instance_variable</code></li>
   <li><code>render_height</code></li>
+  <li><code>render_replay_mouse</code></li>
   <li><code>render_width</code></li>
+  <li><code>request_quit</code></li>
   <li><code>require</code></li>
   <li><code>reset</code></li>
   <li><code>respond_to?</code></li>
@@ -289,6 +312,8 @@
   <li><code>root=</code></li>
   <li><code>save_state</code></li>
   <li><code>send</code></li>
+  <li><code>set_rng</code></li>
+  <li><code>show_console</code></li>
   <li><code>singleton_class</code></li>
   <li><code>singleton_methods</code></li>
   <li><code>solid_to_ffi</code></li>
@@ -296,23 +321,25 @@
   <li><code>sprite_to_ffi</code></li>
   <li><code>sprites</code></li>
   <li><code>srand</code></li>
+  <li><code>stage_replay_values</code></li>
+  <li><code>start!</code></li>
+  <li><code>start_recording</code></li>
+  <li><code>start_replay</code></li>
+  <li><code>stop_recording</code></li>
+  <li><code>stop_replay</code></li>
   <li><code>tap</code></li>
   <li><code>target</code></li>
   <li><code>text_font</code></li>
   <li><code>then</code></li>
   <li><code>tick</code></li>
+  <li><code>tick_console</code></li>
   <li><code>tick_core</code></li>
   <li><code>tick_speed_count</code></li>
   <li><code>tick_speed_count=</code></li>
   <li><code>tick_speed_sum</code></li>
   <li><code>tick_speed_sum=</code></li>
-  <li><code>tick_toast</code></li>
   <li><code>to_enum</code></li>
   <li><code>to_s</code></li>
-  <li><code>toast!</code></li>
-  <li><code>toast_labels</code></li>
-  <li><code>toggle_gridlines!</code></li>
-  <li><code>ungridlines!</code></li>
   <li><code>unpause!</code></li>
   <li><code>yield_self</code></li>
 </ul>
@@ -337,10 +364,12 @@
   <li><code>String</code></li>
   <li><code>__caller_without_noise__</code></li>
   <li><code>__case_eqq</code></li>
+  <li><code>__custom_object_methods__</code></li>
   <li><code>__dragon_ruby_source_files__</code></li>
   <li><code>__dragon_ruby_string_contains_source_file_path__?</code></li>
   <li><code>__id__</code></li>
   <li><code>__method__</code></li>
+  <li><code>__object_methods__</code></li>
   <li><code>__pretty_print_exception__</code></li>
   <li><code>__printstr__</code></li>
   <li><code>__send__</code></li>
@@ -374,20 +403,9 @@
   <li><code>getc</code></li>
   <li><code>gets</code></li>
   <li><code>global_variables</code></li>
-  <li><code>gridline_color</code></li>
-  <li><code>gridline_color=</code></li>
-  <li><code>gridline_label_color</code></li>
-  <li><code>gridline_label_color=</code></li>
-  <li><code>gridline_label_spacing_x</code></li>
-  <li><code>gridline_label_spacing_x=</code></li>
-  <li><code>gridline_label_spacing_y</code></li>
-  <li><code>gridline_label_spacing_y=</code></li>
-  <li><code>gridline_spacing_x</code></li>
-  <li><code>gridline_spacing_x=</code></li>
-  <li><code>gridline_spacing_y</code></li>
-  <li><code>gridline_spacing_y=</code></li>
   <li><code>hash</code></li>
   <li><code>hash=</code></li>
+  <li><code>help</code></li>
   <li><code>here</code></li>
   <li><code>initialize</code></li>
   <li><code>initialize_copy</code></li>
@@ -417,6 +435,7 @@
   <li><code>object_id</code></li>
   <li><code>open</code></li>
   <li><code>or</code></li>
+  <li><code>original_puts</code></li>
   <li><code>p</code></li>
   <li><code>paused</code></li>
   <li><code>paused=</code></li>
@@ -436,16 +455,9 @@
   <li><code>reloaded_files</code></li>
   <li><code>reloaded_files=</code></li>
   <li><code>remove_instance_variable</code></li>
-  <li><code>repl_enabled</code></li>
-  <li><code>repl_enabled=</code></li>
-  <li><code>repl_text_color</code></li>
-  <li><code>repl_text_color=</code></li>
-  <li><code>repl_text_font</code></li>
-  <li><code>repl_text_font=</code></li>
+  <li><code>require</code></li>
   <li><code>respond_to?</code></li>
   <li><code>send</code></li>
-  <li><code>show_gridlines</code></li>
-  <li><code>show_gridlines=</code></li>
   <li><code>singleton_class</code></li>
   <li><code>singleton_methods</code></li>
   <li><code>sprintf</code></li>
@@ -461,10 +473,6 @@
   <li><code>time_per_tick=</code></li>
   <li><code>to_enum</code></li>
   <li><code>to_s</code></li>
-  <li><code>toast_debounce</code></li>
-  <li><code>toast_debounce=</code></li>
-  <li><code>toast_message</code></li>
-  <li><code>toast_message=</code></li>
   <li><code>yield_self</code></li>
 </ul>
 
@@ -472,7 +480,7 @@
 
 <hr />
 
-<h3 id="openstructlite-for-argsgamenewentity-methods-of-an-entity-object">OpenStructLite for <em>args.game.new_entity</em> Methods of an entity object</h3>
+<h3 id="class-objectopenentity">Class: Object::OpenEntity</h3>
 <p><em>args.game.new_entity</em> Methods of an entity object</p>
 
 <ul>
@@ -490,12 +498,14 @@
   <li><code>__case_eqq</code></li>
   <li><code>__contains_array_indexers__</code></li>
   <li><code>__contains_array_indexers__=</code></li>
+  <li><code>__custom_object_methods__</code></li>
   <li><code>__dragon_ruby_source_files__</code></li>
   <li><code>__dragon_ruby_string_contains_source_file_path__?</code></li>
   <li><code>__get_hash_property__</code></li>
   <li><code>__id__</code></li>
   <li><code>__meta__</code></li>
   <li><code>__method__</code></li>
+  <li><code>__object_methods__</code></li>
   <li><code>__pretty_print_exception__</code></li>
   <li><code>__printstr__</code></li>
   <li><code>__reserved_keys__</code></li>
@@ -532,8 +542,11 @@
   <li><code>frozen?</code></li>
   <li><code>getc</code></li>
   <li><code>gets</code></li>
+  <li><code>global_created_at=</code></li>
+  <li><code>global_created_at_elapsed</code></li>
   <li><code>global_variables</code></li>
   <li><code>hash</code></li>
+  <li><code>help</code></li>
   <li><code>here</code></li>
   <li><code>initialize</code></li>
   <li><code>initialize_copy</code></li>
@@ -555,13 +568,16 @@
   <li><code>meta</code></li>
   <li><code>method_missing</code></li>
   <li><code>methods</code></li>
+  <li><code>new?</code></li>
   <li><code>new_entity</code></li>
   <li><code>nil?</code></li>
   <li><code>numeric_or_default</code></li>
   <li><code>object_id</code></li>
+  <li><code>old?</code></li>
   <li><code>open</code></li>
   <li><code>or</code></li>
   <li><code>original_eq_eq</code></li>
+  <li><code>original_puts</code></li>
   <li><code>p</code></li>
   <li><code>print</code></li>
   <li><code>printf</code></li>
@@ -577,6 +593,7 @@
   <li><code>raise_with_caller</code></li>
   <li><code>rand</code></li>
   <li><code>remove_instance_variable</code></li>
+  <li><code>require</code></li>
   <li><code>respond_to?</code></li>
   <li><code>send</code></li>
   <li><code>set!</code></li>
@@ -613,10 +630,12 @@
   <li><code>String</code></li>
   <li><code>__caller_without_noise__</code></li>
   <li><code>__case_eqq</code></li>
+  <li><code>__custom_object_methods__</code></li>
   <li><code>__dragon_ruby_source_files__</code></li>
   <li><code>__dragon_ruby_string_contains_source_file_path__?</code></li>
   <li><code>__id__</code></li>
   <li><code>__method__</code></li>
+  <li><code>__object_methods__</code></li>
   <li><code>__pretty_print_exception__</code></li>
   <li><code>__printstr__</code></li>
   <li><code>__send__</code></li>
@@ -646,6 +665,7 @@
   <li><code>gets</code></li>
   <li><code>global_variables</code></li>
   <li><code>hash</code></li>
+  <li><code>help</code></li>
   <li><code>here</code></li>
   <li><code>initialize</code></li>
   <li><code>initialize_copy</code></li>
@@ -671,6 +691,7 @@
   <li><code>object_id</code></li>
   <li><code>open</code></li>
   <li><code>or</code></li>
+  <li><code>original_puts</code></li>
   <li><code>p</code></li>
   <li><code>parse</code></li>
   <li><code>print</code></li>
@@ -688,6 +709,7 @@
   <li><code>rand</code></li>
   <li><code>reload</code></li>
   <li><code>remove_instance_variable</code></li>
+  <li><code>require</code></li>
   <li><code>respond_to?</code></li>
   <li><code>send</code></li>
   <li><code>singleton_class</code></li>
@@ -722,10 +744,12 @@
   <li><code>String</code></li>
   <li><code>__caller_without_noise__</code></li>
   <li><code>__case_eqq</code></li>
+  <li><code>__custom_object_methods__</code></li>
   <li><code>__dragon_ruby_source_files__</code></li>
   <li><code>__dragon_ruby_string_contains_source_file_path__?</code></li>
   <li><code>__id__</code></li>
   <li><code>__method__</code></li>
+  <li><code>__object_methods__</code></li>
   <li><code>__pretty_print_exception__</code></li>
   <li><code>__printstr__</code></li>
   <li><code>__send__</code></li>
@@ -754,6 +778,7 @@
   <li><code>gets</code></li>
   <li><code>global_variables</code></li>
   <li><code>hash</code></li>
+  <li><code>help</code></li>
   <li><code>here</code></li>
   <li><code>initialize</code></li>
   <li><code>initialize_copy</code></li>
@@ -781,6 +806,7 @@
   <li><code>object_id</code></li>
   <li><code>open</code></li>
   <li><code>or</code></li>
+  <li><code>original_puts</code></li>
   <li><code>p</code></li>
   <li><code>print</code></li>
   <li><code>printf</code></li>
@@ -796,6 +822,7 @@
   <li><code>raise_with_caller</code></li>
   <li><code>rand</code></li>
   <li><code>remove_instance_variable</code></li>
+  <li><code>require</code></li>
   <li><code>respond_to?</code></li>
   <li><code>send</code></li>
   <li><code>singleton_class</code></li>
@@ -815,7 +842,7 @@
 
 <hr />
 
-<h3 id="openstructlite-for-argsgame">OpenStructLite for <em>args.game</em></h3>
+<h3 id="class-objectopenentity-1">Class: Object::OpenEntity</h3>
 <p><em>args.game</em></p>
 
 <ul>
@@ -833,12 +860,14 @@
   <li><code>__case_eqq</code></li>
   <li><code>__contains_array_indexers__</code></li>
   <li><code>__contains_array_indexers__=</code></li>
+  <li><code>__custom_object_methods__</code></li>
   <li><code>__dragon_ruby_source_files__</code></li>
   <li><code>__dragon_ruby_string_contains_source_file_path__?</code></li>
   <li><code>__get_hash_property__</code></li>
   <li><code>__id__</code></li>
   <li><code>__meta__</code></li>
   <li><code>__method__</code></li>
+  <li><code>__object_methods__</code></li>
   <li><code>__pretty_print_exception__</code></li>
   <li><code>__printstr__</code></li>
   <li><code>__reserved_keys__</code></li>
@@ -861,6 +890,7 @@
   <li><code>define_singleton_method</code></li>
   <li><code>dig</code></li>
   <li><code>documenter_success</code></li>
+  <li><code>documenter_success=</code></li>
   <li><code>dup</code></li>
   <li><code>entity_id</code></li>
   <li><code>enum_for</code></li>
@@ -874,8 +904,10 @@
   <li><code>frozen?</code></li>
   <li><code>getc</code></li>
   <li><code>gets</code></li>
+  <li><code>global_created_at_elapsed</code></li>
   <li><code>global_variables</code></li>
   <li><code>hash</code></li>
+  <li><code>help</code></li>
   <li><code>here</code></li>
   <li><code>initialize</code></li>
   <li><code>initialize_copy</code></li>
@@ -897,13 +929,16 @@
   <li><code>meta</code></li>
   <li><code>method_missing</code></li>
   <li><code>methods</code></li>
+  <li><code>new?</code></li>
   <li><code>new_entity</code></li>
   <li><code>nil?</code></li>
   <li><code>numeric_or_default</code></li>
   <li><code>object_id</code></li>
+  <li><code>old?</code></li>
   <li><code>open</code></li>
   <li><code>or</code></li>
   <li><code>original_eq_eq</code></li>
+  <li><code>original_puts</code></li>
   <li><code>p</code></li>
   <li><code>print</code></li>
   <li><code>printf</code></li>
@@ -919,6 +954,7 @@
   <li><code>raise_with_caller</code></li>
   <li><code>rand</code></li>
   <li><code>remove_instance_variable</code></li>
+  <li><code>require</code></li>
   <li><code>respond_to?</code></li>
   <li><code>send</code></li>
   <li><code>set!</code></li>
@@ -957,10 +993,12 @@
   <li><code>String</code></li>
   <li><code>__caller_without_noise__</code></li>
   <li><code>__case_eqq</code></li>
+  <li><code>__custom_object_methods__</code></li>
   <li><code>__dragon_ruby_source_files__</code></li>
   <li><code>__dragon_ruby_string_contains_source_file_path__?</code></li>
   <li><code>__id__</code></li>
   <li><code>__method__</code></li>
+  <li><code>__object_methods__</code></li>
   <li><code>__pretty_print_exception__</code></li>
   <li><code>__printstr__</code></li>
   <li><code>__send__</code></li>
@@ -1014,6 +1052,7 @@
   <li><code>gets</code></li>
   <li><code>global_variables</code></li>
   <li><code>hash</code></li>
+  <li><code>help</code></li>
   <li><code>here</code></li>
   <li><code>include</code></li>
   <li><code>include?</code></li>
@@ -1052,6 +1091,7 @@
   <li><code>object_id</code></li>
   <li><code>open</code></li>
   <li><code>or</code></li>
+  <li><code>original_puts</code></li>
   <li><code>p</code></li>
   <li><code>prepend</code></li>
   <li><code>prepend_features</code></li>
@@ -1076,6 +1116,7 @@
   <li><code>remove_const</code></li>
   <li><code>remove_instance_variable</code></li>
   <li><code>remove_method</code></li>
+  <li><code>require</code></li>
   <li><code>respond_to?</code></li>
   <li><code>send</code></li>
   <li><code>singleton_class</code></li>
@@ -1115,10 +1156,12 @@
   <li><code>String</code></li>
   <li><code>__caller_without_noise__</code></li>
   <li><code>__case_eqq</code></li>
+  <li><code>__custom_object_methods__</code></li>
   <li><code>__dragon_ruby_source_files__</code></li>
   <li><code>__dragon_ruby_string_contains_source_file_path__?</code></li>
   <li><code>__id__</code></li>
   <li><code>__method__</code></li>
+  <li><code>__object_methods__</code></li>
   <li><code>__pretty_print_exception__</code></li>
   <li><code>__print_origin_help</code></li>
   <li><code>__printstr__</code></li>
@@ -1131,6 +1174,10 @@
   <li><code>bottom</code></li>
   <li><code>bottom=</code></li>
   <li><code>caller</code></li>
+  <li><code>center_x</code></li>
+  <li><code>center_x=</code></li>
+  <li><code>center_y</code></li>
+  <li><code>center_y=</code></li>
   <li><code>class</code></li>
   <li><code>class_defined?</code></li>
   <li><code>clone</code></li>
@@ -1152,6 +1199,7 @@
   <li><code>h</code></li>
   <li><code>h_half</code></li>
   <li><code>hash</code></li>
+  <li><code>help</code></li>
   <li><code>here</code></li>
   <li><code>initialize</code></li>
   <li><code>initialize_copy</code></li>
@@ -1185,6 +1233,7 @@
   <li><code>origin_x=</code></li>
   <li><code>origin_y</code></li>
   <li><code>origin_y=</code></li>
+  <li><code>original_puts</code></li>
   <li><code>p</code></li>
   <li><code>print</code></li>
   <li><code>printf</code></li>
@@ -1202,6 +1251,7 @@
   <li><code>rect</code></li>
   <li><code>rect=</code></li>
   <li><code>remove_instance_variable</code></li>
+  <li><code>require</code></li>
   <li><code>respond_to?</code></li>
   <li><code>right</code></li>
   <li><code>right=</code></li>
@@ -1248,10 +1298,12 @@
   <li><code>String</code></li>
   <li><code>__caller_without_noise__</code></li>
   <li><code>__case_eqq</code></li>
+  <li><code>__custom_object_methods__</code></li>
   <li><code>__dragon_ruby_source_files__</code></li>
   <li><code>__dragon_ruby_string_contains_source_file_path__?</code></li>
   <li><code>__id__</code></li>
   <li><code>__method__</code></li>
+  <li><code>__object_methods__</code></li>
   <li><code>__pretty_print_exception__</code></li>
   <li><code>__printstr__</code></li>
   <li><code>__send__</code></li>
@@ -1317,6 +1369,7 @@
   <li><code>grep</code></li>
   <li><code>group_by</code></li>
   <li><code>hash</code></li>
+  <li><code>help</code></li>
   <li><code>here</code></li>
   <li><code>include?</code></li>
   <li><code>initialize</code></li>
@@ -1356,6 +1409,7 @@
   <li><code>one?</code></li>
   <li><code>open</code></li>
   <li><code>or</code></li>
+  <li><code>original_puts</code></li>
   <li><code>p</code></li>
   <li><code>partition</code></li>
   <li><code>pid</code></li>
@@ -1381,6 +1435,7 @@
   <li><code>reduce</code></li>
   <li><code>reject</code></li>
   <li><code>remove_instance_variable</code></li>
+  <li><code>require</code></li>
   <li><code>respond_to?</code></li>
   <li><code>reverse_each</code></li>
   <li><code>rewind</code></li>
@@ -1438,10 +1493,12 @@
   <li><code>String</code></li>
   <li><code>__caller_without_noise__</code></li>
   <li><code>__case_eqq</code></li>
+  <li><code>__custom_object_methods__</code></li>
   <li><code>__dragon_ruby_source_files__</code></li>
   <li><code>__dragon_ruby_string_contains_source_file_path__?</code></li>
   <li><code>__id__</code></li>
   <li><code>__method__</code></li>
+  <li><code>__object_methods__</code></li>
   <li><code>__pretty_print_exception__</code></li>
   <li><code>__printstr__</code></li>
   <li><code>__send__</code></li>
@@ -1508,6 +1565,7 @@
   <li><code>grep</code></li>
   <li><code>group_by</code></li>
   <li><code>hash</code></li>
+  <li><code>help</code></li>
   <li><code>here</code></li>
   <li><code>include?</code></li>
   <li><code>initialize</code></li>
@@ -1548,6 +1606,7 @@
   <li><code>one?</code></li>
   <li><code>open</code></li>
   <li><code>or</code></li>
+  <li><code>original_puts</code></li>
   <li><code>p</code></li>
   <li><code>partition</code></li>
   <li><code>path</code></li>
@@ -1575,6 +1634,7 @@
   <li><code>reduce</code></li>
   <li><code>reject</code></li>
   <li><code>remove_instance_variable</code></li>
+  <li><code>require</code></li>
   <li><code>respond_to?</code></li>
   <li><code>reverse_each</code></li>
   <li><code>rewind</code></li>
@@ -1615,102 +1675,69 @@
 
 <hr />
 
-<h3 id="class-objectdragonrubyview">Class: Object::DragonRubyView</h3>
+<h3 id="class-objectnilclass">Class: Object::NilClass</h3>
 <p><em>$layout</em></p>
 
 <ul>
   <li><code>!</code></li>
   <li><code>!=</code></li>
   <li><code>!~</code></li>
+  <li><code>&amp;</code></li>
+  <li><code>+</code></li>
+  <li><code>&lt;</code></li>
+  <li><code>&lt;=</code></li>
   <li><code>==</code></li>
   <li><code>===</code></li>
+  <li><code>&gt;</code></li>
+  <li><code>&gt;=</code></li>
   <li><code>Array</code></li>
   <li><code>Float</code></li>
   <li><code>Hash</code></li>
   <li><code>Integer</code></li>
   <li><code>String</code></li>
+  <li><code>^</code></li>
   <li><code>__caller_without_noise__</code></li>
   <li><code>__case_eqq</code></li>
+  <li><code>__check_thrash__!</code></li>
+  <li><code>__custom_object_methods__</code></li>
   <li><code>__dragon_ruby_source_files__</code></li>
   <li><code>__dragon_ruby_string_contains_source_file_path__?</code></li>
-  <li><code>__files_to_reload</code></li>
-  <li><code>__highlights</code></li>
   <li><code>__id__</code></li>
-  <li><code>__init_mtimes</code></li>
   <li><code>__method__</code></li>
+  <li><code>__object_methods__</code></li>
   <li><code>__pretty_print_exception__</code></li>
   <li><code>__printstr__</code></li>
-  <li><code>__reload_if_needed</code></li>
-  <li><code>__reload_repl_file</code></li>
-  <li><code>__reload_ruby_file</code></li>
-  <li><code>__repl_labels</code></li>
   <li><code>__send__</code></li>
   <li><code>__supports_ivars__?</code></li>
   <li><code>_inspect</code></li>
   <li>```````</li>
-  <li><code>analog_to_perc</code></li>
   <li><code>and</code></li>
-  <li><code>append_buffer</code></li>
-  <li><code>append_current_repl_code</code></li>
-  <li><code>append_mini_buffer_code</code></li>
-  <li><code>append_repl_code</code></li>
+  <li><code>assign_method_missing</code></li>
   <li><code>background_color</code></li>
-  <li><code>black</code></li>
-  <li><code>blink_cursor</code></li>
   <li><code>block_given?</code></li>
-  <li><code>borders</code></li>
-  <li><code>button_name_given_enum</code></li>
-  <li><code>bye</code></li>
   <li><code>caller</code></li>
-  <li><code>center_aligned</code></li>
-  <li><code>char_with_shift</code></li>
   <li><code>class</code></li>
   <li><code>class_defined?</code></li>
   <li><code>clone</code></li>
-  <li><code>color_with_perc_towards</code></li>
-  <li><code>current_repl_code_index</code></li>
-  <li><code>current_repl_code_index=</code></li>
-  <li><code>dark_gray</code></li>
   <li><code>define_singleton_method</code></li>
   <li><code>dig</code></li>
   <li><code>dup</code></li>
   <li><code>enum_for</code></li>
   <li><code>eql?</code></li>
   <li><code>equal?</code></li>
-  <li><code>eval_or_create_main_rb</code></li>
-  <li><code>exit_mini_buffer_if_needed</code></li>
   <li><code>extend</code></li>
   <li><code>fail</code></li>
   <li><code>fast_rand</code></li>
-  <li><code>ffi_file</code></li>
-  <li><code>ffi_mrb</code></li>
-  <li><code>font_med</code></li>
+  <li><code>feels_like_an_array?</code></li>
   <li><code>format</code></li>
   <li><code>freeze</code></li>
   <li><code>frozen?</code></li>
-  <li><code>get_buffer</code></li>
-  <li><code>get_current_repl_code</code></li>
-  <li><code>get_mini_buffer_code</code></li>
-  <li><code>get_repl_code</code></li>
   <li><code>getc</code></li>
   <li><code>gets</code></li>
   <li><code>global_variables</code></li>
-  <li><code>gray</code></li>
-  <li><code>green</code></li>
-  <li><code>gridline_color</code></li>
-  <li><code>gridline_label_color</code></li>
-  <li><code>gridline_label_spacing_x</code></li>
-  <li><code>gridline_label_spacing_y</code></li>
-  <li><code>gridline_spacing_x</code></li>
-  <li><code>gridline_spacing_y</code></li>
-  <li><code>gridlines</code></li>
   <li><code>hash</code></li>
+  <li><code>help</code></li>
   <li><code>here</code></li>
-  <li><code>hide_repl</code></li>
-  <li><code>highlights</code></li>
-  <li><code>in_game_repl_labels</code></li>
-  <li><code>in_game_repl_shown</code></li>
-  <li><code>in_game_repl_shown=</code></li>
   <li><code>initialize</code></li>
   <li><code>initialize_copy</code></li>
   <li><code>inspect</code></li>
@@ -1724,148 +1751,52 @@
   <li><code>is_a?</code></li>
   <li><code>iterator?</code></li>
   <li><code>itself</code></li>
-  <li><code>key_down_in_game</code></li>
-  <li><code>key_down_player_one</code></li>
-  <li><code>key_down_player_two</code></li>
-  <li><code>key_down_raw</code></li>
-  <li><code>key_down_raw_repl</code></li>
-  <li><code>key_down_raw_show_hide_mini_buffer</code></li>
-  <li><code>key_down_raw_show_hide_repl</code></li>
-  <li><code>key_held_player_one</code></li>
-  <li><code>key_held_player_two</code></li>
-  <li><code>key_held_raw</code></li>
-  <li><code>key_in_game</code></li>
-  <li><code>key_up_in_game</code></li>
-  <li><code>key_up_player_one</code></li>
-  <li><code>key_up_player_two</code></li>
-  <li><code>key_up_raw</code></li>
-  <li><code>keyboard_methods</code></li>
-  <li><code>keyboard_methods_invalidate!</code></li>
   <li><code>kind_of?</code></li>
-  <li><code>labels</code></li>
-  <li><code>labels_with_alpha</code></li>
   <li><code>lambda</code></li>
-  <li><code>left_aligned</code></li>
-  <li><code>left_analog_x_player_1</code></li>
-  <li><code>left_analog_x_player_2</code></li>
-  <li><code>left_analog_y_player_1</code></li>
-  <li><code>left_analog_y_player_2</code></li>
-  <li><code>light_gray</code></li>
-  <li><code>lines</code></li>
   <li><code>local_variables</code></li>
   <li><code>loop</code></li>
   <li><code>method_missing</code></li>
   <li><code>methods</code></li>
-  <li><code>mini_buffer_enabled?</code></li>
-  <li><code>mini_buffer_label</code></li>
-  <li><code>mouse_move</code></li>
-  <li><code>mouse_pressed</code></li>
-  <li><code>mouse_up</code></li>
   <li><code>nil?</code></li>
   <li><code>numeric_or_default</code></li>
   <li><code>object_id</code></li>
-  <li><code>on_reload</code></li>
-  <li><code>on_startup</code></li>
   <li><code>open</code></li>
   <li><code>or</code></li>
+  <li><code>original_puts</code></li>
   <li><code>p</code></li>
-  <li><code>passes</code></li>
-  <li><code>prepend_buffer</code></li>
-  <li><code>prepend_current_repl_code</code></li>
-  <li><code>pretty_print_exception_and_export!</code></li>
-  <li><code>primitives</code></li>
   <li><code>print</code></li>
-  <li><code>print_help_when_mouse_clicked</code></li>
   <li><code>printf</code></li>
   <li><code>private_methods</code></li>
   <li><code>proc</code></li>
-  <li><code>process_mini_buffer</code></li>
-  <li><code>process_repl</code></li>
   <li><code>protected_methods</code></li>
   <li><code>public_methods</code></li>
   <li><code>purge_class</code></li>
   <li><code>puts</code></li>
   <li><code>putsc</code></li>
-  <li><code>queue_flash</code></li>
-  <li><code>queue_music</code></li>
-  <li><code>queue_sound</code></li>
   <li><code>raise</code></li>
   <li><code>raise_method_missing_better_error</code></li>
   <li><code>raise_with_caller</code></li>
   <li><code>rand</code></li>
-  <li><code>really_light_gray</code></li>
-  <li><code>red</code></li>
   <li><code>remove_instance_variable</code></li>
-  <li><code>render_height</code></li>
-  <li><code>render_width</code></li>
-  <li><code>repl_before_after_cursor</code></li>
-  <li><code>repl_clear</code></li>
-  <li><code>repl_code_labels</code></li>
-  <li><code>repl_code_line</code></li>
-  <li><code>repl_code_lines</code></li>
-  <li><code>repl_cursor_down</code></li>
-  <li><code>repl_cursor_index</code></li>
-  <li><code>repl_cursor_key</code></li>
-  <li><code>repl_cursor_left</code></li>
-  <li><code>repl_cursor_location</code></li>
-  <li><code>repl_cursor_location_shifted</code></li>
-  <li><code>repl_cursor_right</code></li>
-  <li><code>repl_cursor_up</code></li>
-  <li><code>repl_cursor_width</code></li>
-  <li><code>repl_dismissed</code></li>
-  <li><code>repl_enabled?</code></li>
-  <li><code>repl_eval_buffer</code></li>
-  <li><code>repl_eval_mini_buffer</code></li>
-  <li><code>repl_file_name</code></li>
-  <li><code>repl_instructions</code></li>
-  <li><code>repl_labels</code></li>
-  <li><code>repl_line_numbers</code></li>
-  <li><code>repl_load</code></li>
-  <li><code>repl_ordinal_cursor</code></li>
-  <li><code>repl_save</code></li>
-  <li><code>repl_set_cursor</code></li>
-  <li><code>repl_shown</code></li>
-  <li><code>repl_text_color</code></li>
-  <li><code>repl_text_font</code></li>
-  <li><code>repl_tick</code></li>
+  <li><code>require</code></li>
   <li><code>respond_to?</code></li>
-  <li><code>right_aligned</code></li>
-  <li><code>right_analog_x_player_1</code></li>
-  <li><code>right_analog_x_player_2</code></li>
-  <li><code>right_analog_y_player_1</code></li>
-  <li><code>right_analog_y_player_2</code></li>
   <li><code>send</code></li>
-  <li><code>set_buffer</code></li>
-  <li><code>set_current_repl_code</code></li>
-  <li><code>set_key</code></li>
-  <li><code>set_mini_buffer_code</code></li>
-  <li><code>set_repl_code</code></li>
-  <li><code>show_cursor?</code></li>
-  <li><code>show_repl</code></li>
+  <li><code>serialize</code></li>
   <li><code>singleton_class</code></li>
   <li><code>singleton_methods</code></li>
-  <li><code>sounds</code></li>
   <li><code>sprintf</code></li>
-  <li><code>sprites</code></li>
   <li><code>srand</code></li>
-  <li><code>stop_music</code></li>
-  <li><code>take_screenshot</code></li>
   <li><code>tap</code></li>
-  <li><code>target</code></li>
-  <li><code>text_color</code></li>
-  <li><code>text_font</code></li>
-  <li><code>textures</code></li>
-  <li><code>textures=</code></li>
   <li><code>then</code></li>
   <li><code>tick</code></li>
-  <li><code>tick_flashes</code></li>
-  <li><code>time_per_tick</code></li>
+  <li><code>to_a</code></li>
   <li><code>to_enum</code></li>
+  <li><code>to_f</code></li>
+  <li><code>to_h</code></li>
+  <li><code>to_i</code></li>
   <li><code>to_s</code></li>
-  <li><code>white</code></li>
-  <li><code>window_keyboard_focus_changed</code></li>
-  <li><code>window_mouse_focus_changed</code></li>
   <li><code>yield_self</code></li>
+  <li><code>|</code></li>
 </ul>
 
 <p><a href="#top">Top</a></p>
@@ -1888,10 +1819,12 @@
   <li><code>String</code></li>
   <li><code>__caller_without_noise__</code></li>
   <li><code>__case_eqq</code></li>
+  <li><code>__custom_object_methods__</code></li>
   <li><code>__dragon_ruby_source_files__</code></li>
   <li><code>__dragon_ruby_string_contains_source_file_path__?</code></li>
   <li><code>__id__</code></li>
   <li><code>__method__</code></li>
+  <li><code>__object_methods__</code></li>
   <li><code>__pretty_print_exception__</code></li>
   <li><code>__printstr__</code></li>
   <li><code>__send__</code></li>
@@ -1902,6 +1835,7 @@
   <li><code>all_labels</code></li>
   <li><code>all_lines</code></li>
   <li><code>all_primitives</code></li>
+  <li><code>all_reserved</code></li>
   <li><code>all_solids</code></li>
   <li><code>all_sounds</code></li>
   <li><code>all_sprites</code></li>
@@ -1913,6 +1847,7 @@
   <li><code>class</code></li>
   <li><code>class_defined?</code></li>
   <li><code>clear</code></li>
+  <li><code>clear_non_static</code></li>
   <li><code>clone</code></li>
   <li><code>define_singleton_method</code></li>
   <li><code>dig</code></li>
@@ -1932,6 +1867,7 @@
   <li><code>hash</code></li>
   <li><code>height</code></li>
   <li><code>height=</code></li>
+  <li><code>help</code></li>
   <li><code>here</code></li>
   <li><code>initialize</code></li>
   <li><code>initialize_copy</code></li>
@@ -1961,6 +1897,7 @@
   <li><code>object_id</code></li>
   <li><code>open</code></li>
   <li><code>or</code></li>
+  <li><code>original_puts</code></li>
   <li><code>p</code></li>
   <li><code>primitives</code></li>
   <li><code>primitives=</code></li>
@@ -1978,6 +1915,9 @@
   <li><code>raise_with_caller</code></li>
   <li><code>rand</code></li>
   <li><code>remove_instance_variable</code></li>
+  <li><code>require</code></li>
+  <li><code>reserved</code></li>
+  <li><code>reserved=</code></li>
   <li><code>respond_to?</code></li>
   <li><code>send</code></li>
   <li><code>serialize</code></li>
@@ -1999,6 +1939,8 @@
   <li><code>static_lines=</code></li>
   <li><code>static_primitives</code></li>
   <li><code>static_primitives=</code></li>
+  <li><code>static_reserved</code></li>
+  <li><code>static_reserved=</code></li>
   <li><code>static_solids</code></li>
   <li><code>static_solids=</code></li>
   <li><code>static_sprites</code></li>
@@ -2046,10 +1988,12 @@
   <li><code>__ary_index</code></li>
   <li><code>__caller_without_noise__</code></li>
   <li><code>__case_eqq</code></li>
+  <li><code>__custom_object_methods__</code></li>
   <li><code>__dragon_ruby_source_files__</code></li>
   <li><code>__dragon_ruby_string_contains_source_file_path__?</code></li>
   <li><code>__id__</code></li>
   <li><code>__method__</code></li>
+  <li><code>__object_methods__</code></li>
   <li><code>__pretty_print_exception__</code></li>
   <li><code>__printstr__</code></li>
   <li><code>__send__</code></li>
@@ -2067,6 +2011,7 @@
   <li><code>angle=</code></li>
   <li><code>angle_given_point</code></li>
   <li><code>any?</code></li>
+  <li><code>any_intersects_rect?</code></li>
   <li><code>append</code></li>
   <li><code>assoc</code></li>
   <li><code>at</code></li>
@@ -2137,6 +2082,7 @@
   <li><code>hash</code></li>
   <li><code>height</code></li>
   <li><code>height_half</code></li>
+  <li><code>help</code></li>
   <li><code>here</code></li>
   <li><code>include?</code></li>
   <li><code>index</code></li>
@@ -2169,6 +2115,7 @@
   <li><code>loop</code></li>
   <li><code>map</code></li>
   <li><code>map!</code></li>
+  <li><code>map_2d</code></li>
   <li><code>max</code></li>
   <li><code>max_by</code></li>
   <li><code>member?</code></li>
@@ -2185,6 +2132,7 @@
   <li><code>one?</code></li>
   <li><code>open</code></li>
   <li><code>or</code></li>
+  <li><code>original_puts</code></li>
   <li><code>p</code></li>
   <li><code>pack</code></li>
   <li><code>pairs_to_hash</code></li>
@@ -2212,6 +2160,7 @@
   <li><code>rassoc</code></li>
   <li><code>rect</code></li>
   <li><code>rect_offset</code></li>
+  <li><code>rect_shift</code></li>
   <li><code>rect_shift_down</code></li>
   <li><code>rect_shift_left</code></li>
   <li><code>rect_shift_right</code></li>
@@ -2223,7 +2172,9 @@
   <li><code>reject_nil</code></li>
   <li><code>remove_instance_variable</code></li>
   <li><code>replace</code></li>
+  <li><code>require</code></li>
   <li><code>respond_to?</code></li>
+  <li><code>rest</code></li>
   <li><code>reverse</code></li>
   <li><code>reverse!</code></li>
   <li><code>reverse_each</code></li>
@@ -2239,6 +2190,7 @@
   <li><code>send</code></li>
   <li><code>serialize</code></li>
   <li><code>shift</code></li>
+  <li><code>shift_rect</code></li>
   <li><code>shuffle</code></li>
   <li><code>shuffle!</code></li>
   <li><code>singleton_class</code></li>
@@ -2304,10 +2256,12 @@
   <li><code>String</code></li>
   <li><code>__caller_without_noise__</code></li>
   <li><code>__case_eqq</code></li>
+  <li><code>__custom_object_methods__</code></li>
   <li><code>__dragon_ruby_source_files__</code></li>
   <li><code>__dragon_ruby_string_contains_source_file_path__?</code></li>
   <li><code>__id__</code></li>
   <li><code>__method__</code></li>
+  <li><code>__object_methods__</code></li>
   <li><code>__pretty_print_exception__</code></li>
   <li><code>__printstr__</code></li>
   <li><code>__send__</code></li>
@@ -2336,6 +2290,7 @@
   <li><code>gets</code></li>
   <li><code>global_variables</code></li>
   <li><code>hash</code></li>
+  <li><code>help</code></li>
   <li><code>here</code></li>
   <li><code>initialize</code></li>
   <li><code>initialize_copy</code></li>
@@ -2361,6 +2316,7 @@
   <li><code>object_id</code></li>
   <li><code>open</code></li>
   <li><code>or</code></li>
+  <li><code>original_puts</code></li>
   <li><code>p</code></li>
   <li><code>print</code></li>
   <li><code>printf</code></li>
@@ -2376,6 +2332,7 @@
   <li><code>raise_with_caller</code></li>
   <li><code>rand</code></li>
   <li><code>remove_instance_variable</code></li>
+  <li><code>require</code></li>
   <li><code>respond_to?</code></li>
   <li><code>send</code></li>
   <li><code>serialize</code></li>
@@ -2411,10 +2368,12 @@
   <li><code>String</code></li>
   <li><code>__caller_without_noise__</code></li>
   <li><code>__case_eqq</code></li>
+  <li><code>__custom_object_methods__</code></li>
   <li><code>__dragon_ruby_source_files__</code></li>
   <li><code>__dragon_ruby_string_contains_source_file_path__?</code></li>
   <li><code>__id__</code></li>
   <li><code>__method__</code></li>
+  <li><code>__object_methods__</code></li>
   <li><code>__pretty_print_exception__</code></li>
   <li><code>__printstr__</code></li>
   <li><code>__send__</code></li>
@@ -2451,6 +2410,7 @@
   <li><code>h</code></li>
   <li><code>h=</code></li>
   <li><code>hash</code></li>
+  <li><code>help</code></li>
   <li><code>here</code></li>
   <li><code>initialize</code></li>
   <li><code>initialize_copy</code></li>
@@ -2476,6 +2436,7 @@
   <li><code>object_id</code></li>
   <li><code>open</code></li>
   <li><code>or</code></li>
+  <li><code>original_puts</code></li>
   <li><code>p</code></li>
   <li><code>print</code></li>
   <li><code>printf</code></li>
@@ -2493,6 +2454,7 @@
   <li><code>raise_with_caller</code></li>
   <li><code>rand</code></li>
   <li><code>remove_instance_variable</code></li>
+  <li><code>require</code></li>
   <li><code>respond_to?</code></li>
   <li><code>send</code></li>
   <li><code>serialize</code></li>
@@ -2536,10 +2498,12 @@
   <li><code>String</code></li>
   <li><code>__caller_without_noise__</code></li>
   <li><code>__case_eqq</code></li>
+  <li><code>__custom_object_methods__</code></li>
   <li><code>__dragon_ruby_source_files__</code></li>
   <li><code>__dragon_ruby_string_contains_source_file_path__?</code></li>
   <li><code>__id__</code></li>
   <li><code>__method__</code></li>
+  <li><code>__object_methods__</code></li>
   <li><code>__pretty_print_exception__</code></li>
   <li><code>__printstr__</code></li>
   <li><code>__send__</code></li>
@@ -2578,6 +2542,7 @@
   <li><code>gets</code></li>
   <li><code>global_variables</code></li>
   <li><code>hash</code></li>
+  <li><code>help</code></li>
   <li><code>here</code></li>
   <li><code>initialize</code></li>
   <li><code>initialize_copy</code></li>
@@ -2603,6 +2568,7 @@
   <li><code>object_id</code></li>
   <li><code>open</code></li>
   <li><code>or</code></li>
+  <li><code>original_puts</code></li>
   <li><code>p</code></li>
   <li><code>print</code></li>
   <li><code>printf</code></li>
@@ -2620,6 +2586,7 @@
   <li><code>raise_with_caller</code></li>
   <li><code>rand</code></li>
   <li><code>remove_instance_variable</code></li>
+  <li><code>require</code></li>
   <li><code>respond_to?</code></li>
   <li><code>send</code></li>
   <li><code>serialize</code></li>
@@ -2665,10 +2632,12 @@
   <li><code>String</code></li>
   <li><code>__caller_without_noise__</code></li>
   <li><code>__case_eqq</code></li>
+  <li><code>__custom_object_methods__</code></li>
   <li><code>__dragon_ruby_source_files__</code></li>
   <li><code>__dragon_ruby_string_contains_source_file_path__?</code></li>
   <li><code>__id__</code></li>
   <li><code>__method__</code></li>
+  <li><code>__object_methods__</code></li>
   <li><code>__pretty_print_exception__</code></li>
   <li><code>__printstr__</code></li>
   <li><code>__send__</code></li>
@@ -2703,6 +2672,7 @@
   <li><code>gets</code></li>
   <li><code>global_variables</code></li>
   <li><code>hash</code></li>
+  <li><code>help</code></li>
   <li><code>here</code></li>
   <li><code>initialize</code></li>
   <li><code>initialize_copy</code></li>
@@ -2728,6 +2698,7 @@
   <li><code>object_id</code></li>
   <li><code>open</code></li>
   <li><code>or</code></li>
+  <li><code>original_puts</code></li>
   <li><code>p</code></li>
   <li><code>print</code></li>
   <li><code>printf</code></li>
@@ -2745,6 +2716,7 @@
   <li><code>raise_with_caller</code></li>
   <li><code>rand</code></li>
   <li><code>remove_instance_variable</code></li>
+  <li><code>require</code></li>
   <li><code>respond_to?</code></li>
   <li><code>send</code></li>
   <li><code>serialize</code></li>
@@ -2788,10 +2760,12 @@
   <li><code>String</code></li>
   <li><code>__caller_without_noise__</code></li>
   <li><code>__case_eqq</code></li>
+  <li><code>__custom_object_methods__</code></li>
   <li><code>__dragon_ruby_source_files__</code></li>
   <li><code>__dragon_ruby_string_contains_source_file_path__?</code></li>
   <li><code>__id__</code></li>
   <li><code>__method__</code></li>
+  <li><code>__object_methods__</code></li>
   <li><code>__pretty_print_exception__</code></li>
   <li><code>__printstr__</code></li>
   <li><code>__send__</code></li>
@@ -2828,6 +2802,7 @@
   <li><code>h</code></li>
   <li><code>h=</code></li>
   <li><code>hash</code></li>
+  <li><code>help</code></li>
   <li><code>here</code></li>
   <li><code>initialize</code></li>
   <li><code>initialize_copy</code></li>
@@ -2853,6 +2828,7 @@
   <li><code>object_id</code></li>
   <li><code>open</code></li>
   <li><code>or</code></li>
+  <li><code>original_puts</code></li>
   <li><code>p</code></li>
   <li><code>print</code></li>
   <li><code>printf</code></li>
@@ -2870,6 +2846,7 @@
   <li><code>raise_with_caller</code></li>
   <li><code>rand</code></li>
   <li><code>remove_instance_variable</code></li>
+  <li><code>require</code></li>
   <li><code>respond_to?</code></li>
   <li><code>send</code></li>
   <li><code>serialize</code></li>
@@ -2913,10 +2890,12 @@
   <li><code>String</code></li>
   <li><code>__caller_without_noise__</code></li>
   <li><code>__case_eqq</code></li>
+  <li><code>__custom_object_methods__</code></li>
   <li><code>__dragon_ruby_source_files__</code></li>
   <li><code>__dragon_ruby_string_contains_source_file_path__?</code></li>
   <li><code>__id__</code></li>
   <li><code>__method__</code></li>
+  <li><code>__object_methods__</code></li>
   <li><code>__pretty_print_exception__</code></li>
   <li><code>__printstr__</code></li>
   <li><code>__send__</code></li>
@@ -2963,6 +2942,7 @@
   <li><code>h</code></li>
   <li><code>h=</code></li>
   <li><code>hash</code></li>
+  <li><code>help</code></li>
   <li><code>here</code></li>
   <li><code>initialize</code></li>
   <li><code>initialize_copy</code></li>
@@ -2988,6 +2968,7 @@
   <li><code>object_id</code></li>
   <li><code>open</code></li>
   <li><code>or</code></li>
+  <li><code>original_puts</code></li>
   <li><code>p</code></li>
   <li><code>path</code></li>
   <li><code>path=</code></li>
@@ -3007,6 +2988,7 @@
   <li><code>raise_with_caller</code></li>
   <li><code>rand</code></li>
   <li><code>remove_instance_variable</code></li>
+  <li><code>require</code></li>
   <li><code>respond_to?</code></li>
   <li><code>send</code></li>
   <li><code>serialize</code></li>
@@ -3056,10 +3038,12 @@
   <li><code>String</code></li>
   <li><code>__caller_without_noise__</code></li>
   <li><code>__case_eqq</code></li>
+  <li><code>__custom_object_methods__</code></li>
   <li><code>__dragon_ruby_source_files__</code></li>
   <li><code>__dragon_ruby_string_contains_source_file_path__?</code></li>
   <li><code>__id__</code></li>
   <li><code>__method__</code></li>
+  <li><code>__object_methods__</code></li>
   <li><code>__pretty_print_exception__</code></li>
   <li><code>__printstr__</code></li>
   <li><code>__send__</code></li>
@@ -3092,7 +3076,10 @@
   <li><code>gets</code></li>
   <li><code>global_variables</code></li>
   <li><code>hash</code></li>
+  <li><code>help</code></li>
   <li><code>here</code></li>
+  <li><code>history</code></li>
+  <li><code>history=</code></li>
   <li><code>initialize</code></li>
   <li><code>initialize_copy</code></li>
   <li><code>inspect</code></li>
@@ -3121,6 +3108,7 @@
   <li><code>object_id</code></li>
   <li><code>open</code></li>
   <li><code>or</code></li>
+  <li><code>original_puts</code></li>
   <li><code>p</code></li>
   <li><code>print</code></li>
   <li><code>printf</code></li>
@@ -3136,6 +3124,7 @@
   <li><code>raise_with_caller</code></li>
   <li><code>rand</code></li>
   <li><code>remove_instance_variable</code></li>
+  <li><code>require</code></li>
   <li><code>respond_to?</code></li>
   <li><code>send</code></li>
   <li><code>serialize</code></li>
@@ -3144,6 +3133,8 @@
   <li><code>sprintf</code></li>
   <li><code>srand</code></li>
   <li><code>tap</code></li>
+  <li><code>text</code></li>
+  <li><code>text=</code></li>
   <li><code>then</code></li>
   <li><code>tick</code></li>
   <li><code>to_enum</code></li>
@@ -3171,10 +3162,12 @@
   <li><code>String</code></li>
   <li><code>__caller_without_noise__</code></li>
   <li><code>__case_eqq</code></li>
+  <li><code>__custom_object_methods__</code></li>
   <li><code>__dragon_ruby_source_files__</code></li>
   <li><code>__dragon_ruby_string_contains_source_file_path__?</code></li>
   <li><code>__id__</code></li>
   <li><code>__method__</code></li>
+  <li><code>__object_methods__</code></li>
   <li><code>__pretty_print_exception__</code></li>
   <li><code>__printstr__</code></li>
   <li><code>__send__</code></li>
@@ -3204,6 +3197,7 @@
   <li><code>gets</code></li>
   <li><code>global_variables</code></li>
   <li><code>hash</code></li>
+  <li><code>help</code></li>
   <li><code>here</code></li>
   <li><code>initialize</code></li>
   <li><code>initialize_copy</code></li>
@@ -3245,6 +3239,7 @@
   <li><code>object_id</code></li>
   <li><code>open</code></li>
   <li><code>or</code></li>
+  <li><code>original_puts</code></li>
   <li><code>p</code></li>
   <li><code>print</code></li>
   <li><code>printf</code></li>
@@ -3260,6 +3255,7 @@
   <li><code>raise_with_caller</code></li>
   <li><code>rand</code></li>
   <li><code>remove_instance_variable</code></li>
+  <li><code>require</code></li>
   <li><code>respond_to?</code></li>
   <li><code>right_analog_x_perc</code></li>
   <li><code>right_analog_x_perc=</code></li>
@@ -3305,10 +3301,12 @@
   <li><code>String</code></li>
   <li><code>__caller_without_noise__</code></li>
   <li><code>__case_eqq</code></li>
+  <li><code>__custom_object_methods__</code></li>
   <li><code>__dragon_ruby_source_files__</code></li>
   <li><code>__dragon_ruby_string_contains_source_file_path__?</code></li>
   <li><code>__id__</code></li>
   <li><code>__method__</code></li>
+  <li><code>__object_methods__</code></li>
   <li><code>__pretty_print_exception__</code></li>
   <li><code>__printstr__</code></li>
   <li><code>__send__</code></li>
@@ -3338,6 +3336,7 @@
   <li><code>gets</code></li>
   <li><code>global_variables</code></li>
   <li><code>hash</code></li>
+  <li><code>help</code></li>
   <li><code>here</code></li>
   <li><code>initialize</code></li>
   <li><code>initialize_copy</code></li>
@@ -3379,6 +3378,7 @@
   <li><code>object_id</code></li>
   <li><code>open</code></li>
   <li><code>or</code></li>
+  <li><code>original_puts</code></li>
   <li><code>p</code></li>
   <li><code>print</code></li>
   <li><code>printf</code></li>
@@ -3394,6 +3394,7 @@
   <li><code>raise_with_caller</code></li>
   <li><code>rand</code></li>
   <li><code>remove_instance_variable</code></li>
+  <li><code>require</code></li>
   <li><code>respond_to?</code></li>
   <li><code>right_analog_x_perc</code></li>
   <li><code>right_analog_x_perc=</code></li>
@@ -3450,10 +3451,12 @@
   <li><code>__ary_index</code></li>
   <li><code>__caller_without_noise__</code></li>
   <li><code>__case_eqq</code></li>
+  <li><code>__custom_object_methods__</code></li>
   <li><code>__dragon_ruby_source_files__</code></li>
   <li><code>__dragon_ruby_string_contains_source_file_path__?</code></li>
   <li><code>__id__</code></li>
   <li><code>__method__</code></li>
+  <li><code>__object_methods__</code></li>
   <li><code>__pretty_print_exception__</code></li>
   <li><code>__printstr__</code></li>
   <li><code>__send__</code></li>
@@ -3471,6 +3474,7 @@
   <li><code>angle=</code></li>
   <li><code>angle_given_point</code></li>
   <li><code>any?</code></li>
+  <li><code>any_intersects_rect?</code></li>
   <li><code>append</code></li>
   <li><code>assoc</code></li>
   <li><code>at</code></li>
@@ -3541,6 +3545,7 @@
   <li><code>hash</code></li>
   <li><code>height</code></li>
   <li><code>height_half</code></li>
+  <li><code>help</code></li>
   <li><code>here</code></li>
   <li><code>include?</code></li>
   <li><code>index</code></li>
@@ -3573,6 +3578,7 @@
   <li><code>loop</code></li>
   <li><code>map</code></li>
   <li><code>map!</code></li>
+  <li><code>map_2d</code></li>
   <li><code>max</code></li>
   <li><code>max_by</code></li>
   <li><code>member?</code></li>
@@ -3589,6 +3595,7 @@
   <li><code>one?</code></li>
   <li><code>open</code></li>
   <li><code>or</code></li>
+  <li><code>original_puts</code></li>
   <li><code>p</code></li>
   <li><code>pack</code></li>
   <li><code>pairs_to_hash</code></li>
@@ -3616,6 +3623,7 @@
   <li><code>rassoc</code></li>
   <li><code>rect</code></li>
   <li><code>rect_offset</code></li>
+  <li><code>rect_shift</code></li>
   <li><code>rect_shift_down</code></li>
   <li><code>rect_shift_left</code></li>
   <li><code>rect_shift_right</code></li>
@@ -3627,7 +3635,9 @@
   <li><code>reject_nil</code></li>
   <li><code>remove_instance_variable</code></li>
   <li><code>replace</code></li>
+  <li><code>require</code></li>
   <li><code>respond_to?</code></li>
+  <li><code>rest</code></li>
   <li><code>reverse</code></li>
   <li><code>reverse!</code></li>
   <li><code>reverse_each</code></li>
@@ -3643,6 +3653,7 @@
   <li><code>send</code></li>
   <li><code>serialize</code></li>
   <li><code>shift</code></li>
+  <li><code>shift_rect</code></li>
   <li><code>shuffle</code></li>
   <li><code>shuffle!</code></li>
   <li><code>singleton_class</code></li>
@@ -3708,10 +3719,12 @@
   <li><code>String</code></li>
   <li><code>__caller_without_noise__</code></li>
   <li><code>__case_eqq</code></li>
+  <li><code>__custom_object_methods__</code></li>
   <li><code>__dragon_ruby_source_files__</code></li>
   <li><code>__dragon_ruby_string_contains_source_file_path__?</code></li>
   <li><code>__id__</code></li>
   <li><code>__method__</code></li>
+  <li><code>__object_methods__</code></li>
   <li><code>__pretty_print_exception__</code></li>
   <li><code>__printstr__</code></li>
   <li><code>__send__</code></li>
@@ -3727,6 +3740,7 @@
   <li><code>clone</code></li>
   <li><code>define_singleton_method</code></li>
   <li><code>dig</code></li>
+  <li><code>down</code></li>
   <li><code>dup</code></li>
   <li><code>enum_for</code></li>
   <li><code>eql?</code></li>
@@ -3743,6 +3757,7 @@
   <li><code>has_focus</code></li>
   <li><code>has_focus=</code></li>
   <li><code>hash</code></li>
+  <li><code>help</code></li>
   <li><code>here</code></li>
   <li><code>initialize</code></li>
   <li><code>initialize_copy</code></li>
@@ -3765,6 +3780,7 @@
   <li><code>key_up=</code></li>
   <li><code>kind_of?</code></li>
   <li><code>lambda</code></li>
+  <li><code>left</code></li>
   <li><code>left_right</code></li>
   <li><code>local_variables</code></li>
   <li><code>loop</code></li>
@@ -3775,6 +3791,7 @@
   <li><code>object_id</code></li>
   <li><code>open</code></li>
   <li><code>or</code></li>
+  <li><code>original_puts</code></li>
   <li><code>p</code></li>
   <li><code>print</code></li>
   <li><code>printf</code></li>
@@ -3790,7 +3807,9 @@
   <li><code>raise_with_caller</code></li>
   <li><code>rand</code></li>
   <li><code>remove_instance_variable</code></li>
+  <li><code>require</code></li>
   <li><code>respond_to?</code></li>
+  <li><code>right</code></li>
   <li><code>send</code></li>
   <li><code>serialize</code></li>
   <li><code>singleton_class</code></li>
@@ -3802,6 +3821,8 @@
   <li><code>tick</code></li>
   <li><code>to_enum</code></li>
   <li><code>to_s</code></li>
+  <li><code>up</code></li>
+  <li><code>up_down</code></li>
   <li><code>yield_self</code></li>
 </ul>
 
@@ -3825,10 +3846,12 @@
   <li><code>String</code></li>
   <li><code>__caller_without_noise__</code></li>
   <li><code>__case_eqq</code></li>
+  <li><code>__custom_object_methods__</code></li>
   <li><code>__dragon_ruby_source_files__</code></li>
   <li><code>__dragon_ruby_string_contains_source_file_path__?</code></li>
   <li><code>__id__</code></li>
   <li><code>__method__</code></li>
+  <li><code>__object_methods__</code></li>
   <li><code>__pretty_print_exception__</code></li>
   <li><code>__printstr__</code></li>
   <li><code>__send__</code></li>
@@ -3863,6 +3886,7 @@
   <li><code>has_focus</code></li>
   <li><code>has_focus=</code></li>
   <li><code>hash</code></li>
+  <li><code>help</code></li>
   <li><code>here</code></li>
   <li><code>initialize</code></li>
   <li><code>initialize_copy</code></li>
@@ -3887,11 +3911,14 @@
   <li><code>moved=</code></li>
   <li><code>moved_at</code></li>
   <li><code>moved_at=</code></li>
+  <li><code>moved_at_time</code></li>
+  <li><code>moved_at_time=</code></li>
   <li><code>nil?</code></li>
   <li><code>numeric_or_default</code></li>
   <li><code>object_id</code></li>
   <li><code>open</code></li>
   <li><code>or</code></li>
+  <li><code>original_puts</code></li>
   <li><code>p</code></li>
   <li><code>position</code></li>
   <li><code>previous_click</code></li>
@@ -3910,6 +3937,7 @@
   <li><code>raise_with_caller</code></li>
   <li><code>rand</code></li>
   <li><code>remove_instance_variable</code></li>
+  <li><code>require</code></li>
   <li><code>respond_to?</code></li>
   <li><code>send</code></li>
   <li><code>serialize</code></li>
