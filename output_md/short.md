@@ -13,35 +13,55 @@
 * A markdown unordered list which will be replaced with the ToC, excluding the from above
 {:toc}
 
-### Class: Object::DragonRubyArgs
+### Class: (class Object)::(class GTK::Args)
 *args*
 
+* ```borders```
 * ```clear_render_targets```
+* ```click```
+* ```click_at```
+* ```controller_one```
+* ```controller_two```
 * ```destructure```
 * ```dragon```
-* ```dragon=```
 * ```game```
-* ```game=```
 * ```grid```
 * ```grid=```
+* ```gtk```
 * ```initialize```
 * ```inputs```
 * ```inputs=```
+* ```keyboard```
+* ```labels```
+* ```lines```
+* ```mouse```
 * ```outputs```
 * ```outputs=```
 * ```passes```
 * ```passes=```
+* ```primitives```
 * ```recording```
 * ```recording=```
 * ```render_target```
+* ```runtime```
+* ```runtime=```
 * ```serialize```
+* ```solids```
+* ```sprites```
 * ```state```
+* ```state=```
+* ```static_borders```
+* ```static_labels```
+* ```static_lines```
+* ```static_primitives```
+* ```static_solids```
+* ```static_sprites```
 
 [Top](#top)
 
 ---
 
-### Class: Object::DragonRuby
+### Class: (class Object)::(class GTK::Runtime)
 *args.dragon*
 
 * ```args```
@@ -63,10 +83,12 @@
 * ```disable_console```
 * ```enable_console```
 * ```export!```
+* ```ffi_draw```
 * ```ffi_file```
 * ```ffi_misc```
 * ```ffi_mrb```
-* ```flattened_solids```
+* ```framerate_below_threshold?```
+* ```grep_source```
 * ```help```
 * ```init_args_if_needed```
 * ```initialize```
@@ -86,6 +108,8 @@
 * ```queue_key_up```
 * ```quit!```
 * ```quit_requested?```
+* ```raise_conversion_for_rendering_failed```
+* ```read_file```
 * ```record_input_history```
 * ```recording```
 * ```render_height```
@@ -93,7 +117,9 @@
 * ```render_width```
 * ```request_quit```
 * ```require```
+* ```reserved_primitives```
 * ```reset```
+* ```reset_framerate_calculation```
 * ```root```
 * ```root=```
 * ```save_state```
@@ -101,36 +127,32 @@
 * ```show_console```
 * ```solid_to_ffi```
 * ```sprite_to_ffi```
-* ```sprites```
 * ```stage_replay_values```
 * ```start!```
 * ```start_recording```
 * ```start_replay```
 * ```stop_recording```
 * ```stop_replay```
+* ```suppress_framerate_warning```
+* ```suppress_framerate_warning=```
+* ```suppress_print_help_when_mouse_clicked```
+* ```suppress_print_help_when_mouse_clicked=```
 * ```target```
+* ```tests```
 * ```text_font```
 * ```tick_console```
 * ```tick_core```
-* ```tick_speed_count```
-* ```tick_speed_count=```
-* ```tick_speed_sum```
-* ```tick_speed_sum=```
 * ```unpause!```
 
 [Top](#top)
 
 ---
 
-### Class: Object::DragonRubyRoot
+### Class: (class Object)::(class GTK::Root)
 *args.dragon.root*
 
 * ```files_reloaded```
 * ```files_reloaded=```
-* ```framerate```
-* ```framerate=```
-* ```framerate_at```
-* ```framerate_at=```
 * ```hash```
 * ```hash=```
 * ```initialize```
@@ -153,8 +175,8 @@
 
 ---
 
-### Class: Object::OpenEntity
-*args.game.new_entity* Methods of an entity object 
+### Class: (class Object)::(class GTK::OpenEntity)
+*args.state.new_entity* Methods of an entity object 
 
 * ```==```
 * ```__contains_array_indexers__```
@@ -177,9 +199,11 @@
 * ```initialize```
 * ```inspect```
 * ```meta```
+* ```meta!```
 * ```method_missing```
 * ```new?```
 * ```new_entity```
+* ```new_entity_strict```
 * ```old?```
 * ```original_eq_eq```
 * ```set!```
@@ -190,7 +214,7 @@
 
 ---
 
-### Class: Object::FFI::MRB
+### Class: (class Object)::(class FFI::MRB)
 *$ffi*
 
 * ```eval```
@@ -201,7 +225,7 @@
 
 ---
 
-### Class: Object::FFI::File
+### Class: (class Object)::(class FFI::File)
 *FFI::File*
 
 * ```loadfile```
@@ -212,8 +236,8 @@
 
 ---
 
-### Class: Object::OpenEntity
-*args.game*
+### Class: (class Object)::(class GTK::OpenEntity)
+*args.state*
 
 * ```==```
 * ```__contains_array_indexers__```
@@ -228,20 +252,20 @@
 * ```clear!```
 * ```created_at_elapsed```
 * ```documenter_success```
-* ```documenter_success=```
 * ```entity_id```
 * ```global_created_at_elapsed```
 * ```hash```
 * ```initialize```
 * ```inspect```
 * ```meta```
+* ```meta!```
 * ```method_missing```
 * ```new?```
 * ```new_entity```
+* ```new_entity_strict```
 * ```old?```
 * ```original_eq_eq```
 * ```set!```
-* ```tick_count```
 * ```tick_count=```
 * ```to_s```
 * ```with_meta```
@@ -250,7 +274,7 @@
 
 ---
 
-### Class: Object::Module
+### Class: (class Object)::(class Module)
 *GC*
 
 * ```===```
@@ -315,7 +339,8 @@
 
 ---
 
-### Class: Object::Grid
+### Class: (class Object)::(class GTK::Grid 
+   (included_modules [Serialize]))
 *args.grid*
 
 * ```__print_origin_help```
@@ -330,6 +355,8 @@
 * ```initialize```
 * ```left```
 * ```left=```
+* ```name```
+* ```name=```
 * ```origin_bottom_left!```
 * ```origin_center!```
 * ```origin_x```
@@ -346,6 +373,8 @@
 * ```transform_rect```
 * ```transform_x```
 * ```transform_y```
+* ```untransform_x```
+* ```untransform_y```
 * ```w```
 * ```w_half```
 
@@ -353,7 +382,8 @@
 
 ---
 
-### Class: Object::IO
+### Class: (class Object)::(class IO 
+   (included_modules [Enumerable]))
 *IO.new(IO.sysopen("/dev/tty", "w"), "w")*
 
 * ```<<```
@@ -405,7 +435,11 @@
 
 ---
 
-### Class: IO::File
+### Class: (class IO 
+   (included_modules [Enumerable]))::(class File
+   (superclass (class IO 
+     (included_modules [Enumerable])))
+    (included_modules [File::Constants, Enumerable]))
 *File.open*
 
 * ```flock```
@@ -418,7 +452,8 @@
 
 ---
 
-### Class: Object::NilClass
+### Class: (class Object)::(class NilClass 
+   (included_modules [NilClassFalseClass]))
 *$layout*
 
 * ```&```
@@ -439,9 +474,24 @@
 
 ---
 
-### Class: Object::Outputs
+### Class: (class Object)::(class GTK::Outputs)
 *args.outputs*
 
+* ```__borders=```
+* ```__labels=```
+* ```__lines=```
+* ```__primitives=```
+* ```__raise_deprecated__```
+* ```__reserved=```
+* ```__solids=```
+* ```__sprites=```
+* ```__static_borders=```
+* ```__static_labels=```
+* ```__static_lines=```
+* ```__static_primitives=```
+* ```__static_reserved=```
+* ```__static_solids=```
+* ```__static_sprites=```
 * ```all_borders```
 * ```all_labels```
 * ```all_lines```
@@ -496,7 +546,8 @@
 
 ---
 
-### Class: Object::Array
+### Class: (class Object)::(class Array 
+   (included_modules [GTK::Primitive::ConversionCapabilities, Enumerable]))
 *args.passes*
 
 * ```&```
@@ -511,22 +562,17 @@
 * ```__ary_cmp```
 * ```__ary_eq```
 * ```__ary_index```
+* ```__original_add__```
+* ```__original_add_single__```
 * ```__sort_sub__```
 * ```__svalue```
 * ```_inspect```
-* ```a```
-* ```a=```
-* ```angle```
-* ```angle=```
-* ```angle_given_point```
 * ```any_intersects_rect?```
 * ```append```
 * ```assoc```
 * ```at```
-* ```bottom```
 * ```bsearch```
 * ```bsearch_index```
-* ```center_inside_rect```
 * ```clear```
 * ```collect!```
 * ```combination```
@@ -537,7 +583,6 @@
 * ```delete_at```
 * ```delete_if```
 * ```dig```
-* ```draw_primitive_marker?```
 * ```each```
 * ```each_index```
 * ```empty?```
@@ -547,43 +592,26 @@
 * ```first```
 * ```flatten```
 * ```flatten!```
-* ```flatten_tuples```
-* ```h```
-* ```h_half```
-* ```has_nested_arrays?```
-* ```height```
-* ```height_half```
+* ```include_any?```
 * ```index```
 * ```initialize```
 * ```initialize_copy```
 * ```insert```
-* ```inside_rect?```
 * ```inspect```
-* ```intersects_rect?```
 * ```join```
 * ```keep_if```
 * ```last```
-* ```left```
 * ```length```
 * ```map!```
 * ```map_2d```
 * ```pack```
 * ```pairs_to_hash```
-* ```path```
 * ```permutation```
-* ```point```
 * ```pop```
 * ```prepend```
 * ```product```
 * ```push```
 * ```rassoc```
-* ```rect```
-* ```rect_offset```
-* ```rect_shift```
-* ```rect_shift_down```
-* ```rect_shift_left```
-* ```rect_shift_right```
-* ```rect_shift_up```
 * ```reject!```
 * ```reject_false```
 * ```reject_nil```
@@ -592,17 +620,13 @@
 * ```reverse```
 * ```reverse!```
 * ```reverse_each```
-* ```right```
 * ```rindex```
 * ```rotate```
 * ```rotate!```
 * ```sample```
-* ```scale_rect```
 * ```select!```
-* ```self_rect```
 * ```serialize```
 * ```shift```
-* ```shift_rect```
 * ```shuffle```
 * ```shuffle!```
 * ```size```
@@ -610,197 +634,22 @@
 * ```slice!```
 * ```sort```
 * ```sort!```
-* ```text```
 * ```to_a_pairs```
 * ```to_ary```
 * ```to_h```
 * ```to_s```
-* ```top```
 * ```transpose```
 * ```uniq```
 * ```uniq!```
 * ```unshift```
 * ```values_at```
-* ```w```
-* ```w_half```
-* ```width```
-* ```width_half```
-* ```x```
-* ```x2```
-* ```x=```
-* ```y```
-* ```y2```
-* ```y=```
 * ```|```
 
 [Top](#top)
 
 ---
 
-### Class: Object::Primitive
-*Primitive.new*
-
-
-[Top](#top)
-
----
-
-### Class: Primitive::Border
-*Border.new*
-
-* ```a```
-* ```a=```
-* ```b```
-* ```b=```
-* ```g```
-* ```g=```
-* ```h```
-* ```h=```
-* ```initialize```
-* ```r```
-* ```r=```
-* ```valid?```
-* ```validate!```
-* ```w```
-* ```w=```
-* ```x```
-* ```x=```
-* ```y```
-* ```y=```
-
-[Top](#top)
-
----
-
-### Class: Primitive::Label
-*Label.new*
-
-* ```a```
-* ```a=```
-* ```alignment_enum```
-* ```alignment_enum=```
-* ```b```
-* ```b=```
-* ```font```
-* ```font=```
-* ```g```
-* ```g=```
-* ```initialize```
-* ```r```
-* ```r=```
-* ```size_enum```
-* ```size_enum=```
-* ```text```
-* ```text=```
-* ```valid?```
-* ```validate!```
-* ```x```
-* ```x=```
-* ```y```
-* ```y=```
-
-[Top](#top)
-
----
-
-### Class: Primitive::Line
-*Line.new*
-
-* ```a```
-* ```a=```
-* ```b```
-* ```b=```
-* ```g```
-* ```g=```
-* ```initialize```
-* ```r```
-* ```r=```
-* ```x```
-* ```x2```
-* ```x2=```
-* ```x=```
-* ```y```
-* ```y2```
-* ```y2=```
-* ```y=```
-
-[Top](#top)
-
----
-
-### Class: Primitive::Solid
-*Solid.new*
-
-* ```a```
-* ```a=```
-* ```b```
-* ```b=```
-* ```g```
-* ```g=```
-* ```h```
-* ```h=```
-* ```initialize```
-* ```r```
-* ```r=```
-* ```valid?```
-* ```validate!```
-* ```w```
-* ```w=```
-* ```x```
-* ```x=```
-* ```y```
-* ```y=```
-
-[Top](#top)
-
----
-
-### Class: Primitive::Sprite
-*Sprite.new*
-
-* ```a```
-* ```a=```
-* ```angle```
-* ```angle=```
-* ```b```
-* ```b=```
-* ```dpx```
-* ```dpx=```
-* ```dpy```
-* ```dpy=```
-* ```fliphorz```
-* ```fliphorz=```
-* ```flipvert```
-* ```flipvert=```
-* ```g```
-* ```g=```
-* ```h```
-* ```h=```
-* ```initialize```
-* ```path```
-* ```path=```
-* ```r```
-* ```r=```
-* ```sh```
-* ```sh=```
-* ```sw```
-* ```sw=```
-* ```sx```
-* ```sx=```
-* ```sy```
-* ```sy=```
-* ```w```
-* ```w=```
-* ```x```
-* ```x=```
-* ```y```
-* ```y=```
-
-[Top](#top)
-
----
-
-### Class: Object::Inputs
+### Class: (class Object)::(class GTK::Inputs)
 *args.inputs*
 
 * ```controller_one```
@@ -822,7 +671,7 @@
 
 ---
 
-### Class: Object::Controller
+### Class: (class Object)::(class GTK::Controller)
 *args.inputs.controller_one*
 
 * ```clear```
@@ -859,7 +708,7 @@
 
 ---
 
-### Class: Object::Controller
+### Class: (class Object)::(class GTK::Controller)
 *args.inputs.controller_two*
 
 * ```clear```
@@ -896,7 +745,8 @@
 
 ---
 
-### Class: Object::Array
+### Class: (class Object)::(class Array 
+   (included_modules [GTK::Primitive::ConversionCapabilities, Enumerable]))
 *args.inputs.controllers*
 
 * ```&```
@@ -911,22 +761,17 @@
 * ```__ary_cmp```
 * ```__ary_eq```
 * ```__ary_index```
+* ```__original_add__```
+* ```__original_add_single__```
 * ```__sort_sub__```
 * ```__svalue```
 * ```_inspect```
-* ```a```
-* ```a=```
-* ```angle```
-* ```angle=```
-* ```angle_given_point```
 * ```any_intersects_rect?```
 * ```append```
 * ```assoc```
 * ```at```
-* ```bottom```
 * ```bsearch```
 * ```bsearch_index```
-* ```center_inside_rect```
 * ```clear```
 * ```collect!```
 * ```combination```
@@ -937,7 +782,6 @@
 * ```delete_at```
 * ```delete_if```
 * ```dig```
-* ```draw_primitive_marker?```
 * ```each```
 * ```each_index```
 * ```empty?```
@@ -947,43 +791,26 @@
 * ```first```
 * ```flatten```
 * ```flatten!```
-* ```flatten_tuples```
-* ```h```
-* ```h_half```
-* ```has_nested_arrays?```
-* ```height```
-* ```height_half```
+* ```include_any?```
 * ```index```
 * ```initialize```
 * ```initialize_copy```
 * ```insert```
-* ```inside_rect?```
 * ```inspect```
-* ```intersects_rect?```
 * ```join```
 * ```keep_if```
 * ```last```
-* ```left```
 * ```length```
 * ```map!```
 * ```map_2d```
 * ```pack```
 * ```pairs_to_hash```
-* ```path```
 * ```permutation```
-* ```point```
 * ```pop```
 * ```prepend```
 * ```product```
 * ```push```
 * ```rassoc```
-* ```rect```
-* ```rect_offset```
-* ```rect_shift```
-* ```rect_shift_down```
-* ```rect_shift_left```
-* ```rect_shift_right```
-* ```rect_shift_up```
 * ```reject!```
 * ```reject_false```
 * ```reject_nil```
@@ -992,17 +819,13 @@
 * ```reverse```
 * ```reverse!```
 * ```reverse_each```
-* ```right```
 * ```rindex```
 * ```rotate```
 * ```rotate!```
 * ```sample```
-* ```scale_rect```
 * ```select!```
-* ```self_rect```
 * ```serialize```
 * ```shift```
-* ```shift_rect```
 * ```shuffle```
 * ```shuffle!```
 * ```size```
@@ -1010,34 +833,22 @@
 * ```slice!```
 * ```sort```
 * ```sort!```
-* ```text```
 * ```to_a_pairs```
 * ```to_ary```
 * ```to_h```
 * ```to_s```
-* ```top```
 * ```transpose```
 * ```uniq```
 * ```uniq!```
 * ```unshift```
 * ```values_at```
-* ```w```
-* ```w_half```
-* ```width```
-* ```width_half```
-* ```x```
-* ```x2```
-* ```x=```
-* ```y```
-* ```y2```
-* ```y=```
 * ```|```
 
 [Top](#top)
 
 ---
 
-### Class: Object::Keyboard
+### Class: (class Object)::(class GTK::Keyboard)
 *args.inputs.keyboard*
 
 * ```clear```
@@ -1064,7 +875,7 @@
 
 ---
 
-### Class: Object::Mouse
+### Class: (class Object)::(class GTK::Mouse)
 *args.inputs.mouse*
 
 * ```clear```

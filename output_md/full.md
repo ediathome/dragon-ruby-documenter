@@ -13,7 +13,7 @@
 * A markdown unordered list which will be replaced with the ToC, excluding the from above
 {:toc}
 
-### Class: Object::DragonRubyArgs
+### Class: (class Object)::(class GTK::Args)
 *args*
 
 * ```!```
@@ -29,8 +29,8 @@
 * ```__caller_without_noise__```
 * ```__case_eqq```
 * ```__custom_object_methods__```
-* ```__dragon_ruby_source_files__```
-* ```__dragon_ruby_string_contains_source_file_path__?```
+* ```__gtk_ruby_source_files__```
+* ```__gtk_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
 * ```__object_methods__```
@@ -41,17 +41,22 @@
 * ```_inspect```
 * ```````
 * ```and```
+* ```better_instance_information```
 * ```block_given?```
+* ```borders```
 * ```caller```
 * ```class```
 * ```class_defined?```
 * ```clear_render_targets```
+* ```click```
+* ```click_at```
 * ```clone```
+* ```controller_one```
+* ```controller_two```
 * ```define_singleton_method```
 * ```destructure```
 * ```dig```
 * ```dragon```
-* ```dragon=```
 * ```dup```
 * ```enum_for```
 * ```eql?```
@@ -63,12 +68,12 @@
 * ```freeze```
 * ```frozen?```
 * ```game```
-* ```game=```
 * ```getc```
 * ```gets```
 * ```global_variables```
 * ```grid```
 * ```grid=```
+* ```gtk```
 * ```hash```
 * ```help```
 * ```here```
@@ -87,12 +92,21 @@
 * ```is_a?```
 * ```iterator?```
 * ```itself```
+* ```keyboard```
 * ```kind_of?```
+* ```labels```
 * ```lambda```
+* ```lines```
 * ```local_variables```
+* ```log```
+* ```log_info```
+* ```log_once```
+* ```log_once_info```
 * ```loop```
+* ```metadata_object_id```
 * ```method_missing```
 * ```methods```
+* ```mouse```
 * ```nil?```
 * ```numeric_or_default```
 * ```object_id```
@@ -104,6 +118,9 @@
 * ```p```
 * ```passes```
 * ```passes=```
+* ```primitive?```
+* ```primitive_determined?```
+* ```primitives```
 * ```print```
 * ```printf```
 * ```private_methods```
@@ -114,6 +131,8 @@
 * ```puts```
 * ```putsc```
 * ```raise```
+* ```raise_error_with_kind_of_okay_message```
+* ```raise_immediately```
 * ```raise_method_missing_better_error```
 * ```raise_with_caller```
 * ```rand```
@@ -123,13 +142,24 @@
 * ```render_target```
 * ```require```
 * ```respond_to?```
+* ```runtime```
+* ```runtime=```
 * ```send```
 * ```serialize```
 * ```singleton_class```
 * ```singleton_methods```
+* ```solids```
 * ```sprintf```
+* ```sprites```
 * ```srand```
 * ```state```
+* ```state=```
+* ```static_borders```
+* ```static_labels```
+* ```static_lines```
+* ```static_primitives```
+* ```static_solids```
+* ```static_sprites```
 * ```tap```
 * ```then```
 * ```tick```
@@ -141,7 +171,7 @@
 
 ---
 
-### Class: Object::DragonRuby
+### Class: (class Object)::(class GTK::Runtime)
 *args.dragon*
 
 * ```!```
@@ -157,8 +187,8 @@
 * ```__caller_without_noise__```
 * ```__case_eqq```
 * ```__custom_object_methods__```
-* ```__dragon_ruby_source_files__```
-* ```__dragon_ruby_string_contains_source_file_path__?```
+* ```__gtk_ruby_source_files__```
+* ```__gtk_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
 * ```__object_methods__```
@@ -173,6 +203,7 @@
 * ```args=```
 * ```argv```
 * ```argv=```
+* ```better_instance_information```
 * ```block_given?```
 * ```border_to_ffi```
 * ```calc_wrapper```
@@ -202,16 +233,18 @@
 * ```extend```
 * ```fail```
 * ```fast_rand```
+* ```ffi_draw```
 * ```ffi_file```
 * ```ffi_misc```
 * ```ffi_mrb```
-* ```flattened_solids```
 * ```format```
+* ```framerate_below_threshold?```
 * ```freeze```
 * ```frozen?```
 * ```getc```
 * ```gets```
 * ```global_variables```
+* ```grep_source```
 * ```hash```
 * ```help```
 * ```here```
@@ -237,7 +270,11 @@
 * ```load_state```
 * ```local_variables```
 * ```log```
+* ```log_info```
+* ```log_once```
+* ```log_once_info```
 * ```loop```
+* ```metadata_object_id```
 * ```method_missing```
 * ```methods```
 * ```next_keyboard_inputs_after_tick```
@@ -253,6 +290,8 @@
 * ```pause!```
 * ```paused?```
 * ```pin_root_values```
+* ```primitive?```
+* ```primitive_determined?```
 * ```primitive_to_ffi```
 * ```primitives```
 * ```print```
@@ -268,9 +307,13 @@
 * ```quit!```
 * ```quit_requested?```
 * ```raise```
+* ```raise_conversion_for_rendering_failed```
+* ```raise_error_with_kind_of_okay_message```
+* ```raise_immediately```
 * ```raise_method_missing_better_error```
 * ```raise_with_caller```
 * ```rand```
+* ```read_file```
 * ```record_input_history```
 * ```recording```
 * ```remove_instance_variable```
@@ -279,7 +322,9 @@
 * ```render_width```
 * ```request_quit```
 * ```require```
+* ```reserved_primitives```
 * ```reset```
+* ```reset_framerate_calculation```
 * ```respond_to?```
 * ```root```
 * ```root=```
@@ -292,7 +337,6 @@
 * ```solid_to_ffi```
 * ```sprintf```
 * ```sprite_to_ffi```
-* ```sprites```
 * ```srand```
 * ```stage_replay_values```
 * ```start!```
@@ -300,17 +344,18 @@
 * ```start_replay```
 * ```stop_recording```
 * ```stop_replay```
+* ```suppress_framerate_warning```
+* ```suppress_framerate_warning=```
+* ```suppress_print_help_when_mouse_clicked```
+* ```suppress_print_help_when_mouse_clicked=```
 * ```tap```
 * ```target```
+* ```tests```
 * ```text_font```
 * ```then```
 * ```tick```
 * ```tick_console```
 * ```tick_core```
-* ```tick_speed_count```
-* ```tick_speed_count=```
-* ```tick_speed_sum```
-* ```tick_speed_sum=```
 * ```to_enum```
 * ```to_s```
 * ```unpause!```
@@ -320,7 +365,7 @@
 
 ---
 
-### Class: Object::DragonRubyRoot
+### Class: (class Object)::(class GTK::Root)
 *args.dragon.root*
 
 * ```!```
@@ -336,8 +381,8 @@
 * ```__caller_without_noise__```
 * ```__case_eqq```
 * ```__custom_object_methods__```
-* ```__dragon_ruby_source_files__```
-* ```__dragon_ruby_string_contains_source_file_path__?```
+* ```__gtk_ruby_source_files__```
+* ```__gtk_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
 * ```__object_methods__```
@@ -348,6 +393,7 @@
 * ```_inspect```
 * ```````
 * ```and```
+* ```better_instance_information```
 * ```block_given?```
 * ```caller```
 * ```class```
@@ -365,10 +411,6 @@
 * ```files_reloaded```
 * ```files_reloaded=```
 * ```format```
-* ```framerate```
-* ```framerate=```
-* ```framerate_at```
-* ```framerate_at=```
 * ```freeze```
 * ```frozen?```
 * ```getc```
@@ -396,7 +438,12 @@
 * ```kind_of?```
 * ```lambda```
 * ```local_variables```
+* ```log```
+* ```log_info```
+* ```log_once```
+* ```log_once_info```
 * ```loop```
+* ```metadata_object_id```
 * ```method_missing```
 * ```methods```
 * ```mouse_focus```
@@ -410,6 +457,8 @@
 * ```p```
 * ```paused```
 * ```paused=```
+* ```primitive?```
+* ```primitive_determined?```
 * ```print```
 * ```printf```
 * ```private_methods```
@@ -420,6 +469,8 @@
 * ```puts```
 * ```putsc```
 * ```raise```
+* ```raise_error_with_kind_of_okay_message```
+* ```raise_immediately```
 * ```raise_method_missing_better_error```
 * ```raise_with_caller```
 * ```rand```
@@ -450,8 +501,8 @@
 
 ---
 
-### Class: Object::OpenEntity
-*args.game.new_entity* Methods of an entity object 
+### Class: (class Object)::(class GTK::OpenEntity)
+*args.state.new_entity* Methods of an entity object 
 
 * ```!```
 * ```!=```
@@ -468,9 +519,9 @@
 * ```__contains_array_indexers__```
 * ```__contains_array_indexers__=```
 * ```__custom_object_methods__```
-* ```__dragon_ruby_source_files__```
-* ```__dragon_ruby_string_contains_source_file_path__?```
 * ```__get_hash_property__```
+* ```__gtk_ruby_source_files__```
+* ```__gtk_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__meta__```
 * ```__method__```
@@ -487,6 +538,7 @@
 * ```````
 * ```and```
 * ```attributes```
+* ```better_instance_information```
 * ```block_given?```
 * ```caller```
 * ```class```
@@ -533,12 +585,19 @@
 * ```kind_of?```
 * ```lambda```
 * ```local_variables```
+* ```log```
+* ```log_info```
+* ```log_once```
+* ```log_once_info```
 * ```loop```
 * ```meta```
+* ```meta!```
+* ```metadata_object_id```
 * ```method_missing```
 * ```methods```
 * ```new?```
 * ```new_entity```
+* ```new_entity_strict```
 * ```nil?```
 * ```numeric_or_default```
 * ```object_id```
@@ -548,6 +607,8 @@
 * ```original_eq_eq```
 * ```original_puts```
 * ```p```
+* ```primitive?```
+* ```primitive_determined?```
 * ```print```
 * ```printf```
 * ```private_methods```
@@ -558,6 +619,8 @@
 * ```puts```
 * ```putsc```
 * ```raise```
+* ```raise_error_with_kind_of_okay_message```
+* ```raise_immediately```
 * ```raise_method_missing_better_error```
 * ```raise_with_caller```
 * ```rand```
@@ -582,7 +645,7 @@
 
 ---
 
-### Class: Object::FFI::MRB
+### Class: (class Object)::(class FFI::MRB)
 *$ffi*
 
 * ```!```
@@ -598,8 +661,8 @@
 * ```__caller_without_noise__```
 * ```__case_eqq```
 * ```__custom_object_methods__```
-* ```__dragon_ruby_source_files__```
-* ```__dragon_ruby_string_contains_source_file_path__?```
+* ```__gtk_ruby_source_files__```
+* ```__gtk_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
 * ```__object_methods__```
@@ -610,6 +673,7 @@
 * ```_inspect```
 * ```````
 * ```and```
+* ```better_instance_information```
 * ```block_given?```
 * ```caller```
 * ```class```
@@ -650,7 +714,12 @@
 * ```kind_of?```
 * ```lambda```
 * ```local_variables```
+* ```log```
+* ```log_info```
+* ```log_once```
+* ```log_once_info```
 * ```loop```
+* ```metadata_object_id```
 * ```method_missing```
 * ```methods```
 * ```nil?```
@@ -661,6 +730,8 @@
 * ```original_puts```
 * ```p```
 * ```parse```
+* ```primitive?```
+* ```primitive_determined?```
 * ```print```
 * ```printf```
 * ```private_methods```
@@ -671,6 +742,8 @@
 * ```puts```
 * ```putsc```
 * ```raise```
+* ```raise_error_with_kind_of_okay_message```
+* ```raise_immediately```
 * ```raise_method_missing_better_error```
 * ```raise_with_caller```
 * ```rand```
@@ -694,7 +767,7 @@
 
 ---
 
-### Class: Object::FFI::File
+### Class: (class Object)::(class FFI::File)
 *FFI::File*
 
 * ```!```
@@ -710,8 +783,8 @@
 * ```__caller_without_noise__```
 * ```__case_eqq```
 * ```__custom_object_methods__```
-* ```__dragon_ruby_source_files__```
-* ```__dragon_ruby_string_contains_source_file_path__?```
+* ```__gtk_ruby_source_files__```
+* ```__gtk_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
 * ```__object_methods__```
@@ -722,6 +795,7 @@
 * ```_inspect```
 * ```````
 * ```and```
+* ```better_instance_information```
 * ```block_given?```
 * ```caller```
 * ```class```
@@ -762,7 +836,12 @@
 * ```lambda```
 * ```loadfile```
 * ```local_variables```
+* ```log```
+* ```log_info```
+* ```log_once```
+* ```log_once_info```
 * ```loop```
+* ```metadata_object_id```
 * ```method_missing```
 * ```methods```
 * ```mtime```
@@ -773,6 +852,8 @@
 * ```or```
 * ```original_puts```
 * ```p```
+* ```primitive?```
+* ```primitive_determined?```
 * ```print```
 * ```printf```
 * ```private_methods```
@@ -783,6 +864,8 @@
 * ```puts```
 * ```putsc```
 * ```raise```
+* ```raise_error_with_kind_of_okay_message```
+* ```raise_immediately```
 * ```raise_method_missing_better_error```
 * ```raise_with_caller```
 * ```rand```
@@ -806,8 +889,8 @@
 
 ---
 
-### Class: Object::OpenEntity
-*args.game*
+### Class: (class Object)::(class GTK::OpenEntity)
+*args.state*
 
 * ```!```
 * ```!=```
@@ -824,9 +907,9 @@
 * ```__contains_array_indexers__```
 * ```__contains_array_indexers__=```
 * ```__custom_object_methods__```
-* ```__dragon_ruby_source_files__```
-* ```__dragon_ruby_string_contains_source_file_path__?```
 * ```__get_hash_property__```
+* ```__gtk_ruby_source_files__```
+* ```__gtk_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__meta__```
 * ```__method__```
@@ -843,6 +926,7 @@
 * ```````
 * ```and```
 * ```attributes```
+* ```better_instance_information```
 * ```block_given?```
 * ```caller```
 * ```class```
@@ -853,7 +937,6 @@
 * ```define_singleton_method```
 * ```dig```
 * ```documenter_success```
-* ```documenter_success=```
 * ```dup```
 * ```entity_id```
 * ```enum_for```
@@ -888,12 +971,19 @@
 * ```kind_of?```
 * ```lambda```
 * ```local_variables```
+* ```log```
+* ```log_info```
+* ```log_once```
+* ```log_once_info```
 * ```loop```
 * ```meta```
+* ```meta!```
+* ```metadata_object_id```
 * ```method_missing```
 * ```methods```
 * ```new?```
 * ```new_entity```
+* ```new_entity_strict```
 * ```nil?```
 * ```numeric_or_default```
 * ```object_id```
@@ -903,6 +993,8 @@
 * ```original_eq_eq```
 * ```original_puts```
 * ```p```
+* ```primitive?```
+* ```primitive_determined?```
 * ```print```
 * ```printf```
 * ```private_methods```
@@ -913,6 +1005,8 @@
 * ```puts```
 * ```putsc```
 * ```raise```
+* ```raise_error_with_kind_of_okay_message```
+* ```raise_immediately```
 * ```raise_method_missing_better_error```
 * ```raise_with_caller```
 * ```rand```
@@ -928,7 +1022,6 @@
 * ```tap```
 * ```then```
 * ```tick```
-* ```tick_count```
 * ```tick_count=```
 * ```to_enum```
 * ```to_s```
@@ -939,7 +1032,7 @@
 
 ---
 
-### Class: Object::Module
+### Class: (class Object)::(class Module)
 *GC*
 
 * ```!```
@@ -955,8 +1048,8 @@
 * ```__caller_without_noise__```
 * ```__case_eqq```
 * ```__custom_object_methods__```
-* ```__dragon_ruby_source_files__```
-* ```__dragon_ruby_string_contains_source_file_path__?```
+* ```__gtk_ruby_source_files__```
+* ```__gtk_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
 * ```__object_methods__```
@@ -974,6 +1067,7 @@
 * ```attr_accessor```
 * ```attr_reader```
 * ```attr_writer```
+* ```better_instance_information```
 * ```block_given?```
 * ```caller```
 * ```class```
@@ -1038,7 +1132,12 @@
 * ```kind_of?```
 * ```lambda```
 * ```local_variables```
+* ```log```
+* ```log_info```
+* ```log_once```
+* ```log_once_info```
 * ```loop```
+* ```metadata_object_id```
 * ```method_defined?```
 * ```method_missing```
 * ```method_removed```
@@ -1057,6 +1156,8 @@
 * ```prepend```
 * ```prepend_features```
 * ```prepended```
+* ```primitive?```
+* ```primitive_determined?```
 * ```print```
 * ```printf```
 * ```private```
@@ -1070,6 +1171,8 @@
 * ```puts```
 * ```putsc```
 * ```raise```
+* ```raise_error_with_kind_of_okay_message```
+* ```raise_immediately```
 * ```raise_method_missing_better_error```
 * ```raise_with_caller```
 * ```rand```
@@ -1100,7 +1203,8 @@
 
 ---
 
-### Class: Object::Grid
+### Class: (class Object)::(class GTK::Grid 
+   (included_modules [Serialize]))
 *args.grid*
 
 * ```!```
@@ -1116,8 +1220,8 @@
 * ```__caller_without_noise__```
 * ```__case_eqq```
 * ```__custom_object_methods__```
-* ```__dragon_ruby_source_files__```
-* ```__dragon_ruby_string_contains_source_file_path__?```
+* ```__gtk_ruby_source_files__```
+* ```__gtk_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
 * ```__object_methods__```
@@ -1129,6 +1233,7 @@
 * ```_inspect```
 * ```````
 * ```and```
+* ```better_instance_information```
 * ```block_given?```
 * ```bottom```
 * ```bottom=```
@@ -1178,9 +1283,16 @@
 * ```left```
 * ```left=```
 * ```local_variables```
+* ```log```
+* ```log_info```
+* ```log_once```
+* ```log_once_info```
 * ```loop```
+* ```metadata_object_id```
 * ```method_missing```
 * ```methods```
+* ```name```
+* ```name=```
 * ```nil?```
 * ```numeric_or_default```
 * ```object_id```
@@ -1194,6 +1306,8 @@
 * ```origin_y=```
 * ```original_puts```
 * ```p```
+* ```primitive?```
+* ```primitive_determined?```
 * ```print```
 * ```printf```
 * ```private_methods```
@@ -1204,6 +1318,8 @@
 * ```puts```
 * ```putsc```
 * ```raise```
+* ```raise_error_with_kind_of_okay_message```
+* ```raise_immediately```
 * ```raise_method_missing_better_error```
 * ```raise_with_caller```
 * ```rand```
@@ -1231,6 +1347,8 @@
 * ```transform_rect```
 * ```transform_x```
 * ```transform_y```
+* ```untransform_x```
+* ```untransform_y```
 * ```w```
 * ```w_half```
 * ```yield_self```
@@ -1239,7 +1357,8 @@
 
 ---
 
-### Class: Object::IO
+### Class: (class Object)::(class IO 
+   (included_modules [Enumerable]))
 *IO.new(IO.sysopen("/dev/tty", "w"), "w")*
 
 * ```!```
@@ -1256,8 +1375,8 @@
 * ```__caller_without_noise__```
 * ```__case_eqq```
 * ```__custom_object_methods__```
-* ```__dragon_ruby_source_files__```
-* ```__dragon_ruby_string_contains_source_file_path__?```
+* ```__gtk_ruby_source_files__```
+* ```__gtk_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
 * ```__object_methods__```
@@ -1273,6 +1392,7 @@
 * ```all?```
 * ```and```
 * ```any?```
+* ```better_instance_information```
 * ```block_given?```
 * ```caller```
 * ```class```
@@ -1348,11 +1468,16 @@
 * ```lambda```
 * ```lazy```
 * ```local_variables```
+* ```log```
+* ```log_info```
+* ```log_once```
+* ```log_once_info```
 * ```loop```
 * ```map```
 * ```max```
 * ```max_by```
 * ```member?```
+* ```metadata_object_id```
 * ```method_missing```
 * ```methods```
 * ```min```
@@ -1372,6 +1497,8 @@
 * ```pid```
 * ```pos```
 * ```pos=```
+* ```primitive?```
+* ```primitive_determined?```
 * ```print```
 * ```printf```
 * ```private_methods```
@@ -1382,6 +1509,8 @@
 * ```puts```
 * ```putsc```
 * ```raise```
+* ```raise_error_with_kind_of_okay_message```
+* ```raise_immediately```
 * ```raise_method_missing_better_error```
 * ```raise_with_caller```
 * ```rand```
@@ -1432,7 +1561,11 @@
 
 ---
 
-### Class: IO::File
+### Class: (class IO 
+   (included_modules [Enumerable]))::(class File
+   (superclass (class IO 
+     (included_modules [Enumerable])))
+    (included_modules [File::Constants, Enumerable]))
 *File.open*
 
 * ```!```
@@ -1449,8 +1582,8 @@
 * ```__caller_without_noise__```
 * ```__case_eqq```
 * ```__custom_object_methods__```
-* ```__dragon_ruby_source_files__```
-* ```__dragon_ruby_string_contains_source_file_path__?```
+* ```__gtk_ruby_source_files__```
+* ```__gtk_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
 * ```__object_methods__```
@@ -1466,6 +1599,7 @@
 * ```all?```
 * ```and```
 * ```any?```
+* ```better_instance_information```
 * ```block_given?```
 * ```caller```
 * ```class```
@@ -1542,11 +1676,16 @@
 * ```lambda```
 * ```lazy```
 * ```local_variables```
+* ```log```
+* ```log_info```
+* ```log_once```
+* ```log_once_info```
 * ```loop```
 * ```map```
 * ```max```
 * ```max_by```
 * ```member?```
+* ```metadata_object_id```
 * ```method_missing```
 * ```methods```
 * ```min```
@@ -1569,6 +1708,8 @@
 * ```pid```
 * ```pos```
 * ```pos=```
+* ```primitive?```
+* ```primitive_determined?```
 * ```print```
 * ```printf```
 * ```private_methods```
@@ -1579,6 +1720,8 @@
 * ```puts```
 * ```putsc```
 * ```raise```
+* ```raise_error_with_kind_of_okay_message```
+* ```raise_immediately```
 * ```raise_method_missing_better_error```
 * ```raise_with_caller```
 * ```rand```
@@ -1629,7 +1772,8 @@
 
 ---
 
-### Class: Object::NilClass
+### Class: (class Object)::(class NilClass 
+   (included_modules [NilClassFalseClass]))
 *$layout*
 
 * ```!```
@@ -1653,8 +1797,8 @@
 * ```__case_eqq```
 * ```__check_thrash__!```
 * ```__custom_object_methods__```
-* ```__dragon_ruby_source_files__```
-* ```__dragon_ruby_string_contains_source_file_path__?```
+* ```__gtk_ruby_source_files__```
+* ```__gtk_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
 * ```__object_methods__```
@@ -1667,6 +1811,7 @@
 * ```and```
 * ```assign_method_missing```
 * ```background_color```
+* ```better_instance_information```
 * ```block_given?```
 * ```caller```
 * ```class```
@@ -1683,6 +1828,7 @@
 * ```fast_rand```
 * ```feels_like_an_array?```
 * ```format```
+* ```frame_index```
 * ```freeze```
 * ```frozen?```
 * ```getc```
@@ -1707,7 +1853,12 @@
 * ```kind_of?```
 * ```lambda```
 * ```local_variables```
+* ```log```
+* ```log_info```
+* ```log_once```
+* ```log_once_info```
 * ```loop```
+* ```metadata_object_id```
 * ```method_missing```
 * ```methods```
 * ```nil?```
@@ -1717,6 +1868,8 @@
 * ```or```
 * ```original_puts```
 * ```p```
+* ```primitive?```
+* ```primitive_determined?```
 * ```print```
 * ```printf```
 * ```private_methods```
@@ -1727,6 +1880,8 @@
 * ```puts```
 * ```putsc```
 * ```raise```
+* ```raise_error_with_kind_of_okay_message```
+* ```raise_immediately```
 * ```raise_method_missing_better_error```
 * ```raise_with_caller```
 * ```rand```
@@ -1748,6 +1903,8 @@
 * ```to_h```
 * ```to_i```
 * ```to_s```
+* ```unassign_method_missing```
+* ```unassign_method_missing_and_raise```
 * ```yield_self```
 * ```|```
 
@@ -1755,7 +1912,7 @@
 
 ---
 
-### Class: Object::Outputs
+### Class: (class Object)::(class GTK::Outputs)
 *args.outputs*
 
 * ```!```
@@ -1768,17 +1925,32 @@
 * ```Hash```
 * ```Integer```
 * ```String```
+* ```__borders=```
 * ```__caller_without_noise__```
 * ```__case_eqq```
 * ```__custom_object_methods__```
-* ```__dragon_ruby_source_files__```
-* ```__dragon_ruby_string_contains_source_file_path__?```
+* ```__gtk_ruby_source_files__```
+* ```__gtk_ruby_string_contains_source_file_path__?```
 * ```__id__```
+* ```__labels=```
+* ```__lines=```
 * ```__method__```
 * ```__object_methods__```
 * ```__pretty_print_exception__```
+* ```__primitives=```
 * ```__printstr__```
+* ```__raise_deprecated__```
+* ```__reserved=```
 * ```__send__```
+* ```__solids=```
+* ```__sprites=```
+* ```__static_borders=```
+* ```__static_labels=```
+* ```__static_lines=```
+* ```__static_primitives=```
+* ```__static_reserved=```
+* ```__static_solids=```
+* ```__static_sprites=```
 * ```__supports_ivars__?```
 * ```_inspect```
 * ```````
@@ -1791,6 +1963,7 @@
 * ```all_sounds```
 * ```all_sprites```
 * ```and```
+* ```better_instance_information```
 * ```block_given?```
 * ```borders```
 * ```borders=```
@@ -1840,7 +2013,12 @@
 * ```lines```
 * ```lines=```
 * ```local_variables```
+* ```log```
+* ```log_info```
+* ```log_once```
+* ```log_once_info```
 * ```loop```
+* ```metadata_object_id```
 * ```method_missing```
 * ```methods```
 * ```nil?```
@@ -1850,6 +2028,8 @@
 * ```or```
 * ```original_puts```
 * ```p```
+* ```primitive?```
+* ```primitive_determined?```
 * ```primitives```
 * ```primitives=```
 * ```print```
@@ -1862,6 +2042,8 @@
 * ```puts```
 * ```putsc```
 * ```raise```
+* ```raise_error_with_kind_of_okay_message```
+* ```raise_immediately```
 * ```raise_method_missing_better_error```
 * ```raise_with_caller```
 * ```rand```
@@ -1911,7 +2093,8 @@
 
 ---
 
-### Class: Object::Array
+### Class: (class Object)::(class Array 
+   (included_modules [GTK::Primitive::ConversionCapabilities, Enumerable]))
 *args.passes*
 
 * ```!```
@@ -1938,11 +2121,13 @@
 * ```__caller_without_noise__```
 * ```__case_eqq```
 * ```__custom_object_methods__```
-* ```__dragon_ruby_source_files__```
-* ```__dragon_ruby_string_contains_source_file_path__?```
+* ```__gtk_ruby_source_files__```
+* ```__gtk_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
 * ```__object_methods__```
+* ```__original_add__```
+* ```__original_add_single__```
 * ```__pretty_print_exception__```
 * ```__printstr__```
 * ```__send__```
@@ -1964,7 +2149,9 @@
 * ```append```
 * ```assoc```
 * ```at```
+* ```better_instance_information```
 * ```block_given?```
+* ```border```
 * ```bottom```
 * ```bsearch```
 * ```bsearch_index```
@@ -1989,7 +2176,6 @@
 * ```delete_if```
 * ```detect```
 * ```dig```
-* ```draw_primitive_marker?```
 * ```drop```
 * ```drop_while```
 * ```dup```
@@ -2016,7 +2202,6 @@
 * ```flat_map```
 * ```flatten```
 * ```flatten!```
-* ```flatten_tuples```
 * ```format```
 * ```freeze```
 * ```frozen?```
@@ -2027,13 +2212,13 @@
 * ```group_by```
 * ```h```
 * ```h_half```
-* ```has_nested_arrays?```
 * ```hash```
 * ```height```
 * ```height_half```
 * ```help```
 * ```here```
 * ```include?```
+* ```include_any?```
 * ```index```
 * ```initialize```
 * ```initialize_copy```
@@ -2055,19 +2240,35 @@
 * ```join```
 * ```keep_if```
 * ```kind_of?```
+* ```label```
 * ```lambda```
 * ```last```
 * ```lazy```
 * ```left```
 * ```length```
+* ```line```
 * ```local_variables```
+* ```log```
+* ```log_info```
+* ```log_once```
+* ```log_once_info```
 * ```loop```
 * ```map```
 * ```map!```
 * ```map_2d```
+* ```mark_as_border!```
+* ```mark_as_common!```
+* ```mark_as_label!```
+* ```mark_as_line!```
+* ```mark_as_point!```
+* ```mark_as_primitive!```
+* ```mark_as_rect!```
+* ```mark_as_solid!```
+* ```mark_as_sprite!```
 * ```max```
 * ```max_by```
 * ```member?```
+* ```metadata_object_id```
 * ```method_missing```
 * ```methods```
 * ```min```
@@ -2087,10 +2288,13 @@
 * ```pairs_to_hash```
 * ```partition```
 * ```path```
+* ```path=```
 * ```permutation```
 * ```point```
 * ```pop```
 * ```prepend```
+* ```primitive?```
+* ```primitive_determined?```
 * ```print```
 * ```printf```
 * ```private_methods```
@@ -2103,12 +2307,13 @@
 * ```puts```
 * ```putsc```
 * ```raise```
+* ```raise_error_with_kind_of_okay_message```
+* ```raise_immediately```
 * ```raise_method_missing_better_error```
 * ```raise_with_caller```
 * ```rand```
 * ```rassoc```
 * ```rect```
-* ```rect_offset```
 * ```rect_shift```
 * ```rect_shift_down```
 * ```rect_shift_left```
@@ -2135,7 +2340,6 @@
 * ```scale_rect```
 * ```select```
 * ```select!```
-* ```self_rect```
 * ```send```
 * ```serialize```
 * ```shift```
@@ -2147,15 +2351,18 @@
 * ```size```
 * ```slice```
 * ```slice!```
+* ```solid```
 * ```sort```
 * ```sort!```
 * ```sort_by```
 * ```sprintf```
+* ```sprite```
 * ```srand```
 * ```take```
 * ```take_while```
 * ```tap```
 * ```text```
+* ```text=```
 * ```then```
 * ```tick```
 * ```to_a```
@@ -2188,777 +2395,7 @@
 
 ---
 
-### Class: Object::Primitive
-*Primitive.new*
-
-* ```!```
-* ```!=```
-* ```!~```
-* ```==```
-* ```===```
-* ```Array```
-* ```Float```
-* ```Hash```
-* ```Integer```
-* ```String```
-* ```__caller_without_noise__```
-* ```__case_eqq```
-* ```__custom_object_methods__```
-* ```__dragon_ruby_source_files__```
-* ```__dragon_ruby_string_contains_source_file_path__?```
-* ```__id__```
-* ```__method__```
-* ```__object_methods__```
-* ```__pretty_print_exception__```
-* ```__printstr__```
-* ```__send__```
-* ```__supports_ivars__?```
-* ```_inspect```
-* ```````
-* ```and```
-* ```block_given?```
-* ```caller```
-* ```class```
-* ```class_defined?```
-* ```clone```
-* ```define_singleton_method```
-* ```dig```
-* ```dup```
-* ```enum_for```
-* ```eql?```
-* ```equal?```
-* ```extend```
-* ```fail```
-* ```fast_rand```
-* ```format```
-* ```freeze```
-* ```frozen?```
-* ```getc```
-* ```gets```
-* ```global_variables```
-* ```hash```
-* ```help```
-* ```here```
-* ```initialize```
-* ```initialize_copy```
-* ```inspect```
-* ```instance_eval```
-* ```instance_exec```
-* ```instance_of?```
-* ```instance_variable_defined?```
-* ```instance_variable_get```
-* ```instance_variable_set```
-* ```instance_variables```
-* ```is_a?```
-* ```iterator?```
-* ```itself```
-* ```kind_of?```
-* ```lambda```
-* ```local_variables```
-* ```loop```
-* ```method_missing```
-* ```methods```
-* ```nil?```
-* ```numeric_or_default```
-* ```object_id```
-* ```open```
-* ```or```
-* ```original_puts```
-* ```p```
-* ```print```
-* ```printf```
-* ```private_methods```
-* ```proc```
-* ```protected_methods```
-* ```public_methods```
-* ```purge_class```
-* ```puts```
-* ```putsc```
-* ```raise```
-* ```raise_method_missing_better_error```
-* ```raise_with_caller```
-* ```rand```
-* ```remove_instance_variable```
-* ```require```
-* ```respond_to?```
-* ```send```
-* ```serialize```
-* ```singleton_class```
-* ```singleton_methods```
-* ```sprintf```
-* ```srand```
-* ```tap```
-* ```then```
-* ```tick```
-* ```to_enum```
-* ```to_s```
-* ```yield_self```
-
-[Top](#top)
-
----
-
-### Class: Primitive::Border
-*Border.new*
-
-* ```!```
-* ```!=```
-* ```!~```
-* ```==```
-* ```===```
-* ```Array```
-* ```Float```
-* ```Hash```
-* ```Integer```
-* ```String```
-* ```__caller_without_noise__```
-* ```__case_eqq```
-* ```__custom_object_methods__```
-* ```__dragon_ruby_source_files__```
-* ```__dragon_ruby_string_contains_source_file_path__?```
-* ```__id__```
-* ```__method__```
-* ```__object_methods__```
-* ```__pretty_print_exception__```
-* ```__printstr__```
-* ```__send__```
-* ```__supports_ivars__?```
-* ```_inspect```
-* ```````
-* ```a```
-* ```a=```
-* ```and```
-* ```b```
-* ```b=```
-* ```block_given?```
-* ```caller```
-* ```class```
-* ```class_defined?```
-* ```clone```
-* ```define_singleton_method```
-* ```dig```
-* ```dup```
-* ```enum_for```
-* ```eql?```
-* ```equal?```
-* ```extend```
-* ```fail```
-* ```fast_rand```
-* ```format```
-* ```freeze```
-* ```frozen?```
-* ```g```
-* ```g=```
-* ```getc```
-* ```gets```
-* ```global_variables```
-* ```h```
-* ```h=```
-* ```hash```
-* ```help```
-* ```here```
-* ```initialize```
-* ```initialize_copy```
-* ```inspect```
-* ```instance_eval```
-* ```instance_exec```
-* ```instance_of?```
-* ```instance_variable_defined?```
-* ```instance_variable_get```
-* ```instance_variable_set```
-* ```instance_variables```
-* ```is_a?```
-* ```iterator?```
-* ```itself```
-* ```kind_of?```
-* ```lambda```
-* ```local_variables```
-* ```loop```
-* ```method_missing```
-* ```methods```
-* ```nil?```
-* ```numeric_or_default```
-* ```object_id```
-* ```open```
-* ```or```
-* ```original_puts```
-* ```p```
-* ```print```
-* ```printf```
-* ```private_methods```
-* ```proc```
-* ```protected_methods```
-* ```public_methods```
-* ```purge_class```
-* ```puts```
-* ```putsc```
-* ```r```
-* ```r=```
-* ```raise```
-* ```raise_method_missing_better_error```
-* ```raise_with_caller```
-* ```rand```
-* ```remove_instance_variable```
-* ```require```
-* ```respond_to?```
-* ```send```
-* ```serialize```
-* ```singleton_class```
-* ```singleton_methods```
-* ```sprintf```
-* ```srand```
-* ```tap```
-* ```then```
-* ```tick```
-* ```to_enum```
-* ```to_s```
-* ```valid?```
-* ```validate!```
-* ```w```
-* ```w=```
-* ```x```
-* ```x=```
-* ```y```
-* ```y=```
-* ```yield_self```
-
-[Top](#top)
-
----
-
-### Class: Primitive::Label
-*Label.new*
-
-* ```!```
-* ```!=```
-* ```!~```
-* ```==```
-* ```===```
-* ```Array```
-* ```Float```
-* ```Hash```
-* ```Integer```
-* ```String```
-* ```__caller_without_noise__```
-* ```__case_eqq```
-* ```__custom_object_methods__```
-* ```__dragon_ruby_source_files__```
-* ```__dragon_ruby_string_contains_source_file_path__?```
-* ```__id__```
-* ```__method__```
-* ```__object_methods__```
-* ```__pretty_print_exception__```
-* ```__printstr__```
-* ```__send__```
-* ```__supports_ivars__?```
-* ```_inspect```
-* ```````
-* ```a```
-* ```a=```
-* ```alignment_enum```
-* ```alignment_enum=```
-* ```and```
-* ```b```
-* ```b=```
-* ```block_given?```
-* ```caller```
-* ```class```
-* ```class_defined?```
-* ```clone```
-* ```define_singleton_method```
-* ```dig```
-* ```dup```
-* ```enum_for```
-* ```eql?```
-* ```equal?```
-* ```extend```
-* ```fail```
-* ```fast_rand```
-* ```font```
-* ```font=```
-* ```format```
-* ```freeze```
-* ```frozen?```
-* ```g```
-* ```g=```
-* ```getc```
-* ```gets```
-* ```global_variables```
-* ```hash```
-* ```help```
-* ```here```
-* ```initialize```
-* ```initialize_copy```
-* ```inspect```
-* ```instance_eval```
-* ```instance_exec```
-* ```instance_of?```
-* ```instance_variable_defined?```
-* ```instance_variable_get```
-* ```instance_variable_set```
-* ```instance_variables```
-* ```is_a?```
-* ```iterator?```
-* ```itself```
-* ```kind_of?```
-* ```lambda```
-* ```local_variables```
-* ```loop```
-* ```method_missing```
-* ```methods```
-* ```nil?```
-* ```numeric_or_default```
-* ```object_id```
-* ```open```
-* ```or```
-* ```original_puts```
-* ```p```
-* ```print```
-* ```printf```
-* ```private_methods```
-* ```proc```
-* ```protected_methods```
-* ```public_methods```
-* ```purge_class```
-* ```puts```
-* ```putsc```
-* ```r```
-* ```r=```
-* ```raise```
-* ```raise_method_missing_better_error```
-* ```raise_with_caller```
-* ```rand```
-* ```remove_instance_variable```
-* ```require```
-* ```respond_to?```
-* ```send```
-* ```serialize```
-* ```singleton_class```
-* ```singleton_methods```
-* ```size_enum```
-* ```size_enum=```
-* ```sprintf```
-* ```srand```
-* ```tap```
-* ```text```
-* ```text=```
-* ```then```
-* ```tick```
-* ```to_enum```
-* ```to_s```
-* ```valid?```
-* ```validate!```
-* ```x```
-* ```x=```
-* ```y```
-* ```y=```
-* ```yield_self```
-
-[Top](#top)
-
----
-
-### Class: Primitive::Line
-*Line.new*
-
-* ```!```
-* ```!=```
-* ```!~```
-* ```==```
-* ```===```
-* ```Array```
-* ```Float```
-* ```Hash```
-* ```Integer```
-* ```String```
-* ```__caller_without_noise__```
-* ```__case_eqq```
-* ```__custom_object_methods__```
-* ```__dragon_ruby_source_files__```
-* ```__dragon_ruby_string_contains_source_file_path__?```
-* ```__id__```
-* ```__method__```
-* ```__object_methods__```
-* ```__pretty_print_exception__```
-* ```__printstr__```
-* ```__send__```
-* ```__supports_ivars__?```
-* ```_inspect```
-* ```````
-* ```a```
-* ```a=```
-* ```and```
-* ```b```
-* ```b=```
-* ```block_given?```
-* ```caller```
-* ```class```
-* ```class_defined?```
-* ```clone```
-* ```define_singleton_method```
-* ```dig```
-* ```dup```
-* ```enum_for```
-* ```eql?```
-* ```equal?```
-* ```extend```
-* ```fail```
-* ```fast_rand```
-* ```format```
-* ```freeze```
-* ```frozen?```
-* ```g```
-* ```g=```
-* ```getc```
-* ```gets```
-* ```global_variables```
-* ```hash```
-* ```help```
-* ```here```
-* ```initialize```
-* ```initialize_copy```
-* ```inspect```
-* ```instance_eval```
-* ```instance_exec```
-* ```instance_of?```
-* ```instance_variable_defined?```
-* ```instance_variable_get```
-* ```instance_variable_set```
-* ```instance_variables```
-* ```is_a?```
-* ```iterator?```
-* ```itself```
-* ```kind_of?```
-* ```lambda```
-* ```local_variables```
-* ```loop```
-* ```method_missing```
-* ```methods```
-* ```nil?```
-* ```numeric_or_default```
-* ```object_id```
-* ```open```
-* ```or```
-* ```original_puts```
-* ```p```
-* ```print```
-* ```printf```
-* ```private_methods```
-* ```proc```
-* ```protected_methods```
-* ```public_methods```
-* ```purge_class```
-* ```puts```
-* ```putsc```
-* ```r```
-* ```r=```
-* ```raise```
-* ```raise_method_missing_better_error```
-* ```raise_with_caller```
-* ```rand```
-* ```remove_instance_variable```
-* ```require```
-* ```respond_to?```
-* ```send```
-* ```serialize```
-* ```singleton_class```
-* ```singleton_methods```
-* ```sprintf```
-* ```srand```
-* ```tap```
-* ```then```
-* ```tick```
-* ```to_enum```
-* ```to_s```
-* ```x```
-* ```x2```
-* ```x2=```
-* ```x=```
-* ```y```
-* ```y2```
-* ```y2=```
-* ```y=```
-* ```yield_self```
-
-[Top](#top)
-
----
-
-### Class: Primitive::Solid
-*Solid.new*
-
-* ```!```
-* ```!=```
-* ```!~```
-* ```==```
-* ```===```
-* ```Array```
-* ```Float```
-* ```Hash```
-* ```Integer```
-* ```String```
-* ```__caller_without_noise__```
-* ```__case_eqq```
-* ```__custom_object_methods__```
-* ```__dragon_ruby_source_files__```
-* ```__dragon_ruby_string_contains_source_file_path__?```
-* ```__id__```
-* ```__method__```
-* ```__object_methods__```
-* ```__pretty_print_exception__```
-* ```__printstr__```
-* ```__send__```
-* ```__supports_ivars__?```
-* ```_inspect```
-* ```````
-* ```a```
-* ```a=```
-* ```and```
-* ```b```
-* ```b=```
-* ```block_given?```
-* ```caller```
-* ```class```
-* ```class_defined?```
-* ```clone```
-* ```define_singleton_method```
-* ```dig```
-* ```dup```
-* ```enum_for```
-* ```eql?```
-* ```equal?```
-* ```extend```
-* ```fail```
-* ```fast_rand```
-* ```format```
-* ```freeze```
-* ```frozen?```
-* ```g```
-* ```g=```
-* ```getc```
-* ```gets```
-* ```global_variables```
-* ```h```
-* ```h=```
-* ```hash```
-* ```help```
-* ```here```
-* ```initialize```
-* ```initialize_copy```
-* ```inspect```
-* ```instance_eval```
-* ```instance_exec```
-* ```instance_of?```
-* ```instance_variable_defined?```
-* ```instance_variable_get```
-* ```instance_variable_set```
-* ```instance_variables```
-* ```is_a?```
-* ```iterator?```
-* ```itself```
-* ```kind_of?```
-* ```lambda```
-* ```local_variables```
-* ```loop```
-* ```method_missing```
-* ```methods```
-* ```nil?```
-* ```numeric_or_default```
-* ```object_id```
-* ```open```
-* ```or```
-* ```original_puts```
-* ```p```
-* ```print```
-* ```printf```
-* ```private_methods```
-* ```proc```
-* ```protected_methods```
-* ```public_methods```
-* ```purge_class```
-* ```puts```
-* ```putsc```
-* ```r```
-* ```r=```
-* ```raise```
-* ```raise_method_missing_better_error```
-* ```raise_with_caller```
-* ```rand```
-* ```remove_instance_variable```
-* ```require```
-* ```respond_to?```
-* ```send```
-* ```serialize```
-* ```singleton_class```
-* ```singleton_methods```
-* ```sprintf```
-* ```srand```
-* ```tap```
-* ```then```
-* ```tick```
-* ```to_enum```
-* ```to_s```
-* ```valid?```
-* ```validate!```
-* ```w```
-* ```w=```
-* ```x```
-* ```x=```
-* ```y```
-* ```y=```
-* ```yield_self```
-
-[Top](#top)
-
----
-
-### Class: Primitive::Sprite
-*Sprite.new*
-
-* ```!```
-* ```!=```
-* ```!~```
-* ```==```
-* ```===```
-* ```Array```
-* ```Float```
-* ```Hash```
-* ```Integer```
-* ```String```
-* ```__caller_without_noise__```
-* ```__case_eqq```
-* ```__custom_object_methods__```
-* ```__dragon_ruby_source_files__```
-* ```__dragon_ruby_string_contains_source_file_path__?```
-* ```__id__```
-* ```__method__```
-* ```__object_methods__```
-* ```__pretty_print_exception__```
-* ```__printstr__```
-* ```__send__```
-* ```__supports_ivars__?```
-* ```_inspect```
-* ```````
-* ```a```
-* ```a=```
-* ```and```
-* ```angle```
-* ```angle=```
-* ```b```
-* ```b=```
-* ```block_given?```
-* ```caller```
-* ```class```
-* ```class_defined?```
-* ```clone```
-* ```define_singleton_method```
-* ```dig```
-* ```dpx```
-* ```dpx=```
-* ```dpy```
-* ```dpy=```
-* ```dup```
-* ```enum_for```
-* ```eql?```
-* ```equal?```
-* ```extend```
-* ```fail```
-* ```fast_rand```
-* ```fliphorz```
-* ```fliphorz=```
-* ```flipvert```
-* ```flipvert=```
-* ```format```
-* ```freeze```
-* ```frozen?```
-* ```g```
-* ```g=```
-* ```getc```
-* ```gets```
-* ```global_variables```
-* ```h```
-* ```h=```
-* ```hash```
-* ```help```
-* ```here```
-* ```initialize```
-* ```initialize_copy```
-* ```inspect```
-* ```instance_eval```
-* ```instance_exec```
-* ```instance_of?```
-* ```instance_variable_defined?```
-* ```instance_variable_get```
-* ```instance_variable_set```
-* ```instance_variables```
-* ```is_a?```
-* ```iterator?```
-* ```itself```
-* ```kind_of?```
-* ```lambda```
-* ```local_variables```
-* ```loop```
-* ```method_missing```
-* ```methods```
-* ```nil?```
-* ```numeric_or_default```
-* ```object_id```
-* ```open```
-* ```or```
-* ```original_puts```
-* ```p```
-* ```path```
-* ```path=```
-* ```print```
-* ```printf```
-* ```private_methods```
-* ```proc```
-* ```protected_methods```
-* ```public_methods```
-* ```purge_class```
-* ```puts```
-* ```putsc```
-* ```r```
-* ```r=```
-* ```raise```
-* ```raise_method_missing_better_error```
-* ```raise_with_caller```
-* ```rand```
-* ```remove_instance_variable```
-* ```require```
-* ```respond_to?```
-* ```send```
-* ```serialize```
-* ```sh```
-* ```sh=```
-* ```singleton_class```
-* ```singleton_methods```
-* ```sprintf```
-* ```srand```
-* ```sw```
-* ```sw=```
-* ```sx```
-* ```sx=```
-* ```sy```
-* ```sy=```
-* ```tap```
-* ```then```
-* ```tick```
-* ```to_enum```
-* ```to_s```
-* ```w```
-* ```w=```
-* ```x```
-* ```x=```
-* ```y```
-* ```y=```
-* ```yield_self```
-
-[Top](#top)
-
----
-
-### Class: Object::Inputs
+### Class: (class Object)::(class GTK::Inputs)
 *args.inputs*
 
 * ```!```
@@ -2974,8 +2411,8 @@
 * ```__caller_without_noise__```
 * ```__case_eqq```
 * ```__custom_object_methods__```
-* ```__dragon_ruby_source_files__```
-* ```__dragon_ruby_string_contains_source_file_path__?```
+* ```__gtk_ruby_source_files__```
+* ```__gtk_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
 * ```__object_methods__```
@@ -2986,6 +2423,7 @@
 * ```_inspect```
 * ```````
 * ```and```
+* ```better_instance_information```
 * ```block_given?```
 * ```caller```
 * ```class```
@@ -3033,7 +2471,12 @@
 * ```kind_of?```
 * ```lambda```
 * ```local_variables```
+* ```log```
+* ```log_info```
+* ```log_once```
+* ```log_once_info```
 * ```loop```
+* ```metadata_object_id```
 * ```method_missing```
 * ```methods```
 * ```mouse```
@@ -3045,6 +2488,8 @@
 * ```or```
 * ```original_puts```
 * ```p```
+* ```primitive?```
+* ```primitive_determined?```
 * ```print```
 * ```printf```
 * ```private_methods```
@@ -3055,6 +2500,8 @@
 * ```puts```
 * ```putsc```
 * ```raise```
+* ```raise_error_with_kind_of_okay_message```
+* ```raise_immediately```
 * ```raise_method_missing_better_error```
 * ```raise_with_caller```
 * ```rand```
@@ -3080,7 +2527,7 @@
 
 ---
 
-### Class: Object::Controller
+### Class: (class Object)::(class GTK::Controller)
 *args.inputs.controller_one*
 
 * ```!```
@@ -3096,8 +2543,8 @@
 * ```__caller_without_noise__```
 * ```__case_eqq```
 * ```__custom_object_methods__```
-* ```__dragon_ruby_source_files__```
-* ```__dragon_ruby_string_contains_source_file_path__?```
+* ```__gtk_ruby_source_files__```
+* ```__gtk_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
 * ```__object_methods__```
@@ -3108,6 +2555,7 @@
 * ```_inspect```
 * ```````
 * ```and```
+* ```better_instance_information```
 * ```block_given?```
 * ```caller```
 * ```class```
@@ -3164,7 +2612,12 @@
 * ```left_right```
 * ```left_right=```
 * ```local_variables```
+* ```log```
+* ```log_info```
+* ```log_once```
+* ```log_once_info```
 * ```loop```
+* ```metadata_object_id```
 * ```method_missing```
 * ```methods```
 * ```nil?```
@@ -3174,6 +2627,8 @@
 * ```or```
 * ```original_puts```
 * ```p```
+* ```primitive?```
+* ```primitive_determined?```
 * ```print```
 * ```printf```
 * ```private_methods```
@@ -3184,6 +2639,8 @@
 * ```puts```
 * ```putsc```
 * ```raise```
+* ```raise_error_with_kind_of_okay_message```
+* ```raise_immediately```
 * ```raise_method_missing_better_error```
 * ```raise_with_caller```
 * ```rand```
@@ -3217,7 +2674,7 @@
 
 ---
 
-### Class: Object::Controller
+### Class: (class Object)::(class GTK::Controller)
 *args.inputs.controller_two*
 
 * ```!```
@@ -3233,8 +2690,8 @@
 * ```__caller_without_noise__```
 * ```__case_eqq```
 * ```__custom_object_methods__```
-* ```__dragon_ruby_source_files__```
-* ```__dragon_ruby_string_contains_source_file_path__?```
+* ```__gtk_ruby_source_files__```
+* ```__gtk_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
 * ```__object_methods__```
@@ -3245,6 +2702,7 @@
 * ```_inspect```
 * ```````
 * ```and```
+* ```better_instance_information```
 * ```block_given?```
 * ```caller```
 * ```class```
@@ -3301,7 +2759,12 @@
 * ```left_right```
 * ```left_right=```
 * ```local_variables```
+* ```log```
+* ```log_info```
+* ```log_once```
+* ```log_once_info```
 * ```loop```
+* ```metadata_object_id```
 * ```method_missing```
 * ```methods```
 * ```nil?```
@@ -3311,6 +2774,8 @@
 * ```or```
 * ```original_puts```
 * ```p```
+* ```primitive?```
+* ```primitive_determined?```
 * ```print```
 * ```printf```
 * ```private_methods```
@@ -3321,6 +2786,8 @@
 * ```puts```
 * ```putsc```
 * ```raise```
+* ```raise_error_with_kind_of_okay_message```
+* ```raise_immediately```
 * ```raise_method_missing_better_error```
 * ```raise_with_caller```
 * ```rand```
@@ -3354,7 +2821,8 @@
 
 ---
 
-### Class: Object::Array
+### Class: (class Object)::(class Array 
+   (included_modules [GTK::Primitive::ConversionCapabilities, Enumerable]))
 *args.inputs.controllers*
 
 * ```!```
@@ -3381,11 +2849,13 @@
 * ```__caller_without_noise__```
 * ```__case_eqq```
 * ```__custom_object_methods__```
-* ```__dragon_ruby_source_files__```
-* ```__dragon_ruby_string_contains_source_file_path__?```
+* ```__gtk_ruby_source_files__```
+* ```__gtk_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
 * ```__object_methods__```
+* ```__original_add__```
+* ```__original_add_single__```
 * ```__pretty_print_exception__```
 * ```__printstr__```
 * ```__send__```
@@ -3407,7 +2877,9 @@
 * ```append```
 * ```assoc```
 * ```at```
+* ```better_instance_information```
 * ```block_given?```
+* ```border```
 * ```bottom```
 * ```bsearch```
 * ```bsearch_index```
@@ -3432,7 +2904,6 @@
 * ```delete_if```
 * ```detect```
 * ```dig```
-* ```draw_primitive_marker?```
 * ```drop```
 * ```drop_while```
 * ```dup```
@@ -3459,7 +2930,6 @@
 * ```flat_map```
 * ```flatten```
 * ```flatten!```
-* ```flatten_tuples```
 * ```format```
 * ```freeze```
 * ```frozen?```
@@ -3470,13 +2940,13 @@
 * ```group_by```
 * ```h```
 * ```h_half```
-* ```has_nested_arrays?```
 * ```hash```
 * ```height```
 * ```height_half```
 * ```help```
 * ```here```
 * ```include?```
+* ```include_any?```
 * ```index```
 * ```initialize```
 * ```initialize_copy```
@@ -3498,19 +2968,35 @@
 * ```join```
 * ```keep_if```
 * ```kind_of?```
+* ```label```
 * ```lambda```
 * ```last```
 * ```lazy```
 * ```left```
 * ```length```
+* ```line```
 * ```local_variables```
+* ```log```
+* ```log_info```
+* ```log_once```
+* ```log_once_info```
 * ```loop```
 * ```map```
 * ```map!```
 * ```map_2d```
+* ```mark_as_border!```
+* ```mark_as_common!```
+* ```mark_as_label!```
+* ```mark_as_line!```
+* ```mark_as_point!```
+* ```mark_as_primitive!```
+* ```mark_as_rect!```
+* ```mark_as_solid!```
+* ```mark_as_sprite!```
 * ```max```
 * ```max_by```
 * ```member?```
+* ```metadata_object_id```
 * ```method_missing```
 * ```methods```
 * ```min```
@@ -3530,10 +3016,13 @@
 * ```pairs_to_hash```
 * ```partition```
 * ```path```
+* ```path=```
 * ```permutation```
 * ```point```
 * ```pop```
 * ```prepend```
+* ```primitive?```
+* ```primitive_determined?```
 * ```print```
 * ```printf```
 * ```private_methods```
@@ -3546,12 +3035,13 @@
 * ```puts```
 * ```putsc```
 * ```raise```
+* ```raise_error_with_kind_of_okay_message```
+* ```raise_immediately```
 * ```raise_method_missing_better_error```
 * ```raise_with_caller```
 * ```rand```
 * ```rassoc```
 * ```rect```
-* ```rect_offset```
 * ```rect_shift```
 * ```rect_shift_down```
 * ```rect_shift_left```
@@ -3578,7 +3068,6 @@
 * ```scale_rect```
 * ```select```
 * ```select!```
-* ```self_rect```
 * ```send```
 * ```serialize```
 * ```shift```
@@ -3590,15 +3079,18 @@
 * ```size```
 * ```slice```
 * ```slice!```
+* ```solid```
 * ```sort```
 * ```sort!```
 * ```sort_by```
 * ```sprintf```
+* ```sprite```
 * ```srand```
 * ```take```
 * ```take_while```
 * ```tap```
 * ```text```
+* ```text=```
 * ```then```
 * ```tick```
 * ```to_a```
@@ -3631,7 +3123,7 @@
 
 ---
 
-### Class: Object::Keyboard
+### Class: (class Object)::(class GTK::Keyboard)
 *args.inputs.keyboard*
 
 * ```!```
@@ -3647,8 +3139,8 @@
 * ```__caller_without_noise__```
 * ```__case_eqq```
 * ```__custom_object_methods__```
-* ```__dragon_ruby_source_files__```
-* ```__dragon_ruby_string_contains_source_file_path__?```
+* ```__gtk_ruby_source_files__```
+* ```__gtk_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
 * ```__object_methods__```
@@ -3659,6 +3151,7 @@
 * ```_inspect```
 * ```````
 * ```and```
+* ```better_instance_information```
 * ```block_given?```
 * ```caller```
 * ```class```
@@ -3710,7 +3203,12 @@
 * ```left```
 * ```left_right```
 * ```local_variables```
+* ```log```
+* ```log_info```
+* ```log_once```
+* ```log_once_info```
 * ```loop```
+* ```metadata_object_id```
 * ```method_missing```
 * ```methods```
 * ```nil?```
@@ -3720,6 +3218,8 @@
 * ```or```
 * ```original_puts```
 * ```p```
+* ```primitive?```
+* ```primitive_determined?```
 * ```print```
 * ```printf```
 * ```private_methods```
@@ -3730,6 +3230,8 @@
 * ```puts```
 * ```putsc```
 * ```raise```
+* ```raise_error_with_kind_of_okay_message```
+* ```raise_immediately```
 * ```raise_method_missing_better_error```
 * ```raise_with_caller```
 * ```rand```
@@ -3756,7 +3258,7 @@
 
 ---
 
-### Class: Object::Mouse
+### Class: (class Object)::(class GTK::Mouse)
 *args.inputs.mouse*
 
 * ```!```
@@ -3772,8 +3274,8 @@
 * ```__caller_without_noise__```
 * ```__case_eqq```
 * ```__custom_object_methods__```
-* ```__dragon_ruby_source_files__```
-* ```__dragon_ruby_string_contains_source_file_path__?```
+* ```__gtk_ruby_source_files__```
+* ```__gtk_ruby_string_contains_source_file_path__?```
 * ```__id__```
 * ```__method__```
 * ```__object_methods__```
@@ -3784,6 +3286,7 @@
 * ```_inspect```
 * ```````
 * ```and```
+* ```better_instance_information```
 * ```block_given?```
 * ```caller```
 * ```class```
@@ -3829,7 +3332,12 @@
 * ```kind_of?```
 * ```lambda```
 * ```local_variables```
+* ```log```
+* ```log_info```
+* ```log_once```
+* ```log_once_info```
 * ```loop```
+* ```metadata_object_id```
 * ```method_missing```
 * ```methods```
 * ```moved```
@@ -3848,6 +3356,8 @@
 * ```position```
 * ```previous_click```
 * ```previous_click=```
+* ```primitive?```
+* ```primitive_determined?```
 * ```print```
 * ```printf```
 * ```private_methods```
@@ -3858,6 +3368,8 @@
 * ```puts```
 * ```putsc```
 * ```raise```
+* ```raise_error_with_kind_of_okay_message```
+* ```raise_immediately```
 * ```raise_method_missing_better_error```
 * ```raise_with_caller```
 * ```rand```

@@ -19,10 +19,10 @@ class DragonRubyDocumenter
       { obj: args, comment: '*args*' },
       { obj: args.dragon, comment: '*args.dragon*' },
       { obj: args.dragon.root, comment: '*args.dragon.root*' },
-      { obj: args.game.new_entity(:doc_button), comment: '*args.game.new_entity* Methods of an entity object ' },
+      { obj: args.state.new_entity(:doc_button), comment: '*args.state.new_entity* Methods of an entity object ' },
       { obj: $ffi, comment: '*$ffi*' },
       { obj: FFI::File.new, comment: '*FFI::File*'},
-      { obj: args.game, comment: '*args.game*' },
+      { obj: args.state, comment: '*args.state*' },
       { obj: GC, comment: '*GC*'},
       { obj: args.grid, comment: '*args.grid*' },
       # IO stuff
@@ -34,13 +34,6 @@ class DragonRubyDocumenter
       # Sound is currently not working
       # { obj: Sound.new('resources/beep.wav'), comment: '*args.outputs.sounds.first* ' },
       { obj: args.passes, comment: '*args.passes*' },
-      # Primitives
-      { obj: Primitive.new, comment: '*Primitive.new*' },
-      { obj: Border.new, comment: '*Border.new*' },
-      { obj: Label.new, comment: '*Label.new*' },
-      { obj: Line.new, comment: '*Line.new*' },
-      { obj: Solid.new, comment: '*Solid.new*' },
-      { obj: Sprite.new, comment: '*Sprite.new*' },
       # Inputs
       { obj: args.inputs, comment: '*args.inputs*' },
       { obj: args.inputs.controller_one, comment: '*args.inputs.controller_one*'},
@@ -62,12 +55,12 @@ class DragonRubyDocumenter
     #   next if obj.to_s == '#<Class:DragonRubyDocumenter>'
     # 
     #   puts "looping ObjectSpace class: #{obj.class} for #{obj.to_s[0..50]}"
-      if obj.is_a?(Class)
-        os_arr << "* ```#{class_tree(obj).to_s}```"
-      end
+      # if obj.is_a?(Class)
+      #   os_arr << "* ```#{class_tree(obj).to_s}```"
+      # end
     end
     os_arr.sort!
-    output[:objspace] << os_arr.join("\n") + "\n\n"
+    # output[:objspace] << os_arr.join("\n") + "\n\n"
     
     puts "flushing documentation"
     flush_documentation
@@ -144,7 +137,7 @@ class DragonRubyDocumenter
 
   def output_headers
     hs = Hash.new
-    hs[:objspace]   = "Global Object Space"
+    # hs[:objspace]   = "Global Object Space"
     hs[:short]      = "Short (excluding inherited methods)"
     hs[:full]       = "Full (including inherited methods)"
     hs[:index]      = "Index"
@@ -198,28 +191,28 @@ $docer = DragonRubyDocumenter.new
 def tick args
   x, y, w, h = args.grid.w_half - 150 , args.grid.h_half, 300, 50
 
-  documenter_button        ||= args.game.new_entity(:doc_button)
+  documenter_button        ||= args.state.new_entity(:doc_button)
   documenter_button.label  ||= [x + w.half, y + h.half + 10, "Write Documentation", 1, 1]
   documenter_button.border ||= [x, y, w, h]
 
   args.outputs.labels << documenter_button.label
   args.outputs.borders << documenter_button.border
 
-  if args.game.documenter_success 
-    if args.game.documenter_success + 100 > args.game.tick_count
-      documenter_success_label = args.game.new_entity(:success_label)
+  if args.state.documenter_success 
+    if args.state.documenter_success + 100 > args.state.tick_count
+      documenter_success_label = args.state.new_entity(:success_label)
       documenter_success_label.label = [x + w.half, y + h.half - 50, "Wrote documentation...", 1, 1]
       args.outputs.labels << documenter_success_label.label
     else
       documenter_success_label = nil
-      args.game.documenter_success = false
+      args.state.documenter_success = false
     end
   end
 
   if args.inputs.mouse.click && args.inputs.mouse.click.point.inside_rect?(documenter_button.border)
     if $docer.dox args
-      puts "Creating documentation done at tick #{args.game.tick_count}"
-      args.game.documenter_success = args.game.tick_count
+      puts "Creating documentation done at tick #{args.state.tick_count}"
+      args.state.documenter_success = args.state.tick_count
     else
       puts "Error of some kind"
     end

@@ -1,5 +1,7 @@
-# dragon-ruby-documenter
+# dragon-ruby-documenter UNSUPPORTED
 This small app dumps a basic DragonRuby documentation to a Markdown file.
+
+**PLEASE NOTE THAT THIS PROJECT IS NO LONGER SUPPORTED AS THE DOCUMENTATION PROVIDED BY THE DRAGONRUBY TEAM IS NOW MUCH BETTER. SO PLEASE USE THE OFFICIAL DRAGONRUBY DOCUMENTATION INSTEAD.**
 
 You can find example outputs here:
 
